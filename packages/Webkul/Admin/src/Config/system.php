@@ -265,6 +265,9 @@ return [
                     ], [
                         'title' => 'admin::app.configuration.index.general.design.frontend-theme.dark-mode',
                         'value' => 'dark',
+                    ], [
+                        'title' => 'admin::app.configuration.index.general.design.frontend-theme.christmas-mode',
+                        'value' => 'christmas',
                     ],
                 ],
                 'channel_based' => true,

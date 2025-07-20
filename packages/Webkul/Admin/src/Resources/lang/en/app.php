@@ -3799,10 +3799,11 @@ return [
 
                     'frontend-theme' => [
                         'title'      => 'Frontend Theme',
-                        'title-info' => 'Configure the global theme for the frontend store. Choose between light and dark mode.',
+                        'title-info' => 'Configure the global theme for the frontend store. Choose between light, dark, and Christmas mode.',
                         'mode'       => 'Theme Mode',
                         'light-mode' => 'Light Mode',
                         'dark-mode'  => 'Dark Mode',
+                        'christmas-mode' => 'Christmas Mode',
                     ],
                 ],
 

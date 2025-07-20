@@ -9,17 +9,16 @@
 @php
     $globalTheme = core()->getConfigData('general.design.frontend_theme.mode') ?? 'light';
     
-    // Manual override for testing - uncomment the next line to force dark mode
-    // $globalTheme = 'dark';
-    
-    // Debug: Let's see what value we're getting
-    // echo "<!-- Debug: Theme value = " . $globalTheme . " -->";
+    // Christmas theme logic: when Christmas is selected, apply dark theme
+    $isChristmasTheme = $globalTheme === 'christmas';
+    $effectiveTheme = $isChristmasTheme ? 'dark' : $globalTheme;
 @endphp
 
 <html
     lang="{{ app()->getLocale() }}"
     dir="{{ core()->getCurrentLocale()->direction }}"
-    data-theme="{{ $globalTheme }}"
+    data-theme="{{ $effectiveTheme }}"
+    @if($isChristmasTheme) data-christmas="true" @endif
 >
     <head>
         <!-- CRITICAL: Prevent other theme switchers from overriding admin panel setting -->
@@ -27,25 +26,32 @@
             (function() {
                 // Store the server-side theme setting immediately
                 const serverTheme = '{{ $globalTheme }}';
+                const effectiveTheme = '{{ $effectiveTheme }}';
+                const isChristmas = {{ $isChristmasTheme ? 'true' : 'false' }};
                 
-                console.log('Bagisto: Server theme set to:', serverTheme);
+                console.log('Bagisto: Server theme set to:', serverTheme, 'Effective theme:', effectiveTheme, 'Christmas:', isChristmas);
                 
                 // Clear ALL conflicting localStorage entries immediately
                 localStorage.removeItem('theme');
                 localStorage.removeItem('bagisto-theme');
                 
                 // Ensure the data-theme attribute is set correctly
-                document.documentElement.setAttribute('data-theme', serverTheme);
+                document.documentElement.setAttribute('data-theme', effectiveTheme);
+                if (isChristmas) {
+                    document.documentElement.setAttribute('data-christmas', 'true');
+                }
                 
                 // Override any existing theme switchers
                 window.bagistoServerTheme = serverTheme;
+                window.bagistoEffectiveTheme = effectiveTheme;
+                window.bagistoIsChristmas = isChristmas;
                 
                 // Prevent other scripts from changing the theme
                 const originalSetAttribute = document.documentElement.setAttribute;
                 document.documentElement.setAttribute = function(name, value) {
                     if (name === 'data-theme') {
                         console.log('Bagisto: Theme change attempted:', value, 'Server theme:', serverTheme);
-                        if (value === serverTheme || window.bagistoAppInitialized) {
+                        if (value === effectiveTheme || window.bagistoAppInitialized) {
                             originalSetAttribute.call(this, name, value);
                         } else {
                             console.log('Bagisto: Blocked unauthorized theme change');
@@ -57,8 +63,11 @@
                 
                 // Force the theme to persist
                 setTimeout(() => {
-                    document.documentElement.setAttribute('data-theme', serverTheme);
-                    console.log('Bagisto: Theme forced to:', serverTheme);
+                    document.documentElement.setAttribute('data-theme', effectiveTheme);
+                    if (isChristmas) {
+                        document.documentElement.setAttribute('data-christmas', 'true');
+                    }
+                    console.log('Bagisto: Theme forced to:', effectiveTheme);
                 }, 50);
             })();
         </script>
@@ -279,6 +288,11 @@
 
     <body>
         {!! view_render_event('bagisto.shop.layout.body.before') !!}
+
+        <!-- Christmas Snowflakes Component -->
+        @if($isChristmasTheme)
+            <x-shop::snowflakes />
+        @endif
 
         <a
             href="#main"
