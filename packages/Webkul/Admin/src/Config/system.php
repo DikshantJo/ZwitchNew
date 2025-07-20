@@ -2178,6 +2178,152 @@ return [
             ],
         ],
     ], [
+        'key'    => 'sales.payment_methods.razorpay',
+        'name'   => 'Razorpay',
+        'info'   => 'Pay securely with cards, UPI, net banking, and wallets',
+        'sort'   => 3,
+        'fields' => [
+            [
+                'name'          => 'title',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.title',
+                'type'          => 'text',
+                'depends'       => 'active:1',
+                'validation'    => 'required_if:active,1',
+                'channel_based' => true,
+                'locale_based'  => true,
+            ], [
+                'name'          => 'description',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.description',
+                'type'          => 'textarea',
+                'channel_based' => true,
+                'locale_based'  => true,
+            ], [
+                'name'          => 'image',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.logo',
+                'type'          => 'image',
+                'info'          => 'admin::app.configuration.index.sales.payment-methods.logo-information',
+                'channel_based' => false,
+                'locale_based'  => false,
+                'validation'    => 'mimes:bmp,jpeg,jpg,png,webp',
+            ], [
+                'name'          => 'key_id',
+                'title'         => 'Key ID',
+                'info'          => 'Your Razorpay Key ID',
+                'type'          => 'text',
+                'depends'       => 'active:1',
+                'validation'    => 'required_if:active,1',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'key_secret',
+                'title'         => 'Key Secret',
+                'info'          => 'Your Razorpay Key Secret',
+                'type'          => 'text',
+                'depends'       => 'active:1',
+                'validation'    => 'required_if:active,1',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'webhook_secret',
+                'title'         => 'Webhook Secret',
+                'info'          => 'Your Razorpay Webhook Secret',
+                'type'          => 'text',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'accepted_currencies',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.accepted-currencies',
+                'info'          => 'admin::app.configuration.index.sales.payment-methods.accepted-currencies-info',
+                'type'          => 'text',
+                'depends'       => 'active:1',
+                'validation'    => 'required_if:active,1',
+                'channel_based' => true,
+                'locale_based'  => false,
+                'default'       => 'INR',
+            ], [
+                'name'          => 'instructions',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.instructions',
+                'type'          => 'textarea',
+                'channel_based' => true,
+                'locale_based'  => true,
+            ], [
+                'name'          => 'generate_invoice',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.generate-invoice',
+                'type'          => 'boolean',
+                'default_value' => false,
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'invoice_status',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.set-invoice-status',
+                'depends'       => 'generate_invoice:1',
+                'validation'    => 'required_if:generate_invoice,1',
+                'type'          => 'select',
+                'options'       => [
+                    [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.pending',
+                        'value' => 'pending',
+                    ], [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.paid',
+                        'value' => 'paid',
+                    ],
+                ],
+                'info'          => 'admin::app.configuration.index.sales.payment-methods.set-order-status',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'order_status',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.set-order-status',
+                'type'          => 'select',
+                'options'       => [
+                    [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.pending',
+                        'value' => 'pending',
+                    ], [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.pending-payment',
+                        'value' => 'pending_payment',
+                    ], [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.processing',
+                        'value' => 'processing',
+                    ],
+                ],
+                'info'          => 'admin::app.configuration.index.sales.payment-methods.generate-invoice-applicable',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'active',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.status',
+                'type'          => 'boolean',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'sandbox',
+                'title'         => 'admin::app.configuration.index.sales.payment-methods.sandbox',
+                'type'          => 'boolean',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'    => 'sort',
+                'title'   => 'admin::app.configuration.index.sales.payment-methods.sort-order',
+                'type'    => 'select',
+                'options' => [
+                    [
+                        'title' => '1',
+                        'value' => 1,
+                    ], [
+                        'title' => '2',
+                        'value' => 2,
+                    ], [
+                        'title' => '3',
+                        'value' => 3,
+                    ], [
+                        'title' => '4',
+                        'value' => 4,
+                    ],
+                ],
+            ],
+        ],
+    ], [
         'key'  => 'sales.order_settings',
         'name' => 'admin::app.configuration.index.sales.order-settings.title',
         'info' => 'admin::app.configuration.index.sales.order-settings.info',

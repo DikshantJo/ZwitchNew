@@ -100,6 +100,7 @@ class ComposerStaticInit27dcf8864e0a3c2d435bdcc067255c61
             'Webkul\\Shipping\\' => 16,
             'Webkul\\Sales\\' => 13,
             'Webkul\\Rule\\' => 12,
+            'Webkul\\Razorpay\\' => 16,
             'Webkul\\Product\\' => 15,
             'Webkul\\Paypal\\' => 14,
             'Webkul\\Payment\\' => 15,
@@ -424,6 +425,10 @@ class ComposerStaticInit27dcf8864e0a3c2d435bdcc067255c61
         'Webkul\\Rule\\' => 
         array (
             0 => __DIR__ . '/../..' . '/packages/Webkul/Rule/src',
+        ),
+        'Webkul\\Razorpay\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src',
         ),
         'Webkul\\Product\\' => 
         array (
@@ -1179,6 +1184,7 @@ class ComposerStaticInit27dcf8864e0a3c2d435bdcc067255c61
 
     public static $classMap = array (
         'AllowDynamicProperties' => __DIR__ . '/..' . '/symfony/polyfill-php82/Resources/stubs/AllowDynamicProperties.php',
+        'App\\Console\\Commands\\ToggleTheme' => __DIR__ . '/../..' . '/app/Console/Commands/ToggleTheme.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -1384,6 +1390,7 @@ class ComposerStaticInit27dcf8864e0a3c2d435bdcc067255c61
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Seeders\\DarkThemeConfigSeeder' => __DIR__ . '/../..' . '/database/seeders/DarkThemeConfigSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
@@ -12150,6 +12157,18 @@ class ComposerStaticInit27dcf8864e0a3c2d435bdcc067255c61
         'Webkul\\Product\\Type\\Grouped' => __DIR__ . '/../..' . '/packages/Webkul/Product/src/Type/Grouped.php',
         'Webkul\\Product\\Type\\Simple' => __DIR__ . '/../..' . '/packages/Webkul/Product/src/Type/Simple.php',
         'Webkul\\Product\\Type\\Virtual' => __DIR__ . '/../..' . '/packages/Webkul/Product/src/Type/Virtual.php',
+        'Webkul\\Razorpay\\Http\\Controllers\\Admin\\ConfigurationController' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Http/Controllers/Admin/ConfigurationController.php',
+        'Webkul\\Razorpay\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Http/Controllers/Admin/DashboardController.php',
+        'Webkul\\Razorpay\\Http\\Controllers\\Admin\\OrderController' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Http/Controllers/Admin/OrderController.php',
+        'Webkul\\Razorpay\\Http\\Controllers\\Admin\\WebhookController' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Http/Controllers/Admin/WebhookController.php',
+        'Webkul\\Razorpay\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Http/Controllers/PaymentController.php',
+        'Webkul\\Razorpay\\Http\\Controllers\\WebhookController' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Http/Controllers/WebhookController.php',
+        'Webkul\\Razorpay\\Models\\RazorpayOrder' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Models/RazorpayOrder.php',
+        'Webkul\\Razorpay\\Models\\RazorpayPayment' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Models/RazorpayPayment.php',
+        'Webkul\\Razorpay\\Payment\\Razorpay' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Payment/Razorpay.php',
+        'Webkul\\Razorpay\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Providers/EventServiceProvider.php',
+        'Webkul\\Razorpay\\Providers\\RazorpayServiceProvider' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Providers/RazorpayServiceProvider.php',
+        'Webkul\\Razorpay\\Services\\RazorpayService' => __DIR__ . '/../..' . '/packages/Webkul/Razorpay/src/Services/RazorpayService.php',
         'Webkul\\Rule\\Helpers\\Validator' => __DIR__ . '/../..' . '/packages/Webkul/Rule/src/Helpers/Validator.php',
         'Webkul\\Rule\\Providers\\ModuleServiceProvider' => __DIR__ . '/../..' . '/packages/Webkul/Rule/src/Providers/ModuleServiceProvider.php',
         'Webkul\\Rule\\Providers\\RuleServiceProvider' => __DIR__ . '/../..' . '/packages/Webkul/Rule/src/Providers/RuleServiceProvider.php',

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'bagisto/bagisto',
-        'pretty_version' => '2.3.x-dev',
-        'version' => '2.3.9999999.9999999-dev',
-        'reference' => '3c0b595c7faa992af4b3d1eac9c1699985ee0df5',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'baefe01972bf1c12340ca3676e2782a785868685',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'bagisto/bagisto' => array(
-            'pretty_version' => '2.3.x-dev',
-            'version' => '2.3.9999999.9999999-dev',
-            'reference' => '3c0b595c7faa992af4b3d1eac9c1699985ee0df5',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'baefe01972bf1c12340ca3676e2782a785868685',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

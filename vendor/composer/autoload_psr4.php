@@ -25,6 +25,7 @@ return array(
     'Webkul\\Shipping\\' => array($baseDir . '/packages/Webkul/Shipping/src'),
     'Webkul\\Sales\\' => array($baseDir . '/packages/Webkul/Sales/src'),
     'Webkul\\Rule\\' => array($baseDir . '/packages/Webkul/Rule/src'),
+    'Webkul\\Razorpay\\' => array($baseDir . '/packages/Webkul/Razorpay/src'),
     'Webkul\\Product\\' => array($baseDir . '/packages/Webkul/Product/src'),
     'Webkul\\Paypal\\' => array($baseDir . '/packages/Webkul/Paypal/src'),
     'Webkul\\Payment\\' => array($baseDir . '/packages/Webkul/Payment/src'),
