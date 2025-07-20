@@ -25,6 +25,14 @@
         <testsuite name="Shop Feature Test">
             <directory suffix="Test.php">packages/Webkul/Shop/tests/Feature</directory>
         </testsuite>
+
+        <!-- Razorpay package testsuites. -->
+        <testsuite name="Razorpay Unit Test">
+            <directory suffix="Test.php">packages/Webkul/Razorpay/tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Razorpay Feature Test">
+            <directory suffix="Test.php">packages/Webkul/Razorpay/tests/Feature</directory>
+        </testsuite>
     </testsuites>
 
     <source>

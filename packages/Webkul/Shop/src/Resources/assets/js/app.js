@@ -21,6 +21,8 @@ window.app = createApp({
     mounted() {
         this.lazyImages();
         this.initializeTheme();
+        // Mark that our app has initialized so theme changes are allowed
+        window.bagistoAppInitialized = true;
     },
 
     methods: {
@@ -51,16 +53,27 @@ window.app = createApp({
         },
 
         initializeTheme() {
-            // Check localStorage for user preference first
-            const userTheme = localStorage.getItem('bagisto-theme');
+            // Get server-side theme setting first (from admin panel)
+            const serverTheme = document.documentElement.getAttribute('data-theme') || 'light';
             
-            if (userTheme) {
-                this.currentTheme = userTheme;
-                document.documentElement.setAttribute('data-theme', userTheme);
-            } else {
-                // Set initial theme from data attribute (server-side setting)
-                this.currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            }
+            console.log('Bagisto App: Initializing theme. Server theme:', serverTheme);
+            
+            // Clear ALL localStorage entries to prevent conflicts
+            localStorage.removeItem('theme');
+            localStorage.removeItem('bagisto-theme');
+            
+            // Always use server-side setting as the primary source
+            this.currentTheme = serverTheme;
+            document.documentElement.setAttribute('data-theme', serverTheme);
+            
+            console.log('Bagisto App: Theme set to:', this.currentTheme);
+            
+            // Force the theme to persist by setting it again after a short delay
+            // This prevents other scripts from overriding it
+            setTimeout(() => {
+                document.documentElement.setAttribute('data-theme', this.currentTheme);
+                console.log('Bagisto App: Theme forced to:', this.currentTheme);
+            }, 100);
         },
 
         toggleTheme() {

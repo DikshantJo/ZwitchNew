@@ -49,6 +49,17 @@ class GenerateInvoice
                 core()->getConfigData('sales.payment_methods.moneytransfer.order_status')
             );
         }
+
+        if (
+            $order->payment->method == 'razorpay'
+            && core()->getConfigData('sales.payment_methods.razorpay.generate_invoice')
+        ) {
+            $this->invoiceRepository->create(
+                $this->prepareInvoiceData($order),
+                core()->getConfigData('sales.payment_methods.razorpay.invoice_status'),
+                core()->getConfigData('sales.payment_methods.razorpay.order_status')
+            );
+        }
     }
 
     /**

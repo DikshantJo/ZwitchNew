@@ -164,11 +164,12 @@ class Core
     /**
      * Returns current channel code.
      *
-     * @return \Webkul\Core\Contracts\Channel
+     * @return string
      */
     public function getCurrentChannelCode(): string
     {
-        return $this->getCurrentChannel()?->code;
+        $channel = $this->getCurrentChannel();
+        return $channel?->code ?? 'default';
     }
 
     /**
@@ -204,7 +205,8 @@ class Core
      */
     public function getDefaultChannelCode(): string
     {
-        return $this->getDefaultChannel()?->code;
+        $channel = $this->getDefaultChannel();
+        return $channel?->code ?? 'default';
     }
 
     /**

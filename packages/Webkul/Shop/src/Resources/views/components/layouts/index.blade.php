@@ -22,6 +22,46 @@
     data-theme="{{ $globalTheme }}"
 >
     <head>
+        <!-- CRITICAL: Prevent other theme switchers from overriding admin panel setting -->
+        <script>
+            (function() {
+                // Store the server-side theme setting immediately
+                const serverTheme = '{{ $globalTheme }}';
+                
+                console.log('Bagisto: Server theme set to:', serverTheme);
+                
+                // Clear ALL conflicting localStorage entries immediately
+                localStorage.removeItem('theme');
+                localStorage.removeItem('bagisto-theme');
+                
+                // Ensure the data-theme attribute is set correctly
+                document.documentElement.setAttribute('data-theme', serverTheme);
+                
+                // Override any existing theme switchers
+                window.bagistoServerTheme = serverTheme;
+                
+                // Prevent other scripts from changing the theme
+                const originalSetAttribute = document.documentElement.setAttribute;
+                document.documentElement.setAttribute = function(name, value) {
+                    if (name === 'data-theme') {
+                        console.log('Bagisto: Theme change attempted:', value, 'Server theme:', serverTheme);
+                        if (value === serverTheme || window.bagistoAppInitialized) {
+                            originalSetAttribute.call(this, name, value);
+                        } else {
+                            console.log('Bagisto: Blocked unauthorized theme change');
+                        }
+                    } else {
+                        originalSetAttribute.call(this, name, value);
+                    }
+                };
+                
+                // Force the theme to persist
+                setTimeout(() => {
+                    document.documentElement.setAttribute('data-theme', serverTheme);
+                    console.log('Bagisto: Theme forced to:', serverTheme);
+                }, 50);
+            })();
+        </script>
 
         {!! view_render_event('bagisto.shop.layout.head.before') !!}
 
