@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Canvas</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Concert+One");
+        @import url("https://fonts.googleapis.com/css?family=Sacramento");
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        }
+        
+        #canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 80%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 10vw;
+            font-family: "Concert One", cursive;
+            color: white;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+            z-index: 10;
+            pointer-events: none;
+            animation: text-animation 5s linear infinite alternate;
+        }
+        
+        @keyframes text-animation {
+            from {
+                color: white;
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+            }
+            to {
+                color: white;
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size to viewport
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Firework particle class
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 8,
+                    y: (Math.random() - 0.5) * 8
+                };
+                this.alpha = 1;
+                this.decay = Math.random() * 0.015 + 0.015;
+                this.gravity = 0.1;
+                this.size = Math.random() * 3 + 1;
+            }
+            
+            update() {
+                this.velocity.y += this.gravity;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= this.decay;
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        // Rocket class
+        class Rocket {
+            constructor(x, color) {
+                this.x = x;
+                this.y = canvas.height;
+                this.color = color;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 2,
+                    y: -Math.random() * 3 - 8
+                };
+                this.size = 3;
+                this.exploded = false;
+                this.particles = [];
+                this.trail = [];
+            }
+            
+            update() {
+                if (!this.exploded) {
+                    this.x += this.velocity.x;
+                    this.y += this.velocity.y;
+                    
+                    // Add trail effect
+                    this.trail.push({ x: this.x, y: this.y });
+                    if (this.trail.length > 10) {
+                        this.trail.shift();
+                    }
+                    
+                    // Check if rocket should explode
+                    if (this.y <= Math.random() * canvas.height * 0.3 + canvas.height * 0.2) {
+                        this.explode();
+                    }
+                } else {
+                    // Update particles
+                    for (let i = this.particles.length - 1; i >= 0; i--) {
+                        this.particles[i].update();
+                        if (this.particles[i].alpha <= 0) {
+                            this.particles.splice(i, 1);
+                        }
+                    }
+                }
+            }
+            
+            explode() {
+                this.exploded = true;
+                const particleCount = 100;
+                for (let i = 0; i < particleCount; i++) {
+                    this.particles.push(new Particle(this.x, this.y, this.color));
+                }
+            }
+            
+            draw() {
+                if (!this.exploded) {
+                    // Draw trail
+                    ctx.save();
+                    ctx.globalAlpha = 0.3;
+                    ctx.strokeStyle = this.color;
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    for (let i = 0; i < this.trail.length; i++) {
+                        if (i === 0) {
+                            ctx.moveTo(this.trail[i].x, this.trail[i].y);
+                        } else {
+                            ctx.lineTo(this.trail[i].x, this.trail[i].y);
+                        }
+                    }
+                    ctx.stroke();
+                    ctx.restore();
+                    
+                    // Draw rocket
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    // Draw particles
+                    this.particles.forEach(particle => particle.draw());
+                }
+            }
+        }
+        
+        // Sparkle class for additional effects
+        class Sparkle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.size = Math.random() * 2 + 1;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.02 + 0.01;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 2,
+                    y: (Math.random() - 0.5) * 2
+                };
+            }
+            
+            update() {
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= this.decay;
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        // Arrays to store objects
+        let rockets = [];
+        let sparkles = [];
+        
+        // Colors for fireworks
+        const colors = [
+            '#FFDD1B', '#ff0080', '#00ffff', '#ff6b35', 
+            '#f7931e', '#ff69b4', '#00ff00', '#ff1493',
+            '#1e90ff', '#ff4500', '#32cd32', '#ff6347'
+        ];
+        
+        // Create new rocket
+        function createRocket() {
+            const x = Math.random() * canvas.width;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            rockets.push(new Rocket(x, color));
+        }
+        
+        // Create sparkles
+        function createSparkles() {
+            for (let i = 0; i < 5; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                sparkles.push(new Sparkle(x, y, color));
+            }
+        }
+        
+        // Animation loop
+        function animate() {
+            // Clear canvas with fade effect
+            ctx.fillStyle = 'rgba(27, 39, 53, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Create background gradient
+            const gradient = ctx.createRadialGradient(
+                canvas.width / 2, canvas.height, 0,
+                canvas.width / 2, canvas.height, canvas.height
+            );
+            gradient.addColorStop(0, '#1B2735');
+            gradient.addColorStop(1, '#090A0F');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Update and draw rockets
+            for (let i = rockets.length - 1; i >= 0; i--) {
+                rockets[i].update();
+                rockets[i].draw();
+                
+                // Remove rockets that have finished exploding
+                if (rockets[i].exploded && rockets[i].particles.length === 0) {
+                    rockets.splice(i, 1);
+                }
+            }
+            
+            // Update and draw sparkles
+            for (let i = sparkles.length - 1; i >= 0; i--) {
+                sparkles[i].update();
+                sparkles[i].draw();
+                
+                if (sparkles[i].alpha <= 0) {
+                    sparkles.splice(i, 1);
+                }
+            }
+            
+            // Randomly create new rockets
+            if (Math.random() < 0.03) {
+                createRocket();
+            }
+            
+            // Randomly create sparkles
+            if (Math.random() < 0.1) {
+                createSparkles();
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Start animation
+        animate();
+        
+        // Add some initial rockets
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                createRocket();
+            }, i * 500);
+        }
+        
+        // Click to create fireworks
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Create explosion at click point
+            const rocket = new Rocket(x, color);
+            rocket.y = y;
+            rocket.explode();
+            rockets.push(rocket);
+        });
+    </script>
+</body>
+</html> 

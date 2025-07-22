@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website</title>
+    <style>
+       body {
+  margin: 0;
+  font-family: 'Lato', sans-serif; 
+  /* background-image: url('https://images.pexels.com/photos/754268/pexels-photo-754268.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'); */
+  background-color: #000;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+    </style>
+</head>
+<body>
+
+    <button id = 'button' style="width: 200px;height: 200px; background-color: grey;color:#fff; cursor: pointer;">
+        Text buttton
+    </button>
+
+   <div class="div">
+    <canvas id="canvas"></canvas>
+   </div>
+
+    <!-- Your scripts go here -->
+    <script>
+const canvas = document.getElementById('canvas');
+ctx = canvas.getContext('2d');
+
+function setDimentions() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+setDimentions();
+addEventListener('resize', () => {
+  setDimentions();
+  drops();
+});
+
+var dropsArray = [];
+function drop() {
+  this.x = Math.random() * canvas.width;
+  this.y = -Math.random() * 500;    // Starting point (top of screen)
+  this.r = .2 + 1.5*Math.random();
+  this.s = Math.random() + 0.5; // Speed
+  this.d = Math.random() * canvas.width;  // The distance the snowflake will travel
+  this.draw = () => {
+    ctx.beginPath();
+    ctx.fillStyle = '#ECE9E6';
+    ctx.shadowColor = '#ffffff30';
+    ctx.shadowOffsetX = -2;
+    ctx.shadowOffsetY = -2;
+    ctx.shadowBlur = 2;
+    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, true);
+    ctx.fill();
+    this.y += this.s;   // Snowflakes falling
+    this.x += Math.sin(this.y / this.d) * 2;   // Snowflakes swinging side to side
+    if (this.y >= canvas.height) {
+      this.y = -10;    // Re-positioning fallen snowflake to "respawn" it.
+    }
+  }
+}
+
+function drops() {
+  for (var i = 0; i < 600; i++) {
+    dropsArray[i] = new drop();
+  }
+}
+drops();
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  dropsArray.forEach((drop) => drop.draw());
+  requestAnimationFrame(animate);
+}
+animate();
+
+document.querySelector('#button').addEventListener('click',()=> {
+    alert('hello')
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            color: #ff6b6b;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b;
+            margin-bottom: 2rem;
+            z-index: 10;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            color: #4ecdc4;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            z-index: 10;
+        }
+
+        @keyframes titleGlow {
+            from {
+                text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b;
+            }
+            to {
+                text-shadow: 0 0 30px #ff6b6b, 0 0 60px #ff6b6b, 0 0 80px #ff6b6b;
+            }
+        }
+
+        /* Christmas Tree */
+        .tree {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .tree-body {
+            width: 0;
+            height: 0;
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            border-bottom: 120px solid #2d5a27;
+            position: relative;
+            animation: treeGlow 4s ease-in-out infinite alternate;
+        }
+
+        .tree-body::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: -60px;
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 90px solid #3a7d32;
+        }
+
+        .tree-body::after {
+            content: '';
+            position: absolute;
+            top: 80px;
+            left: -40px;
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 60px solid #4a9a3f;
+        }
+
+        .tree-trunk {
+            width: 20px;
+            height: 40px;
+            background: #8b4513;
+            margin: 0 auto;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @keyframes treeGlow {
+            from {
+                filter: brightness(1);
+            }
+            to {
+                filter: brightness(1.2);
+            }
+        }
+
+        /* Ornaments */
+        .ornament {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: ornamentTwinkle 2s ease-in-out infinite alternate;
+        }
+
+        .ornament:nth-child(1) {
+            top: 20px;
+            left: -30px;
+            background: #ff6b6b;
+            animation-delay: 0s;
+        }
+
+        .ornament:nth-child(2) {
+            top: 50px;
+            left: 20px;
+            background: #4ecdc4;
+            animation-delay: 0.5s;
+        }
+
+        .ornament:nth-child(3) {
+            top: 80px;
+            left: -20px;
+            background: #ffd93d;
+            animation-delay: 1s;
+        }
+
+        .ornament:nth-child(4) {
+            top: 110px;
+            left: 30px;
+            background: #ff8a80;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes ornamentTwinkle {
+            from {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* Star */
+        .star {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid #ffd93d;
+            animation: starGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        .star::after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: -15px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 30px solid #ffd93d;
+        }
+
+        @keyframes starGlow {
+            from {
+                filter: brightness(1) drop-shadow(0 0 5px #ffd93d);
+            }
+            to {
+                filter: brightness(1.5) drop-shadow(0 0 15px #ffd93d);
+            }
+        }
+
+        /* Snowflakes */
+        .snowflake {
+            position: absolute;
+            color: white;
+            font-size: 1em;
+            animation: snowfall linear infinite;
+        }
+
+        .snowflake:nth-child(1) {
+            left: 10%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
+
+        .snowflake:nth-child(2) {
+            left: 20%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        .snowflake:nth-child(3) {
+            left: 30%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        .snowflake:nth-child(4) {
+            left: 40%;
+            animation-duration: 7s;
+            animation-delay: 0.5s;
+        }
+
+        .snowflake:nth-child(5) {
+            left: 50%;
+            animation-duration: 9s;
+            animation-delay: 1.5s;
+        }
+
+        .snowflake:nth-child(6) {
+            left: 60%;
+            animation-duration: 5s;
+            animation-delay: 2.5s;
+        }
+
+        .snowflake:nth-child(7) {
+            left: 70%;
+            animation-duration: 8s;
+            animation-delay: 0.8s;
+        }
+
+        .snowflake:nth-child(8) {
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 1.8s;
+        }
+
+        .snowflake:nth-child(9) {
+            left: 90%;
+            animation-duration: 7s;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Gifts */
+        .gift {
+            position: absolute;
+            bottom: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8a80);
+            border-radius: 5px;
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        .gift::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #4ecdc4;
+            transform: translateY(-50%);
+        }
+
+        .gift::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #4ecdc4;
+            transform: translateX(-50%);
+        }
+
+        .gift:nth-child(1) {
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .gift:nth-child(2) {
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        @keyframes giftBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Fireplace */
+        .fireplace {
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(to top, #8b4513, #cd853f);
+            border-radius: 10px 10px 0 0;
+            z-index: 3;
+        }
+
+        .fire {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 40px;
+            background: radial-gradient(ellipse, #ff6b6b, #ffa502, transparent);
+            border-radius: 50%;
+            animation: fireFlicker 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes fireFlicker {
+            from {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateX(-50%) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tree-body {
+                border-left: 60px solid transparent;
+                border-right: 60px solid transparent;
+                border-bottom: 90px solid #2d5a27;
+            }
+            
+            .tree-body::before {
+                left: -45px;
+                border-left: 45px solid transparent;
+                border-right: 45px solid transparent;
+                border-bottom: 70px solid #3a7d32;
+            }
+            
+            .tree-body::after {
+                left: -30px;
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                border-bottom: 45px solid #4a9a3f;
+            }
+            
+            .fireplace {
+                width: 80px;
+                height: 60px;
+            }
+            
+            .fire {
+                width: 40px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Merry Christmas</h1>
+        <p class="subtitle">Wishing you joy and happiness this holiday season</p>
+        
+        <!-- Snowflakes -->
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        
+        <!-- Christmas Tree -->
+        <div class="tree">
+            <div class="star"></div>
+            <div class="tree-body">
+                <div class="ornament"></div>
+                <div class="ornament"></div>
+                <div class="ornament"></div>
+                <div class="ornament"></div>
+            </div>
+            <div class="tree-trunk"></div>
+        </div>
+        
+        <!-- Gifts -->
+        <div class="gift"></div>
+        <div class="gift"></div>
+        
+        <!-- Fireplace -->
+        <div class="fireplace">
+            <div class="fire"></div>
+        </div>
+    </div>
+
+    <script>
+        // Create more snowflakes dynamically
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = ['❄', '❅', '❆'][Math.floor(Math.random() * 3)];
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            snowflake.style.animationDelay = Math.random() * 3 + 's';
+            
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        }
+
+        // Create snowflakes periodically
+        setInterval(createSnowflake, 300);
+
+        // Add twinkling lights effect
+        function createTwinkle() {
+            const twinkle = document.createElement('div');
+            twinkle.style.position = 'absolute';
+            twinkle.style.width = '3px';
+            twinkle.style.height = '3px';
+            twinkle.style.background = '#ffd93d';
+            twinkle.style.borderRadius = '50%';
+            twinkle.style.left = Math.random() * 100 + '%';
+            twinkle.style.top = Math.random() * 100 + '%';
+            twinkle.style.animation = 'twinkle 2s ease-out forwards';
+            
+            document.body.appendChild(twinkle);
+            
+            setTimeout(() => {
+                twinkle.remove();
+            }, 2000);
+        }
+
+        setInterval(createTwinkle, 1000);
+
+        // Add CSS for twinkling effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 

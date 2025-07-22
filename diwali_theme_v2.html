@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Celebration 2.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            color: #ffd700;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
+            margin-bottom: 2rem;
+            z-index: 10;
+            animation: titlePulse 2s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            z-index: 10;
+        }
+
+        @keyframes titlePulse {
+            from {
+                text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
+                transform: scale(1);
+            }
+            to {
+                text-shadow: 0 0 30px #ffd700, 0 0 60px #ffd700, 0 0 80px #ffd700;
+                transform: scale(1.05);
+            }
+        }
+
+        /* New Rocket Design */
+        .rocket {
+            position: absolute;
+            bottom: -80px;
+            width: 25px;
+            height: 80px;
+            animation: rocketSpiral 6s linear infinite;
+        }
+
+        .rocket-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff4757, #ff6b6b, #ffa502, #ffd700);
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .rocket-nose {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 25px solid #ffd700;
+        }
+
+        .rocket-fins {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 15px;
+        }
+
+        .fin {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 15px solid #ff6b6b;
+        }
+
+        .fin:nth-child(1) {
+            left: -20px;
+            transform: rotate(-45deg);
+        }
+
+        .fin:nth-child(2) {
+            right: -20px;
+            transform: rotate(45deg);
+        }
+
+        .rocket-engine {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 25px;
+            background: radial-gradient(circle, #ffa502, #ff6b6b, #ff4757);
+            border-radius: 50%;
+            animation: engineFlame 0.2s ease-in-out infinite alternate;
+        }
+
+        .rocket-engine::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 15px;
+            background: radial-gradient(circle, #ffd700, #ffa502, transparent);
+            border-radius: 50%;
+            animation: flameFlicker 0.1s ease-in-out infinite alternate;
+        }
+
+        @keyframes engineFlame {
+            from {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateX(-50%) scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flameFlicker {
+            from {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.7;
+            }
+            to {
+                transform: translateX(-50%) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Individual Rocket Animations */
+        .rocket:nth-child(1) {
+            left: 15%;
+            animation-delay: 0s;
+            animation-name: rocketSpiral1;
+        }
+
+        .rocket:nth-child(2) {
+            left: 35%;
+            animation-delay: 2s;
+            animation-name: rocketSpiral2;
+        }
+
+        .rocket:nth-child(3) {
+            left: 55%;
+            animation-delay: 4s;
+            animation-name: rocketSpiral3;
+        }
+
+        .rocket:nth-child(4) {
+            left: 75%;
+            animation-delay: 1s;
+            animation-name: rocketSpiral4;
+        }
+
+        .rocket:nth-child(5) {
+            left: 25%;
+            animation-delay: 3s;
+            animation-name: rocketSpiral5;
+        }
+
+        .rocket:nth-child(6) {
+            left: 65%;
+            animation-delay: 5s;
+            animation-name: rocketSpiral6;
+        }
+
+        /* Spiral Animation Keyframes */
+        @keyframes rocketSpiral1 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-25vh) translateX(50px) rotate(90deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh) translateX(-30px) rotate(180deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-75vh) translateX(40px) rotate(270deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-60px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketSpiral2 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            20% {
+                transform: translateY(-20vh) translateX(-40px) rotate(-90deg);
+                opacity: 1;
+            }
+            40% {
+                transform: translateY(-40vh) translateX(60px) rotate(-180deg);
+                opacity: 1;
+            }
+            60% {
+                transform: translateY(-60vh) translateX(-50px) rotate(-270deg);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(-80vh) translateX(70px) rotate(-360deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-80px) rotate(-450deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketSpiral3 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            30% {
+                transform: translateY(-30vh) translateX(35px) rotate(120deg);
+                opacity: 1;
+            }
+            60% {
+                transform: translateY(-60vh) translateX(-45px) rotate(240deg);
+                opacity: 1;
+            }
+            90% {
+                transform: translateY(-90vh) translateX(55px) rotate(360deg);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-70px) rotate(480deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketSpiral4 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            15% {
+                transform: translateY(-15vh) translateX(-25px) rotate(-60deg);
+                opacity: 1;
+            }
+            45% {
+                transform: translateY(-45vh) translateX(40px) rotate(-120deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-75vh) translateX(-35px) rotate(-180deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px) rotate(-240deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketSpiral5 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            35% {
+                transform: translateY(-35vh) translateX(45px) rotate(150deg);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(-70vh) translateX(-55px) rotate(300deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(65px) rotate(450deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketSpiral6 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-25vh) translateX(-30px) rotate(-75deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh) translateX(50px) rotate(-150deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-75vh) translateX(-40px) rotate(-225deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(60px) rotate(-300deg);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Fireworks */
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: fireworkExplosion 4s ease-out infinite;
+        }
+
+        .firework:nth-child(7) {
+            left: 20%;
+            top: 30%;
+            background: #ffd700;
+            animation-delay: 0s;
+        }
+
+        .firework:nth-child(8) {
+            left: 60%;
+            top: 40%;
+            background: #ff6b6b;
+            animation-delay: 1.5s;
+        }
+
+        .firework:nth-child(9) {
+            left: 80%;
+            top: 25%;
+            background: #2ed573;
+            animation-delay: 3s;
+        }
+
+        .firework:nth-child(10) {
+            left: 40%;
+            top: 35%;
+            background: #ffa502;
+            animation-delay: 2s;
+        }
+
+        @keyframes fireworkExplosion {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+                box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.5);
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+                box-shadow: 0 0 40px 20px rgba(255, 215, 0, 0);
+            }
+        }
+
+        /* Floating Rangoli Patterns */
+        .rangoli {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #ffd700, #ff6b6b, #2ed573);
+            border-radius: 50%;
+            animation: rangoliFloat 8s ease-in-out infinite;
+        }
+
+        .rangoli:nth-child(11) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .rangoli:nth-child(12) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .rangoli:nth-child(13) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .rangoli:nth-child(14) {
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .rangoli:nth-child(15) {
+            left: 90%;
+            animation-delay: 3s;
+        }
+
+        @keyframes rangoliFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .rocket {
+                width: 18px;
+                height: 60px;
+            }
+            
+            .rocket-nose {
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 18px solid #ffd700;
+            }
+            
+            .rocket-engine {
+                width: 22px;
+                height: 18px;
+            }
+            
+            .fin {
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 12px solid #ff6b6b;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Happy Diwali</h1>
+        <p class="subtitle">Celebrating the festival of lights with joy and prosperity</p>
+        
+        <!-- Rockets with new design -->
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="rocket-nose"></div>
+                <div class="rocket-fins">
+                    <div class="fin"></div>
+                    <div class="fin"></div>
+                </div>
+                <div class="rocket-engine"></div>
+            </div>
+        </div>
+        
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="rocket-nose"></div>
+                <div class="rocket-fins">
+                    <div class="fin"></div>
+                    <div class="fin"></div>
+                </div>
+                <div class="rocket-engine"></div>
+            </div>
+        </div>
+        
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="rocket-nose"></div>
+                <div class="rocket-fins">
+                    <div class="fin"></div>
+                    <div class="fin"></div>
+                </div>
+                <div class="rocket-engine"></div>
+            </div>
+        </div>
+        
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="rocket-nose"></div>
+                <div class="rocket-fins">
+                    <div class="fin"></div>
+                    <div class="fin"></div>
+                </div>
+                <div class="rocket-engine"></div>
+            </div>
+        </div>
+        
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="rocket-nose"></div>
+                <div class="rocket-fins">
+                    <div class="fin"></div>
+                    <div class="fin"></div>
+                </div>
+                <div class="rocket-engine"></div>
+            </div>
+        </div>
+        
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="rocket-nose"></div>
+                <div class="rocket-fins">
+                    <div class="fin"></div>
+                    <div class="fin"></div>
+                </div>
+                <div class="rocket-engine"></div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Fireworks -->
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        
+        <!-- Floating Rangoli -->
+        <div class="rangoli"></div>
+        <div class="rangoli"></div>
+        <div class="rangoli"></div>
+        <div class="rangoli"></div>
+        <div class="rangoli"></div>
+    </div>
+
+    <script>
+        // Create sparkle trails for rockets
+        function createRocketTrail() {
+            const rockets = document.querySelectorAll('.rocket');
+            rockets.forEach(rocket => {
+                const trail = document.createElement('div');
+                trail.style.position = 'absolute';
+                trail.style.width = '3px';
+                trail.style.height = '3px';
+                trail.style.background = '#ffd700';
+                trail.style.borderRadius = '50%';
+                trail.style.left = rocket.offsetLeft + 'px';
+                trail.style.top = rocket.offsetTop + 'px';
+                trail.style.animation = 'trailFade 1s ease-out forwards';
+                trail.style.pointerEvents = 'none';
+                
+                document.body.appendChild(trail);
+                
+                setTimeout(() => {
+                    trail.remove();
+                }, 1000);
+            });
+        }
+
+        setInterval(createRocketTrail, 100);
+
+        // Add CSS for trail effect
+        const trailStyle = document.createElement('style');
+        trailStyle.textContent = `
+            @keyframes trailFade {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(trailStyle);
+
+        // Create additional dynamic elements
+        function createGoldenSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'absolute';
+            sparkle.style.width = '4px';
+            sparkle.style.height = '4px';
+            sparkle.style.background = '#ffd700';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animation = 'goldenSparkle 3s ease-out forwards';
+            sparkle.style.boxShadow = '0 0 10px #ffd700';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        setInterval(createGoldenSparkle, 800);
+
+        // Add CSS for golden sparkle
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes goldenSparkle {
+                0% {
+                    transform: scale(0) rotate(0deg);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.5) rotate(180deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+    </script>
+</body>
+</html> 

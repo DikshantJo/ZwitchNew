@@ -12,7 +12,7 @@ class ToggleTheme extends Command
      *
      * @var string
      */
-    protected $signature = 'theme:toggle {mode? : The theme mode (light/dark/christmas)}';
+    protected $signature = 'theme:toggle {mode? : The theme mode (light/dark)}';
 
     /**
      * The console command description.
@@ -36,15 +36,12 @@ class ToggleTheme extends Command
                 ->where('code', 'general.design.frontend_theme.mode')
                 ->value('value') ?? 'light';
             
-            // Toggle through themes: light -> dark -> christmas -> light
-            $themes = ['light', 'dark', 'christmas'];
-            $currentIndex = array_search($currentTheme, $themes);
-            $nextIndex = ($currentIndex + 1) % count($themes);
-            $mode = $themes[$nextIndex];
+            // Toggle to opposite
+            $mode = $currentTheme === 'light' ? 'dark' : 'light';
         }
         
-        if (!in_array($mode, ['light', 'dark', 'christmas'])) {
-            $this->error('Invalid mode. Use "light", "dark", or "christmas".');
+        if (!in_array($mode, ['light', 'dark'])) {
+            $this->error('Invalid mode. Use "light" or "dark".');
             return 1;
         }
 

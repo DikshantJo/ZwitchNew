@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Celebration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            color: #ffd700;
+            font-size: 4rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
+            margin-bottom: 2rem;
+            z-index: 10;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .subtitle {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            z-index: 10;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
+            }
+            to {
+                text-shadow: 0 0 30px #ffd700, 0 0 60px #ffd700, 0 0 80px #ffd700;
+            }
+        }
+
+        /* Rockets */
+        .rocket {
+            position: absolute;
+            bottom: -50px;
+            width: 12px;
+            height: 35px;
+            background: linear-gradient(to top, #ff4757, #ff6b6b, #ffa502);
+            border-radius: 50% 50% 0 0;
+            animation: rocketLaunch 5s linear infinite;
+        }
+
+        .rocket::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 12px solid #ff4757;
+        }
+
+        .rocket::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 12px;
+            background: radial-gradient(circle, #ffa502, #ff6b6b, transparent);
+            border-radius: 50%;
+            animation: rocketFlame 0.1s ease-in-out infinite alternate;
+        }
+
+        .rocket:nth-child(1) {
+            left: 15%;
+            animation-delay: 0s;
+            animation-name: rocketLaunch1;
+        }
+
+        .rocket:nth-child(2) {
+            left: 30%;
+            animation-delay: 1.5s;
+            animation-name: rocketLaunch2;
+        }
+
+        .rocket:nth-child(3) {
+            left: 45%;
+            animation-delay: 3s;
+            animation-name: rocketLaunch3;
+        }
+
+        .rocket:nth-child(4) {
+            left: 60%;
+            animation-delay: 0.8s;
+            animation-name: rocketLaunch4;
+        }
+
+        .rocket:nth-child(5) {
+            left: 75%;
+            animation-delay: 2.2s;
+            animation-name: rocketLaunch5;
+        }
+
+        .rocket:nth-child(6) {
+            left: 90%;
+            animation-delay: 1.8s;
+            animation-name: rocketLaunch6;
+        }
+
+        @keyframes rocketLaunch1 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-25vh) translateX(20px) rotate(15deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh) translateX(-15px) rotate(-10deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-75vh) translateX(25px) rotate(20deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-30px) rotate(-15deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketLaunch2 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            30% {
+                transform: translateY(-30vh) translateX(-25px) rotate(-12deg);
+                opacity: 1;
+            }
+            60% {
+                transform: translateY(-60vh) translateX(30px) rotate(18deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-20px) rotate(-8deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketLaunch3 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            40% {
+                transform: translateY(-40vh) translateX(35px) rotate(25deg);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(-80vh) translateX(-40px) rotate(-20deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(15px) rotate(10deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketLaunch4 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            20% {
+                transform: translateY(-20vh) translateX(-30px) rotate(-18deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh) translateX(25px) rotate(15deg);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(-80vh) translateX(-35px) rotate(-22deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(20px) rotate(12deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketLaunch5 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            35% {
+                transform: translateY(-35vh) translateX(40px) rotate(22deg);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(-70vh) translateX(-25px) rotate(-15deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(30px) rotate(18deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketLaunch6 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-25vh) translateX(-20px) rotate(-10deg);
+                opacity: 1;
+            }
+            60% {
+                transform: translateY(-60vh) translateX(35px) rotate(20deg);
+                opacity: 1;
+            }
+            85% {
+                transform: translateY(-85vh) translateX(-30px) rotate(-18deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(25px) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocketFlame {
+            from {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateX(-50%) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* Fireworks */
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: firework 3s ease-out infinite;
+        }
+
+        .firework:nth-child(7) {
+            left: 20%;
+            top: 30%;
+            background: #ffd700;
+            animation-delay: 0s;
+        }
+
+        .firework:nth-child(8) {
+            left: 60%;
+            top: 40%;
+            background: #ff6b6b;
+            animation-delay: 1s;
+        }
+
+        .firework:nth-child(9) {
+            left: 80%;
+            top: 25%;
+            background: #2ed573;
+            animation-delay: 2s;
+        }
+
+        .firework:nth-child(10) {
+            left: 40%;
+            top: 35%;
+            background: #ffa502;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes firework {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Diyas */
+        .diya {
+            position: absolute;
+            bottom: 20px;
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(to top, #8b4513, #cd853f);
+            border-radius: 50% 50% 0 0;
+            animation: diyaGlow 2s ease-in-out infinite alternate;
+        }
+
+        .diya::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 15px;
+            background: radial-gradient(circle, #ffd700, #ff6b6b, transparent);
+            border-radius: 50%;
+            animation: flame 0.5s ease-in-out infinite alternate;
+        }
+
+        .diya:nth-child(11) {
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .diya:nth-child(12) {
+            left: 35%;
+            animation-delay: 0.5s;
+        }
+
+        .diya:nth-child(13) {
+            left: 55%;
+            animation-delay: 1s;
+        }
+
+        .diya:nth-child(14) {
+            left: 75%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes diyaGlow {
+            from {
+                box-shadow: 0 0 10px #ffd700;
+            }
+            to {
+                box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700;
+            }
+        }
+
+        @keyframes flame {
+            from {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateX(-50%) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(15) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(16) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(17) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(18) {
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(19) {
+            left: 90%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .rocket {
+                width: 8px;
+                height: 25px;
+            }
+            
+            .rocket::before {
+                top: -4px;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-bottom: 8px solid #ff4757;
+            }
+            
+            .rocket::after {
+                bottom: -6px;
+                width: 12px;
+                height: 8px;
+            }
+            
+            .diya {
+                width: 30px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Happy Diwali</h1>
+        <p class="subtitle">May the festival of lights bring joy and prosperity</p>
+        
+        <!-- Rockets -->
+        <div class="rocket"></div>
+        <div class="rocket"></div>
+        <div class="rocket"></div>
+        <div class="rocket"></div>
+        <div class="rocket"></div>
+        <div class="rocket"></div>
+        
+        <!-- Fireworks -->
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        
+        <!-- Diyas -->
+        <div class="diya"></div>
+        <div class="diya"></div>
+        <div class="diya"></div>
+        <div class="diya"></div>
+        
+        <!-- Floating particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <script>
+        // Add more dynamic elements
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'absolute';
+            sparkle.style.width = '2px';
+            sparkle.style.height = '2px';
+            sparkle.style.background = '#ffd700';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animation = 'sparkle 2s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 500);
+
+        // Add CSS for sparkles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkle {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 

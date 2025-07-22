@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections Section</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .collections-section {
+            background: #ffffff;
+            padding: 150px 204px;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collections-container {
+            max-width: 1050px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 43px;
+            align-items: center;
+        }
+
+        .collections-title {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 1;
+            color: #000000;
+            text-align: center;
+            max-width: 989px;
+            margin: 0;
+        }
+
+        .collections-description {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            color: rgba(0, 0, 0, 0.76);
+            text-align: center;
+            letter-spacing: 0.63px;
+            max-width: 837px;
+            margin: 0;
+        }
+
+        .collections-grid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 358px;
+            background: #d9d9d9;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .bottom-row {
+            display: flex;
+            gap: 33px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 512px;
+            flex-shrink: 0;
+        }
+
+        .small-image {
+            width: 100%;
+            height: 342px;
+            background: #d9d9d9;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .large-image {
+            width: 505px;
+            height: 715px;
+            background: #d9d9d9;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .collections-section {
+                padding: 100px 60px;
+            }
+            
+            .collections-title {
+                font-size: 40px;
+            }
+            
+            .bottom-row {
+                gap: 25px;
+            }
+            
+            .left-column {
+                width: 450px;
+            }
+            
+            .large-image {
+                width: 450px;
+                height: 650px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .collections-section {
+                padding: 60px 20px;
+            }
+            
+            .collections-title {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+            
+            .collections-description {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            
+            .bottom-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .left-column {
+                width: 100%;
+            }
+            
+            .large-image {
+                width: 100%;
+                height: 500px;
+            }
+            
+            .main-image {
+                height: 280px;
+            }
+            
+            .small-image {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .collections-section {
+                padding: 40px 15px;
+            }
+            
+            .collections-title {
+                font-size: 28px;
+            }
+            
+            .collections-description {
+                font-size: 14px;
+                line-height: 22px;
+            }
+            
+            .main-image {
+                height: 220px;
+            }
+            
+            .small-image {
+                height: 220px;
+            }
+            
+            .large-image {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="collections-section">
+        <div class="collections-container">
+            <!-- Title -->
+            <h2 class="collections-title">
+                Explore Our Latest Collections For You
+            </h2>
+            
+            <!-- Description -->
+            <p class="collections-description">
+                Discover a world of fashion-forward trends, curated collections,
+                and timeless pieces that inspire. Unleash your inner fashionista
+                and embark on a journey of confidence, elegance and impeccable
+                style.
+            </p>
+            
+            <!-- Collections Grid -->
+            <div class="collections-grid">
+                <!-- Main Image -->
+                <div class="main-image"></div>
+                
+                <!-- Bottom Row -->
+                <div class="bottom-row">
+                    <!-- Left Column with Two Small Images -->
+                    <div class="left-column">
+                        <div class="small-image"></div>
+                        <div class="small-image"></div>
+                    </div>
+                    
+                    <!-- Large Image on the Right -->
+                    <div class="large-image"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

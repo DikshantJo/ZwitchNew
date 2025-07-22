@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Garden Theme</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5dc 0%, #e6e6fa 25%, #f0f8ff 50%, #faf0e6 75%, #fff5ee 100%);
+            color: #4a4a4a;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #8b7355;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .zen-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .cherry-blossom {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #ffb6c1 0%, #ffc0cb 50%, #ffe4e1 100%);
+            border-radius: 50%;
+            animation: blossom-fall linear infinite;
+            opacity: 0.8;
+        }
+
+        .sand-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #d2b48c;
+            border-radius: 50%;
+            animation: sand-drift linear infinite;
+            opacity: 0.6;
+        }
+
+        .ripple {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(139, 115, 85, 0.3);
+            border-radius: 50%;
+            animation: ripple-expand linear infinite;
+            opacity: 0.7;
+        }
+
+        .meditation-symbol {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: radial-gradient(circle, #8b7355 0%, #a0522d 50%, #cd853f 100%);
+            border-radius: 50%;
+            animation: symbol-float linear infinite;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #fff;
+        }
+
+        @keyframes blossom-fall {
+            0% {
+                transform: translateY(-10px) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) translateX(var(--drift-x, 0px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sand-drift {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-10px) translateX(var(--drift-x, 0px));
+                opacity: 0;
+            }
+        }
+
+        @keyframes ripple-expand {
+            0% {
+                transform: scale(0) translateX(0px);
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(3) translateX(var(--drift-x, 0px));
+                opacity: 0;
+            }
+        }
+
+        @keyframes symbol-float {
+            0% {
+                transform: translateY(100vh) translateX(0px) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateY(50vh) translateX(var(--drift-x, 0px)) scale(1.2);
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-10px) translateX(var(--drift-x, 0px)) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        button {
+            background: #8b7355;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #a0522d;
+        }
+
+        .zen-text {
+            color: #8b7355;
+            text-shadow: 0 0 5px rgba(139, 115, 85, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌸 Zen Garden Theme 🌸</h1>
+        <p>Peaceful meditation space with cherry blossoms, sand, and calming elements</p>
+    </div>
+
+    <div class="content">
+        <h2 class="zen-text">🧘‍♀️ Find Your Inner Peace 🧘‍♂️</h2>
+        <p>Experience the tranquility of a traditional zen garden.</p>
+        <p>Let the gentle elements guide you to mindfulness.</p>
+        
+        <div style="margin: 40px 0;">
+            <h3 class="zen-text">Meditation Space</h3>
+            <p>Breathe deeply and let your mind find stillness.</p>
+            <p>Embrace the beauty of simplicity and harmony.</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="toggleZen()" id="toggleBtn">Stop Zen Effects</button>
+        <button onclick="clearEffects()">Clear All</button>
+        <button onclick="addMoreEffects()">Add More</button>
+        <span id="count">Effects: 0</span>
+    </div>
+
+    <div id="zen-container" class="zen-container"></div>
+
+    <script>
+        class ZenManager {
+            constructor() {
+                this.container = document.getElementById('zen-container');
+                this.effects = [];
+                this.isActive = true;
+                this.animationId = null;
+                this.maxEffects = this.getMaxEffects();
+                
+                this.init();
+            }
+            
+            getMaxEffects() {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                const area = width * height;
+                
+                if (width <= 480) {
+                    return Math.min(25, Math.floor(area / 35000));
+                } else if (width <= 768) {
+                    return Math.min(40, Math.floor(area / 30000));
+                } else {
+                    return Math.min(60, Math.floor(area / 25000));
+                }
+            }
+            
+            init() {
+                if (!this.container) {
+                    console.error('Zen container not found!');
+                    return;
+                }
+                
+                console.log('Initializing Zen manager...');
+                this.startEffects();
+                this.updateCount();
+            }
+            
+            startEffects() {
+                // Create initial effects
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        this.createEffect();
+                    }, i * 500);
+                }
+                
+                this.animate();
+            }
+            
+            createEffect() {
+                if (!this.isActive || this.effects.length >= this.maxEffects) {
+                    return;
+                }
+                
+                const effect = document.createElement('div');
+                const effectType = Math.random();
+                let className, duration, delay, driftX, symbol;
+                
+                if (effectType < 0.4) {
+                    // Cherry blossom (40% chance)
+                    className = 'cherry-blossom';
+                    duration = this.randomBetween(10, 18);
+                    delay = this.randomBetween(0, 3);
+                    driftX = this.randomBetween(-80, 80);
+                } else if (effectType < 0.7) {
+                    // Sand particle (30% chance)
+                    className = 'sand-particle';
+                    duration = this.randomBetween(8, 15);
+                    delay = this.randomBetween(0, 2);
+                    driftX = this.randomBetween(-60, 60);
+                } else if (effectType < 0.9) {
+                    // Ripple (20% chance)
+                    className = 'ripple';
+                    duration = this.randomBetween(4, 8);
+                    delay = this.randomBetween(0, 1);
+                    driftX = this.randomBetween(-40, 40);
+                } else {
+                    // Meditation symbol (10% chance)
+                    className = 'meditation-symbol';
+                    duration = this.randomBetween(12, 20);
+                    delay = this.randomBetween(0, 4);
+                    driftX = this.randomBetween(-100, 100);
+                    symbol = ['☸', '☯', '🕉', '☮', '🌸'][Math.floor(Math.random() * 5)];
+                }
+                
+                effect.className = className;
+                effect.style.left = this.randomBetween(0, window.innerWidth) + 'px';
+                effect.style.animationDuration = duration + 's';
+                effect.style.animationDelay = delay + 's';
+                effect.style.setProperty('--drift-x', driftX + 'px');
+                
+                if (symbol) {
+                    effect.textContent = symbol;
+                }
+                
+                this.container.appendChild(effect);
+                this.effects.push(effect);
+                
+                // Remove effect after animation
+                setTimeout(() => {
+                    this.removeEffect(effect);
+                }, (duration + delay) * 1000);
+                
+                this.updateCount();
+                console.log('Created effect:', className, this.effects.length);
+            }
+            
+            removeEffect(effect) {
+                if (effect && effect.parentNode) {
+                    effect.parentNode.removeChild(effect);
+                    const index = this.effects.indexOf(effect);
+                    if (index > -1) {
+                        this.effects.splice(index, 1);
+                    }
+                    this.updateCount();
+                }
+            }
+            
+            animate() {
+                if (!this.isActive) return;
+                
+                // Random chance to create new effects
+                if (this.effects.length < this.maxEffects && Math.random() < 0.1) {
+                    this.createEffect();
+                }
+                
+                requestAnimationFrame(() => this.animate());
+            }
+            
+            randomBetween(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            
+            updateCount() {
+                const countElement = document.getElementById('count');
+                if (countElement) {
+                    countElement.textContent = `Effects: ${this.effects.length}`;
+                }
+            }
+            
+            toggle() {
+                this.isActive = !this.isActive;
+                const btn = document.getElementById('toggleBtn');
+                if (btn) {
+                    btn.textContent = this.isActive ? 'Stop Zen Effects' : 'Start Zen Effects';
+                }
+                
+                if (this.isActive) {
+                    this.animate();
+                }
+            }
+            
+            clear() {
+                this.effects.forEach(effect => {
+                    this.removeEffect(effect);
+                });
+                this.effects = [];
+                this.updateCount();
+            }
+            
+            addMore() {
+                this.maxEffects += 20;
+                console.log('Max effects increased to:', this.maxEffects);
+            }
+        }
+        
+        // Global functions for buttons
+        let zenManager;
+        
+        function toggleZen() {
+            if (zenManager) {
+                zenManager.toggle();
+            }
+        }
+        
+        function clearEffects() {
+            if (zenManager) {
+                zenManager.clear();
+            }
+        }
+        
+        function addMoreEffects() {
+            if (zenManager) {
+                zenManager.addMore();
+            }
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, initializing Zen effects...');
+            zenManager = new ZenManager();
+        });
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            if (zenManager) {
+                zenManager.clear();
+            }
+        });
+    </script>
+</body>
+</html> 

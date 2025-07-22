@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Festival Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: rgba(255, 165, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #ff6b35;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .diwali-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .diya {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ff6b35 0%, #ff8c42 50%, #ffa500 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 10px #ff6b35,
+                0 0 20px #ff8c42,
+                0 0 30px #ffa500,
+                inset 0 0 5px rgba(255, 255, 255, 0.3);
+            animation: diya-float linear infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #ffd700;
+            animation: sparkle-twinkle linear infinite;
+        }
+
+        .rangoli {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ff1493 0%, #ff69b4 50%, #ffb6c1 100%);
+            border-radius: 50%;
+            animation: rangoli-float linear infinite;
+        }
+
+        @keyframes diya-float {
+            0% {
+                transform: translateY(100vh) translateX(0px) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px) translateX(var(--drift-x, 0px)) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkle-twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes rangoli-float {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px) translateX(var(--drift-x, 0px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #ff8c42;
+        }
+
+        .festive-text {
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🪔 Diwali Festival Test 🪔</h1>
+        <p>Testing Diwali animation system with diyas, sparkles, and rangoli</p>
+    </div>
+
+    <div class="content">
+        <h2 class="festive-text">🎆 Happy Diwali! 🎆</h2>
+        <p>This is a test page to verify the Diwali animation works correctly.</p>
+        <p>You should see floating diyas, sparkles, and rangoli elements.</p>
+        
+        <div style="margin: 40px 0;">
+            <h3 class="festive-text">Festive Content</h3>
+            <p>May the festival of lights bring joy, prosperity, and happiness to your life.</p>
+            <p>Let's celebrate the victory of light over darkness!</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="toggleDiwali()" id="toggleBtn">Stop Diwali Effects</button>
+        <button onclick="clearEffects()">Clear All</button>
+        <button onclick="addMoreEffects()">Add More</button>
+        <span id="count">Effects: 0</span>
+    </div>
+
+    <div id="diwali-container" class="diwali-container"></div>
+
+    <script>
+        class DiwaliManager {
+            constructor() {
+                this.container = document.getElementById('diwali-container');
+                this.effects = [];
+                this.isActive = true;
+                this.animationId = null;
+                this.maxEffects = this.getMaxEffects();
+                
+                this.init();
+            }
+            
+            getMaxEffects() {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                const area = width * height;
+                
+                if (width <= 480) {
+                    return Math.min(15, Math.floor(area / 40000));
+                } else if (width <= 768) {
+                    return Math.min(25, Math.floor(area / 30000));
+                } else {
+                    return Math.min(40, Math.floor(area / 20000));
+                }
+            }
+            
+            init() {
+                if (!this.container) {
+                    console.error('Diwali container not found!');
+                    return;
+                }
+                
+                console.log('Initializing Diwali manager...');
+                this.startEffects();
+                this.updateCount();
+            }
+            
+            startEffects() {
+                // Create initial effects
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        this.createEffect();
+                    }, i * 300);
+                }
+                
+                this.animate();
+            }
+            
+            createEffect() {
+                if (!this.isActive || this.effects.length >= this.maxEffects) {
+                    return;
+                }
+                
+                const effect = document.createElement('div');
+                const effectType = Math.random();
+                let className, duration, delay, driftX;
+                
+                if (effectType < 0.4) {
+                    // Diya (40% chance)
+                    className = 'diya';
+                    duration = this.randomBetween(8, 15);
+                    delay = this.randomBetween(0, 2);
+                    driftX = this.randomBetween(-100, 100);
+                } else if (effectType < 0.7) {
+                    // Sparkle (30% chance)
+                    className = 'sparkle';
+                    duration = this.randomBetween(3, 8);
+                    delay = this.randomBetween(0, 1);
+                    driftX = this.randomBetween(-50, 50);
+                } else {
+                    // Rangoli (30% chance)
+                    className = 'rangoli';
+                    duration = this.randomBetween(10, 18);
+                    delay = this.randomBetween(0, 3);
+                    driftX = this.randomBetween(-80, 80);
+                }
+                
+                effect.className = className;
+                effect.style.left = this.randomBetween(0, window.innerWidth) + 'px';
+                effect.style.animationDuration = duration + 's';
+                effect.style.animationDelay = delay + 's';
+                effect.style.setProperty('--drift-x', driftX + 'px');
+                
+                this.container.appendChild(effect);
+                this.effects.push(effect);
+                
+                // Remove effect after animation
+                setTimeout(() => {
+                    this.removeEffect(effect);
+                }, (duration + delay) * 1000);
+                
+                this.updateCount();
+                console.log('Created effect:', className, this.effects.length);
+            }
+            
+            removeEffect(effect) {
+                if (effect && effect.parentNode) {
+                    effect.parentNode.removeChild(effect);
+                    const index = this.effects.indexOf(effect);
+                    if (index > -1) {
+                        this.effects.splice(index, 1);
+                    }
+                    this.updateCount();
+                }
+            }
+            
+            animate() {
+                if (!this.isActive) return;
+                
+                // Random chance to create new effects
+                if (this.effects.length < this.maxEffects && Math.random() < 0.15) {
+                    this.createEffect();
+                }
+                
+                requestAnimationFrame(() => this.animate());
+            }
+            
+            randomBetween(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            
+            updateCount() {
+                const countElement = document.getElementById('count');
+                if (countElement) {
+                    countElement.textContent = `Effects: ${this.effects.length}`;
+                }
+            }
+            
+            toggle() {
+                this.isActive = !this.isActive;
+                const btn = document.getElementById('toggleBtn');
+                if (btn) {
+                    btn.textContent = this.isActive ? 'Stop Diwali Effects' : 'Start Diwali Effects';
+                }
+                
+                if (this.isActive) {
+                    this.animate();
+                }
+            }
+            
+            clear() {
+                this.effects.forEach(effect => {
+                    this.removeEffect(effect);
+                });
+                this.effects = [];
+                this.updateCount();
+            }
+            
+            addMore() {
+                this.maxEffects += 10;
+                console.log('Max effects increased to:', this.maxEffects);
+            }
+        }
+        
+        // Global functions for buttons
+        let diwaliManager;
+        
+        function toggleDiwali() {
+            if (diwaliManager) {
+                diwaliManager.toggle();
+            }
+        }
+        
+        function clearEffects() {
+            if (diwaliManager) {
+                diwaliManager.clear();
+            }
+        }
+        
+        function addMoreEffects() {
+            if (diwaliManager) {
+                diwaliManager.addMore();
+            }
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, initializing Diwali effects...');
+            diwaliManager = new DiwaliManager();
+        });
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            if (diwaliManager) {
+                diwaliManager.clear();
+            }
+        });
+    </script>
+</body>
+</html> 

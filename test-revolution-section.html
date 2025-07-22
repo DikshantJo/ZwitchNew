@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolution Section Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="revolution-intro-section">
+        <div class="revolution-container">
+            <!-- Top Text Block -->
+            <div class="text-block text-block-top">
+                <div>
+                    <p class="adjustLetterSpacing">Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style.</p>
+                </div>
+            </div>
+
+            <!-- Main Heading -->
+            <div class="revolution-heading-container">
+                <div>
+                    <h1 class="revolution-heading">
+                        <p>
+                            <span class="revolution-introducing">Introducing </span>
+                            <span class="revolution-text">revolution</span>
+                        </p>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Bottom Left Text Block -->
+            <div class="text-block text-block-bottom-left">
+                <div>
+                    <div>
+                        <p class="adjustLetterSpacing">Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Right Text Block -->
+            <div class="text-block text-block-bottom-right">
+                <div>
+                    <div>
+                        <p class="adjustLetterSpacing">Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* CSS Custom Properties for easy modifications */
+            :root {
+                --revolution-bg-color: #1a1a1a !important;
+                --revolution-text-color: #ffffff !important;
+                --revolution-accent-color: #3e9ad9 !important;
+                --revolution-font-primary: 'Unbounded', sans-serif !important;
+                --revolution-font-secondary: 'Urbanist', sans-serif !important;
+                --revolution-heading-size: 95px !important;
+                --revolution-text-size: 18px !important;
+                --revolution-letter-spacing: 0.63px !important;
+                --revolution-line-height: 26px !important;
+            }
+
+            .revolution-intro-section {
+                background: var(--revolution-bg-color) !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 6px !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                overflow: clip !important;
+                padding: 30px 0 !important;
+                position: relative !important;
+                border-radius: 24px !important;
+                width: 100% !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+            }
+
+            .revolution-container {
+                width: 100% !important;
+                height: 100% !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 6px !important;
+            }
+
+            /* Top Text Block */
+            .text-block-top {
+                height: 148px !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                overflow: clip !important;
+            }
+
+            .text-block-top > div {
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 10px !important;
+                height: 148px !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 100px 499px 20px 499px !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+
+            .text-block-top p {
+                font-family: var(--revolution-font-secondary) !important;
+                font-weight: normal !important;
+                line-height: 0 !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                color: var(--revolution-text-color) !important;
+                font-size: var(--revolution-text-size) !important;
+                text-align: left !important;
+                letter-spacing: var(--revolution-letter-spacing) !important;
+                width: 634px !important;
+                margin: 0 !important;
+            }
+
+            .text-block-top p.adjustLetterSpacing {
+                display: block !important;
+                line-height: var(--revolution-line-height) !important;
+            }
+
+            /* Main Heading Container */
+            .revolution-heading-container {
+                height: 290px !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                overflow: clip !important;
+            }
+
+            .revolution-heading-container > div {
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 10px !important;
+                height: 290px !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 51px 499px !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+
+            .revolution-heading {
+                font-family: var(--revolution-font-secondary) !important;
+                font-weight: normal !important;
+                line-height: 0 !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                color: var(--revolution-text-color) !important;
+                font-size: 0 !important;
+                text-align: left !important;
+                letter-spacing: var(--revolution-letter-spacing) !important;
+                width: 727px !important;
+                margin: 0 !important;
+            }
+
+            .revolution-heading p {
+                font-family: var(--revolution-font-primary) !important;
+                font-weight: bold !important;
+                line-height: var(--revolution-line-height) !important;
+                font-size: var(--revolution-heading-size) !important;
+                margin: 0 !important;
+            }
+
+            .revolution-introducing {
+                color: var(--revolution-text-color) !important;
+            }
+
+            .revolution-text {
+                color: var(--revolution-accent-color) !important;
+                letter-spacing: var(--revolution-letter-spacing) !important;
+            }
+
+            /* Bottom Left Text Block */
+            .text-block-bottom-left {
+                height: 148px !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                overflow: clip !important;
+            }
+
+            .text-block-bottom-left > div {
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 10px !important;
+                height: 148px !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+                padding: 0 220px !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+
+            .text-block-bottom-left > div > div {
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 10px !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+                overflow: clip !important;
+                padding: 35px 0 !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+            }
+
+            .text-block-bottom-left p {
+                font-family: var(--revolution-font-secondary) !important;
+                font-weight: normal !important;
+                line-height: 0 !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                color: var(--revolution-text-color) !important;
+                font-size: var(--revolution-text-size) !important;
+                text-align: left !important;
+                letter-spacing: var(--revolution-letter-spacing) !important;
+                width: 634px !important;
+                margin: 0 !important;
+            }
+
+            .text-block-bottom-left p.adjustLetterSpacing {
+                display: block !important;
+                line-height: var(--revolution-line-height) !important;
+            }
+
+            /* Bottom Right Text Block */
+            .text-block-bottom-right {
+                height: 148px !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                overflow: clip !important;
+            }
+
+            .text-block-bottom-right > div {
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 10px !important;
+                height: 148px !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                padding: 0 220px !important;
+                position: relative !important;
+                width: 100% !important;
+            }
+
+            .text-block-bottom-right > div > div {
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 10px !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+                overflow: clip !important;
+                padding: 35px 0 !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+            }
+
+            .text-block-bottom-right p {
+                font-family: var(--revolution-font-secondary) !important;
+                font-weight: normal !important;
+                line-height: 0 !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+                color: var(--revolution-text-color) !important;
+                font-size: var(--revolution-text-size) !important;
+                text-align: left !important;
+                letter-spacing: var(--revolution-letter-spacing) !important;
+                width: 634px !important;
+                margin: 0 !important;
+            }
+
+            .text-block-bottom-right p.adjustLetterSpacing {
+                display: block !important;
+                line-height: var(--revolution-line-height) !important;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .text-block-top > div,
+                .revolution-heading-container > div {
+                    padding-left: 200px !important;
+                    padding-right: 200px !important;
+                }
+
+                .text-block-bottom-left > div,
+                .text-block-bottom-right > div {
+                    padding-left: 100px !important;
+                    padding-right: 100px !important;
+                }
+
+                .revolution-heading p {
+                    font-size: 70px !important;
+                }
+
+                .text-block-top p,
+                .text-block-bottom-left p,
+                .text-block-bottom-right p {
+                    width: 500px !important;
+                    font-size: 16px !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .text-block-top > div,
+                .revolution-heading-container > div {
+                    padding-left: 100px !important;
+                    padding-right: 100px !important;
+                }
+
+                .text-block-bottom-left > div,
+                .text-block-bottom-right > div {
+                    padding-left: 50px !important;
+                    padding-right: 50px !important;
+                }
+
+                .revolution-heading p {
+                    font-size: 50px !important;
+                }
+
+                .text-block-top p,
+                .text-block-bottom-left p,
+                .text-block-bottom-right p {
+                    width: 400px !important;
+                    font-size: 14px !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .text-block-top > div,
+                .revolution-heading-container > div {
+                    padding-left: 50px !important;
+                    padding-right: 50px !important;
+                }
+
+                .text-block-bottom-left > div,
+                .text-block-bottom-right > div {
+                    padding-left: 25px !important;
+                    padding-right: 25px !important;
+                }
+
+                .revolution-heading p {
+                    font-size: 35px !important;
+                }
+
+                .text-block-top p,
+                .text-block-bottom-left p,
+                .text-block-bottom-right p {
+                    width: 300px !important;
+                    font-size: 12px !important;
+                }
+            }
+
+            /* Dark theme compatibility */
+            [data-theme="dark"] .revolution-intro-section {
+                background: var(--revolution-bg-color) !important;
+            }
+        </style>
+    </section>
+</body>
+</html> 
