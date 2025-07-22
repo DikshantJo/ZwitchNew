@@ -702,3 +702,440 @@ img.lazy {
         font-family: 'Unbounded', sans-serif !important;
     }
 }
+
+/* Custom Static Component Styles */
+.custom-static-component {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-static-component:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.component-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+}
+
+.component-image {
+    flex-shrink: 0;
+}
+
+.component-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.component-content {
+    flex: 1;
+}
+
+.component-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Unbounded', sans-serif;
+}
+
+.component-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    opacity: 0.9;
+}
+
+.component-button {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.component-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive Design for Custom Component */
+@media (max-width: 768px) {
+    .component-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .component-image img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .component-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 30px 0;
+    margin: 2rem 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-description {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+    letter-spacing: 0.63px;
+    max-width: 634px;
+}
+
+.hero-description-top {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 20px;
+}
+
+.hero-title {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 0 20px;
+}
+
+.hero-title h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 95px;
+    line-height: 1;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.63px;
+}
+
+.highlighted-text {
+    color: #3e9ad9 !important;
+}
+
+.hero-descriptions-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hero-description-left {
+    text-align: left;
+}
+
+.hero-description-right {
+    text-align: right;
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 1200px) {
+    .hero-title h1 {
+        font-size: 80px;
+    }
+    
+    .hero-descriptions-bottom {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 20px 0;
+        min-height: 500px;
+    }
+    
+    .hero-title h1 {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .hero-descriptions-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 20px;
+    }
+    
+    .hero-description-left,
+    .hero-description-right {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title h1 {
+        font-size: 36px;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .hero-container {
+        padding: 0 15px;
+    }
+}
+
+/* Fashion Revolution Section Styles */
+.fashion-revolution-section {
+    background: #ffffff;
+    padding: 70px 0;
+    margin: 2rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.fashion-revolution-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 135px;
+}
+
+.fashion-revolution-content {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+    align-items: center;
+}
+
+.fashion-revolution-title {
+    width: 100%;
+    text-align: left;
+}
+
+.fashion-revolution-title h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 95px;
+    line-height: 1;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 0.63px;
+}
+
+.fashion-revolution-row {
+    display: flex;
+    gap: 59px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.fashion-revolution-carousel {
+    flex-shrink: 0;
+    width: 554px;
+    height: 490px;
+    position: relative;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #d9d9d9;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: #ffffff;
+    transform: scale(1.2);
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.fashion-revolution-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    max-width: 535px;
+}
+
+.text-block {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.76);
+    letter-spacing: 0.63px;
+}
+
+.text-block p {
+    margin: 0;
+}
+
+/* Responsive Design for Fashion Revolution Section */
+@media (max-width: 1200px) {
+    .fashion-revolution-container {
+        padding: 0 60px;
+    }
+    
+    .fashion-revolution-title h2 {
+        font-size: 80px;
+    }
+    
+    .fashion-revolution-row {
+        gap: 40px;
+    }
+    
+    .fashion-revolution-carousel {
+        width: 450px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .fashion-revolution-section {
+        padding: 40px 0;
+    }
+    
+    .fashion-revolution-container {
+        padding: 0 20px;
+    }
+    
+    .fashion-revolution-title h2 {
+        font-size: 48px;
+        line-height: 1.1;
+        text-align: center;
+    }
+    
+    .fashion-revolution-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .fashion-revolution-carousel {
+        width: 100%;
+        height: 350px;
+    }
+    
+    .fashion-revolution-text {
+        max-width: 100%;
+        gap: 30px;
+    }
+    
+    .text-block {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fashion-revolution-section {
+        padding: 30px 0;
+    }
+    
+    .fashion-revolution-container {
+        padding: 0 15px;
+    }
+    
+    .fashion-revolution-title h2 {
+        font-size: 36px;
+    }
+    
+    .fashion-revolution-carousel {
+        height: 280px;
+    }
+    
+    .text-block {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+}

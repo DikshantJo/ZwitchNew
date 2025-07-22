@@ -78,4 +78,20 @@
                 @break
         @endswitch
     @endforeach
+
+    <!-- Fashion Revolution Component -->
+    <x-fashion-revolution 
+        title="Introducing Fashion revolution"
+        description="Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style."
+        highlightedWord="revolution"
+        highlightedColor="#3e9ad9"
+    />
+
+    <!-- Hero Section Component -->
+    <x-hero-section 
+        title="Introducing revolution"
+        description="Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style."
+        highlightedWord="revolution"
+        highlightedColor="#3e9ad9"
+    />
 </x-shop::layouts>

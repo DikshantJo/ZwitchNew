@@ -38,7 +38,8 @@ export default defineConfig(({ mode }) => {
 
         experimental: {
             renderBuiltUrl(filename, { hostId, hostType, type }) {
-                if (hostType === "css") {
+                // Handle both CSS and JS files properly
+                if (hostType === "css" || hostType === "js") {
                     return path.basename(filename);
                 }
             },
