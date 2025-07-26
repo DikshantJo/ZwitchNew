@@ -8,7 +8,7 @@
     $showWishlist = (bool) core()->getConfigData('customer.settings.wishlist.wishlist_option');
 @endphp
 
-<div class="flex flex-wrap gap-4 px-4 pb-4 pt-6 shadow-sm lg:hidden">
+<div class="relative flex flex-wrap gap-4 px-4 pb-4 pt-6 shadow-sm lg:hidden">
     <div class="flex w-full items-center justify-between">
         <!-- Left Navigation -->
         <div class="flex items-center gap-x-1.5">
@@ -18,7 +18,10 @@
             <v-mobile-drawer></v-mobile-drawer>
 
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.after') !!}
+        </div>
 
+        <!-- Centered Logo Section -->
+        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg">
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.before') !!}
 
             <a
@@ -31,6 +34,8 @@
                     alt="{{ config('app.name') }}"
                     width="131"
                     height="29"
+                    class="rounded-full object-cover"
+                    style="border-radius: 50%;"
                 >
             </a>
 
@@ -216,7 +221,7 @@
 
             <input
                 type="text"
-                class="block w-full rounded-xl border border-['#E3E3E3'] px-11 py-3.5 text-sm font-medium text-gray-900 max-md:rounded-lg max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
+                class="block w-full rounded-[50px] border border-['#E3E3E3'] px-11 py-3.5 text-sm font-medium text-gray-900 max-md:rounded-[50px] max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
                 name="query"
                 value="{{ request('query') }}"
                 placeholder="@lang('shop::app.components.layouts.header.mobile.search-text')"

@@ -1,28 +1,12 @@
 {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.before') !!}
 
-<div class="flex min-h-[78px] w-full justify-between border border-b border-l-0 border-r-0 border-t-0 px-[60px] max-1180:px-8">
+<div class="relative flex min-h-[78px] w-full justify-between border border-b border-l-0 border-r-0 border-t-0 px-[60px] max-1180:px-8">
     <!--
         This section will provide categories for the first, second, and third levels. If
         additional levels are required, users can customize them according to their needs.
     -->
-    <!-- Left Nagivation Section -->
+    <!-- Left Navigation Section -->
     <div class="flex items-center gap-x-10 max-[1180px]:gap-x-5">
-        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.before') !!}
-
-        <a
-            href="{{ route('shop.home.index') }}"
-            aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
-        >
-            <img
-                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
-                width="131"
-                height="29"
-                alt="{{ config('app.name') }}"
-            >
-        </a>
-
-        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.after') !!}
-
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.before') !!}
 
         <v-desktop-category>
@@ -45,6 +29,27 @@
         </v-desktop-category>
 
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.after') !!}
+    </div>
+
+    <!-- Centered Logo Section -->
+    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg">
+        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.before') !!}
+
+        <a
+            href="{{ route('shop.home.index') }}"
+            aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
+        >
+            <img
+                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
+                width="131"
+                height="29"
+                alt="{{ config('app.name') }}"
+                class="rounded-full object-cover"
+                style="border-radius: 50%;"
+            >
+        </a>
+
+        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.after') !!}
     </div>
 
     <!-- Right Nagivation Section -->
@@ -72,7 +77,7 @@
                     type="text"
                     name="query"
                     value="{{ request('query') }}"
-                    class="block w-full rounded-lg border border-transparent bg-zinc-100 px-11 py-3 text-xs font-medium text-gray-900 transition-all hover:border-gray-400 focus:border-gray-400"
+                    class="block w-full rounded-[50px] border border-transparent bg-zinc-100 px-11 py-3 text-xs font-medium text-gray-900 transition-all hover:border-gray-400 focus:border-gray-400"
                     minlength="{{ core()->getConfigData('catalog.products.search.min_query_length') }}"
                     maxlength="{{ core()->getConfigData('catalog.products.search.max_query_length') }}"
                     placeholder="@lang('shop::app.components.layouts.header.desktop.bottom.search-text')"
