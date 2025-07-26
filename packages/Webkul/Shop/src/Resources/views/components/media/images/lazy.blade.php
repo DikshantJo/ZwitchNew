@@ -67,9 +67,21 @@
                     entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             let lazyImage = document.getElementById('image-' + self.$.uid);
+                            let imageUrl = lazyImage.dataset.src;
 
-                            lazyImage.src = lazyImage.dataset.src;
+                            // Fix theme image URLs
+                            if (imageUrl && imageUrl.includes('storage/theme/')) {
+                                // Remove port numbers from the beginning (like 8008/)
+                                imageUrl = imageUrl.replace(/^\d+\//, '');
+                                
+                                // Ensure it starts with the correct base URL
+                                if (!imageUrl.startsWith('http')) {
+                                    const baseUrl = window.location.origin;
+                                    imageUrl = baseUrl + '/' + imageUrl;
+                                }
+                            }
 
+                            lazyImage.src = imageUrl;
                             lazyImageObserver.unobserve(lazyImage);
                         }
                     });

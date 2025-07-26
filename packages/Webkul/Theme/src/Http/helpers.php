@@ -27,6 +27,30 @@ if (! function_exists('bagisto_asset')) {
     }
 }
 
+if (! function_exists('process_theme_html')) {
+    /**
+     * Process theme HTML content to fix image URLs.
+     *
+     * @param  string  $html
+     * @return string
+     */
+    function process_theme_html(string $html): string
+    {
+        // Use Laravel's asset() helper to get the correct base URL
+        $baseUrl = rtrim(asset(''), '/');
+        
+        // Handle URLs that start with port numbers (like 8008/storage/theme/...)
+        $html = preg_replace('/src="(\d+)\/storage\/theme\//', 'src="' . $baseUrl . '/storage/theme/', $html);
+        $html = preg_replace('/data-src="(\d+)\/storage\/theme\//', 'data-src="' . $baseUrl . '/storage/theme/', $html);
+        
+        // Convert relative storage paths to absolute URLs
+        $html = preg_replace('/src="storage\/theme\//', 'src="' . $baseUrl . '/storage/theme/', $html);
+        $html = preg_replace('/data-src="storage\/theme\//', 'data-src="' . $baseUrl . '/storage/theme/', $html);
+        
+        return $html;
+    }
+}
+
 if (! function_exists('view_render_event')) {
     /**
      * View render event.

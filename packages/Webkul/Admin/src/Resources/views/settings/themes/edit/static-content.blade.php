@@ -363,7 +363,7 @@
                 getPreviewContent() {
                     let html = this.options.html.slice();
 
-                    html = html.replaceAll('src=""', '').replaceAll('data-src', 'src').replaceAll('src="storage/theme/', "src=\"{{ config('app.url') }}/storage/theme/");
+                    html = html.replaceAll('src=""', '').replaceAll('data-src', 'src').replaceAll('src="storage/theme/', "src=\"{{ rtrim(config('app.url'), '/') }}/storage/theme/");
 
                     return html + '<style type=\"text/css\">' +   this.options.css + '</style>';
                 },

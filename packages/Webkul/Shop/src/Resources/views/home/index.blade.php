@@ -52,7 +52,7 @@
 
                 <!-- render html -->
                 @if (! empty($data['html']))
-                    {!! $data['html'] !!}
+                    {!! process_theme_html($data['html']) !!}
                 @endif
 
                 @break
