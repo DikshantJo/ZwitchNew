@@ -107,11 +107,19 @@ class ThemeCustomizationRepository extends Repository
                 }
 
                 $options['images'][] = [
-                    'image' => 'storage/'.$path,
+                    'image' => Storage::url($path),
                     'link'  => $image['link'],
                     'title' => $image['title'],
                 ];
             } else {
+                // Handle existing images - ensure they have proper URLs
+                if (isset($image['image'])) {
+                    // If the image path doesn't start with http, make it a proper storage URL
+                    if (!str_starts_with($image['image'], 'http')) {
+                        $imagePath = str_replace('storage/', '', $image['image']);
+                        $image['image'] = Storage::url($imagePath);
+                    }
+                }
                 $options['images'][] = $image;
             }
         }

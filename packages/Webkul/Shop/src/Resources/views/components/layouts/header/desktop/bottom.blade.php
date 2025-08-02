@@ -32,7 +32,7 @@
     </div>
 
     <!-- Centered Logo Section -->
-    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg">
+    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg" style="top: 75%;">
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.before') !!}
 
         <a
@@ -41,11 +41,11 @@
         >
             <img
                 src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
-                width="131"
-                height="29"
+                width="110"
+                height="24"
                 alt="{{ config('app.name') }}"
-                class="rounded-full object-cover"
-                style="border-radius: 50%;"
+                class="rounded-full object-cover h-12 w-auto sm:h-9"
+                style="border-radius: 50%; width: 90px;height: 90px;"
             >
         </a>
 
@@ -58,10 +58,10 @@
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.search_bar.before') !!}
 
         <!-- Search Bar Container -->
-        <div class="relative w-full">
+        <div class="relative w-full" style="width:420px;">
             <form
                 action="{{ route('shop.search.index') }}"
-                class="flex max-w-[445px] items-center"
+                class="flex w-[600px] max-w-[600px] items-center max-lg:w-[500px] max-md:w-[400px] max-sm:w-full" style="width: 100%;"
                 role="search"
             >
                 <label
@@ -293,7 +293,8 @@
                 <span>
                     <a
                         :href="category.url"
-                        class="inline-block px-5 uppercase"
+                        class="inline-block px-5 font-semibold"
+                        style="text-transform: none !important; font-weight: 600 !important;"
                     >
                         @{{ category.name }}
                     </a>
@@ -344,7 +345,7 @@
                     class="flex h-[77px] cursor-pointer items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
                     @click="toggleCategoryDrawer"
                 >
-                    <span class="flex items-center gap-1 px-5 uppercase">
+                    <span class="flex items-center gap-1 px-5 font-semibold" style="text-transform: none !important; font-weight: 600 !important;">
                         <span class="icon-hamburger text-xl"></span>
 
                         @lang('shop::app.components.layouts.header.desktop.bottom.all')
@@ -359,7 +360,8 @@
                     <span>
                         <a
                             :href="category.url"
-                            class="inline-block px-5 uppercase"
+                            class="inline-block px-5 font-semibold"
+                            style="text-transform: none !important; font-weight: 600 !important;"
                         >
                             @{{ category.name }}
                         </a>

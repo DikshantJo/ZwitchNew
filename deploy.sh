@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Hostinger Deployment Script for Bagisto
+# Hostinger Deployment Script for Bagisto (Shared Hosting Version)
 # This script will be executed on Hostinger after each GitHub push
 
 echo "🚀 Starting Bagisto deployment..."
@@ -9,19 +9,18 @@ echo "🚀 Starting Bagisto deployment..."
 APP_ENV=production
 APP_DEBUG=false
 
-# Install/Update Composer dependencies
+# Pull latest changes from GitHub
+echo "📥 Pulling latest changes from main branch..."
+git pull origin main
+
+# Install/Update Composer dependencies (using local composer.phar if needed)
 echo "📦 Installing Composer dependencies..."
-composer install --optimize-autoloader --no-dev --no-interaction
-
-# Install/Update NPM dependencies and build assets
-echo "🎨 Building frontend assets..."
-npm install --production
-npm run build
-
-# Build theme assets
-echo "🎨 Building theme assets..."
-cd packages/Webkul/Shop && npm install --production && npm run build && cd ../../..
-cd packages/Webkul/Admin && npm install --production && npm run build && cd ../../..
+if command -v composer &> /dev/null; then
+    composer install --optimize-autoloader --no-dev --no-interaction
+else
+    echo "Using local composer.phar..."
+    php composer.phar install --optimize-autoloader --no-dev --no-interaction
+fi
 
 # Set proper permissions
 echo "🔐 Setting permissions..."
@@ -50,4 +49,5 @@ php artisan migrate --force
 echo "🔗 Creating storage link..."
 php artisan storage:link
 
-echo "✅ Deployment completed successfully!" 
+echo "✅ Deployment completed successfully!"
+echo "⚠️  Note: Frontend assets were not rebuilt. Build them locally and upload if needed." 

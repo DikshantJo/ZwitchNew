@@ -234,6 +234,7 @@
                             <img
                                 class="max-md:h-[100px] max-md:w-[100px]"
                                 src="{{ bagisto_asset('images/thank-you.png') }}"
+                                style="background: #fff;border-radius: 30px;padding: 5px 10px 20px 10px;"
                             >
 
                             <p

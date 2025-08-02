@@ -39,9 +39,9 @@ export default defineConfig(({ mode }) => {
 
         experimental: {
             renderBuiltUrl(filename, { hostId, hostType, type }) {
-                // Handle both CSS and JS files properly
+                // Return the full path for assets to ensure proper URL resolution
                 if (hostType === "css" || hostType === "js") {
-                    return path.basename(filename);
+                    return `/themes/admin/default/build/assets/${path.basename(filename)}`;
                 }
             },
         },

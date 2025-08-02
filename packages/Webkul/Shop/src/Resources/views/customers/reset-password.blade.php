@@ -12,7 +12,7 @@
 @endPush
 
 <x-shop::layouts
-    :has-header="false"
+    :has-header="true"
     :has-feature="false"
     :has-footer="false"
 >
@@ -21,7 +21,7 @@
         @lang('shop::app.customers.reset-password.title')
     </x-slot>
 
-    <div class="container mt-20 max-1180:px-5 max-md:mt-12">
+    <div class="container mt-8 max-1180:px-5 max-md:mt-6">
         {!! view_render_event('bagisto.shop.customers.reset_password.logo.before') !!}
         
         <!-- Company Logo -->
@@ -30,6 +30,7 @@
                 href="{{ route('shop.home.index') }}"
                 class="m-[0_auto_20px_auto]"
                 aria-label="@lang('shop::app.customers.reset-password.bagisto')"
+                style="background: #fff;border-radius: 30px;padding:10px"
             >
                 <img
                     src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
@@ -43,8 +44,8 @@
         {!! view_render_event('bagisto.shop.customers.reset_password.logo.after') !!}
 
         <!-- Form Container -->
-        <div class="m-auto w-full max-w-[870px] rounded-xl border border-zinc-200 p-16 px-[90px] max-md:px-8 max-md:py-8 max-sm:border-none max-sm:p-0">
-            <h1 class="font-dmserif text-4xl max-md:text-3xl max-sm:text-xl">
+        <div class="m-auto w-full max-w-[870px] rounded-xl p-8 px-[90px] max-md:px-8 max-md:py-8 max-sm:border-none max-sm:p-0">
+            <h1 class="font-dmserif text-4xl max-md:text-3xl max-sm:text-xl text-center">
                 @lang('shop::app.customers.reset-password.title')
             </h1>
 
@@ -148,8 +149,8 @@
 
         </div>
 
-        <p class="mb-4 mt-8 text-center text-xs text-zinc-500">
+        <!-- <p class="mb-4 mt-8 text-center text-xs text-zinc-500">
             @lang('shop::app.customers.reset-password.footer', ['current_year'=> date('Y') ])
-        </p>
+        </p> -->
     </div>
 </x-shop::layouts>

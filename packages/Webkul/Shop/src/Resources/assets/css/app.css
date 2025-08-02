@@ -1,3 +1,10 @@
+/* Roboto Fonts for Footer */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@300;400;500;700&display=swap');
+
+/* Unbounded Font */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,6 +38,7 @@ img.lazy {
         @apply cursor-not-allowed opacity-50;
     }
 
+    /* Override Tailwind's global font-family for icons */
     [class^="icon-"],
     [class*=" icon-"] {
         /* use !important to prevent issues with browser extensions that change fonts */
@@ -47,6 +55,11 @@ img.lazy {
         -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Even more specific selectors to ensure font-family is not overridden */
+    [class^="icon-"]::before,
+    [class*=" icon-"]::before {
+        font-family: "bagisto-shop" !important;
+    }
 
     .icon-gdpr-safe:before {
         content: "\e84f";
@@ -445,7 +458,7 @@ img.lazy {
     }
     
     .secondary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-white text-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#050e3a0d];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-white text-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#3d9ad60d];
     }
 
     .shimmer {
@@ -502,7 +515,7 @@ img.lazy {
     .glow-404 {
         background-clip: text;
         -webkit-background-clip: text;
-        color: #060C3B;
+        color: #3d9ad6;
     }
 
     .glow-shadow-404 {
@@ -693,7 +706,7 @@ img.lazy {
         @apply border-blue-600;
     }
 
-    [data-theme="dark"] .hover\:bg-\[#050e3a0d\]:hover {
+    [data-theme="dark"] .hover\:bg-\[#3d9ad60d\]:hover {
         @apply hover:bg-gray-700;
     }
 

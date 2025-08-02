@@ -152,33 +152,198 @@
             /* Dark Mode Styles - Inline for immediate effect */
             [data-theme="dark"] {
                 color-scheme: dark;
+                --category-title-color: #f9fafb;
+            }
+
+            [data-theme="light"] {
+                --category-title-color: #111827;
+                color-scheme: light;
+            }
+
+            /* Light theme overrides to ensure they take precedence over prefers-color-scheme */
+            [data-theme="light"] body,
+            [data-theme="light"] #app,
+            [data-theme="light"] main {
+                background-color: #ffffff !important;
+                color: #111827 !important;
+            }
+
+            [data-theme="light"] .dark\:bg-\[#1a1a1a\] {
+                background-color: #ffffff !important;
+            }
+
+            [data-theme="light"] .bg-white {
+                background-color: #ffffff !important;
             }
 
             [data-theme="dark"] body {
-                background-color: #1a1a1a !important;
                 color: #f9fafb !important;
             }
 
-            [data-theme="dark"] #app {
+            /* Override specific blue-tinted backgrounds to #1a1a1a */
+            [data-theme="dark"] .dark\:bg-gray-900,
+            [data-theme="dark"] .dark\:bg-gray-800,
+            [data-theme="dark"] .dark\:bg-gray-950,
+            [data-theme="dark"] .bg-gray-900,
+            [data-theme="dark"] .bg-gray-800,
+            [data-theme="dark"] .bg-gray-950,
+            [data-theme="dark"] .bg-slate-900,
+            [data-theme="dark"] .bg-slate-800,
+            [data-theme="dark"] .bg-zinc-900,
+            [data-theme="dark"] .bg-zinc-800 {
                 background-color: #1a1a1a !important;
             }
 
-            [data-theme="dark"] main {
-                background-color: #1a1a1a !important;
-            }
-
+            /* Ensure main containers have the correct background */
+            [data-theme="dark"] body,
+            [data-theme="dark"] #app,
+            [data-theme="dark"] main,
             [data-theme="dark"] .container {
                 background-color: #1a1a1a !important;
             }
 
+            /* Override product card backgrounds */
+            [data-theme="dark"] .group,
+            [data-theme="dark"] [class*="product-card"],
+            [data-theme="dark"] [class*="v-product-card"],
+            [data-theme="dark"] [class*="1180:transtion-all"],
+            [data-theme="dark"] [class*="rounded-md"],
+            [data-theme="dark"] [class*="overflow-hidden"] {
+                background-color: #1a1a1a !important;
+            }
+
+            /* Specifically target product card containers */
+            [data-theme="dark"] div[class*="1180:grid"],
+            [data-theme="dark"] div[class*="content-start"] {
+                background-color: #1a1a1a !important;
+            }
+
+            /* Override any remaining blue-tinted elements */
+            [data-theme="dark"] .bg-zinc-100,
+            [data-theme="dark"] .bg-zinc-200,
+            [data-theme="dark"] .bg-slate-100,
+            [data-theme="dark"] .bg-slate-200 {
+                background-color: #1a1a1a !important;
+            }
+
+            /* Ensure product card text is visible on dark background */
+            [data-theme="dark"] .group p,
+            [data-theme="dark"] .group div,
+            [data-theme="dark"] [class*="product-card"] p,
+            [data-theme="dark"] [class*="product-card"] div {
+                color: #f9fafb !important;
+            }
+
             [data-theme="dark"] header {
+                border-color: #404040 !important;
+                background-color: #1a1a1a !important;
+            }
+
+            /* Force header background to be black only in dark theme */
+            [data-theme="dark"] header {
+                background-color: #1a1a1a !important;
+            }
+
+            /* Category dropdown and all dropdown backgrounds */
+            [data-theme="dark"] .bg-white,
+            [data-theme="dark"] div[class*="bg-white"],
+            [data-theme="dark"] .dropdown,
+            [data-theme="dark"] [class*="dropdown"],
+            [data-theme="dark"] [class*="absolute z-20 w-max rounded"],
+            [data-theme="dark"] [class*="absolute z-10 w-max rounded"],
+            [data-theme="dark"] [class*="absolute top-[78px] z-[1]"],
+            [data-theme="dark"] [class*="pointer-events-none absolute top-[78px]"],
+            [data-theme="dark"] [class*="border-[#F3F3F3] bg-white"],
+            [data-theme="dark"] [class*="shadow-[0_6px_6px_1px_rgba(0,0,0,.3)]"],
+            [data-theme="dark"] [class*="shadow-[0px_10px_84px_rgba(0,0,0,0.1)]"],
+            [data-theme="dark"] [class*="shadow-[0px_8px_10px_0px_rgba(0,0,0,0.20)]"] {
                 background-color: #1a1a1a !important;
                 border-color: #404040 !important;
             }
 
-            [data-theme="dark"] .bg-white {
-                background-color: #1a1a1a !important;
+            /* Dropdown text colors for visibility */
+            [data-theme="dark"] .dropdown a,
+            [data-theme="dark"] [class*="dropdown"] a,
+            [data-theme="dark"] [class*="absolute z-20 w-max rounded"] a,
+            [data-theme="dark"] [class*="absolute z-10 w-max rounded"] a,
+            [data-theme="dark"] [class*="absolute top-[78px] z-[1]"] a,
+            [data-theme="dark"] [class*="pointer-events-none absolute top-[78px]"] a,
+            [data-theme="dark"] [class*="border-[#F3F3F3] bg-white"] a,
+            [data-theme="dark"] [class*="shadow-[0_6px_6px_1px_rgba(0,0,0,.3)]"] a,
+            [data-theme="dark"] [class*="shadow-[0px_10px_84px_rgba(0,0,0,0.1)]"] a,
+            [data-theme="dark"] [class*="shadow-[0px_8px_10px_0px_rgba(0,0,0,0.20)]"] a,
+            [data-theme="dark"] .dropdown p,
+            [data-theme="dark"] [class*="dropdown"] p,
+            [data-theme="dark"] [class*="absolute z-20 w-max rounded"] p,
+            [data-theme="dark"] [class*="absolute z-10 w-max rounded"] p,
+            [data-theme="dark"] [class*="absolute top-[78px] z-[1]"] p,
+            [data-theme="dark"] [class*="pointer-events-none absolute top-[78px]"] p,
+            [data-theme="dark"] [class*="border-[#F3F3F3] bg-white"] p,
+            [data-theme="dark"] [class*="shadow-[0_6px_6px_1px_rgba(0,0,0,.3)]"] p,
+            [data-theme="dark"] [class*="shadow-[0px_10px_84px_rgba(0,0,0,0.1)]"] p,
+            [data-theme="dark"] [class*="shadow-[0px_8px_10px_0px_rgba(0,0,0,0.20)]"] p,
+            [data-theme="dark"] .dropdown li,
+            [data-theme="dark"] [class*="dropdown"] li,
+            [data-theme="dark"] [class*="absolute z-20 w-max rounded"] li,
+            [data-theme="dark"] [class*="absolute z-10 w-max rounded"] li,
+            [data-theme="dark"] [class*="absolute top-[78px] z-[1]"] li,
+            [data-theme="dark"] [class*="pointer-events-none absolute top-[78px]"] li,
+            [data-theme="dark"] [class*="border-[#F3F3F3] bg-white"] li,
+            [data-theme="dark"] [class*="shadow-[0_6px_6px_1px_rgba(0,0,0,.3)]"] li,
+            [data-theme="dark"] [class*="shadow-[0px_10px_84px_rgba(0,0,0,0.1)]"] li,
+            [data-theme="dark"] [class*="shadow-[0px_8px_10px_0px_rgba(0,0,0,0.20)]"] li {
+                color: #f9fafb !important;
             }
+
+            /* Hover states for dropdown items */
+            [data-theme="dark"] .dropdown a:hover,
+            [data-theme="dark"] [class*="dropdown"] a:hover,
+            [data-theme="dark"] [class*="absolute z-20 w-max rounded"] a:hover,
+            [data-theme="dark"] [class*="absolute z-10 w-max rounded"] a:hover,
+            [data-theme="dark"] [class*="absolute top-[78px] z-[1]"] a:hover,
+            [data-theme="dark"] [class*="pointer-events-none absolute top-[78px]"] a:hover,
+            [data-theme="dark"] [class*="border-[#F3F3F3] bg-white"] a:hover,
+            [data-theme="dark"] [class*="shadow-[0_6px_6px_1px_rgba(0,0,0,.3)]"] a:hover,
+            [data-theme="dark"] [class*="shadow-[0px_10px_84px_rgba(0,0,0,0.1)]"] a:hover,
+            [data-theme="dark"] [class*="shadow-[0px_8px_10px_0px_rgba(0,0,0,0.20)]"] a:hover {
+                background-color: #404040 !important;
+            }
+
+            /* Header text and icons visibility on black background */
+            header .text-gray-900,
+            header .text-gray-700,
+            header .text-gray-600,
+            header .text-gray-500,
+            header .text-black {
+                color: #f9fafb !important;
+            }
+
+            /* Header icons visibility */
+            header .icon-compare,
+            header .icon-users,
+            header .icon-search,
+            header [class^="icon-"],
+            header [class*=" icon-"] {
+                color: #f9fafb !important;
+            }
+
+            /* Search input styling for black header */
+            header input[type="text"] {
+                background-color: #404040 !important;
+                border-color: #555555 !important;
+                color: #f9fafb !important;
+            }
+
+            header input[type="text"]::placeholder {
+                color: #9ca3af !important;
+            }
+
+            header input[type="text"]:focus {
+                border-color: #2563eb !important;
+                background-color: #404040 !important;
+            }
+
+
 
             [data-theme="dark"] .text-black {
                 color: #f9fafb !important;
@@ -249,30 +414,6 @@
 
             [data-theme="dark"] iframe {
                 background-color: #404040 !important;
-            }
-
-            [data-theme="dark"] .dark\\:bg-gray-800 {
-                background-color: #1a1a1a !important;
-            }
-
-            [data-theme="dark"] .dark\\:bg-gray-700 {
-                background-color: #404040 !important;
-            }
-
-            [data-theme="dark"] .dark\\:bg-gray-900 {
-                background-color: #1a1a1a !important;
-            }
-
-            [data-theme="dark"] .dark\\:text-white {
-                color: #f9fafb !important;
-            }
-
-            [data-theme="dark"] .dark\\:text-gray-300 {
-                color: #d1d5db !important;
-            }
-
-            [data-theme="dark"] .dark\\:border-gray-600 {
-                border-color: #555555 !important;
             }
 
             /* Logo styling for both themes */
@@ -734,14 +875,15 @@
             }
 
             .zob-steps-faq__faq-tab:hover {
-                background: rgba(194, 180, 163, 0.1);
+                /* background: rgba(194, 180, 163, 0.1); */
                 color: #ffffff;
             }
 
             .zob-steps-faq__faq-tab--active {
-                background: #c2b4a3;
-                border-color: #c2b4a3;
-                color: #0f0f0f;
+                background: #3d99d6;
+                border-color: #064976;
+                color: #fff;
+                font-weight: 700;
             }
 
             .zob-steps-faq__faq-item.hidden {

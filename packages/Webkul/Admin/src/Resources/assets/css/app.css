@@ -40,6 +40,7 @@
         background: #e0e7ff;
     }
 
+    /* Override Tailwind's global font-family for icons */
     [class^="icon-"],
     [class*=" icon-"] {
         /* use !important to prevent issues with browser extensions that change fonts */
@@ -49,13 +50,20 @@
         font-weight: normal;
         font-variant: normal;
         text-transform: none;
-        line-height: 1;
         color: #6b7280;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1;
         
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        line-height: 1 !important;
+    }
+
+    /* Even more specific selectors to ensure font-family is not overridden */
+    [class^="icon-"]::before,
+    [class*=" icon-"]::before {
+        font-family: "bagisto-admin" !important;
     }
 
     html.dark [class^="icon-"],
@@ -385,161 +393,6 @@
 
     .icon-play:before {
         content: "\e945";
-    }
-      
-    p {
-        @apply text-[14px] !leading-[17px];
-    }
-
-    input,
-    textarea,
-    select {
-        @apply outline-none;
-    }
-
-    .primary-button {
-        @apply bg-blue-600 border border-blue-700 cursor-pointer flex focus:opacity-[0.9] font-semibold gap-x-1 hover:opacity-[0.9] items-center place-content-center px-3 py-1.5 rounded-md text-gray-50 transition-all;
-    }
-
-    .secondary-button {
-        @apply flex cursor-pointer place-content-center items-center gap-x-1 whitespace-nowrap rounded-md border-2 border-blue-600 bg-white px-3 py-1.5 font-semibold text-blue-600 transition-all hover:bg-[#eff6ff61] focus:bg-[#eff6ff61] dark:border-gray-400 dark:bg-gray-800 dark:text-white dark:hover:opacity-80;
-    }
-
-    .transparent-button {
-        @apply flex cursor-pointer appearance-none place-content-center items-center gap-x-1 whitespace-nowrap rounded-md border-2 border-transparent px-3 py-1.5 font-semibold text-gray-600 transition-all marker:shadow hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950;
-    }
-
-    .journal-scroll::-webkit-scrollbar {
-        width: 14px;
-        cursor: pointer;
-        display: none;
-    }
-
-    .journal-scroll::-webkit-scrollbar-track {
-        background-color: #fff;
-        cursor: pointer;
-        border-radius: 12px;
-        border: 1px solid #e9e9e9;
-    }
-
-    .journal-scroll::-webkit-scrollbar-thumb {
-        cursor: pointer;
-        background-color: #e9e9e9;
-        border-radius: 12px;
-        border: 3px solid transparent;
-        background-clip: content-box;
-    }
-
-    .custom-select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background: transparent;
-        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-        background-repeat: no-repeat;
-        background-position-x: calc(100% - 10px);
-        background-position-y: 50%;
-    }
-    .dark .custom-select{
-        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    }
-
-    [dir="rtl"] .custom-select {
-        background-position-x: calc(100% - (100% - 10px));
-    }
-
-    .label-pending,
-    .label-processing,
-    .label-closed,
-    .label-canceled,
-    .label-info,
-    .label-fraud,
-    .label-pending_payment,
-    .label-completed,
-    .label-active {
-        @apply text-[12px] text-white font-semibold py-px px-1.5 max-w-max rounded-[35px];
-    }
-
-	.label-pending,
-    .label-pending_payment {
-		@apply bg-yellow-500;
-	}
-
-	.label-processing{
-		@apply bg-cyan-600;
-    }
-
-	.label-completed,
-    .label-active {
-		@apply bg-green-600;
-	}
-
-	.label-closed {
-		@apply bg-indigo-600;
-	}
-
-    .label-canceled,
-    .label-fraud {
-        @apply bg-rose-600;
-    }
-
-    .label-info {
-        @apply bg-slate-400;
-    }
-
-    /* status */
-    .status-enable {
-        @apply text-green-600;
-    }
-
-    .status-disable {
-        @apply text-red-600;
-    }
-
-	.icon-star-fill:before {
-        content: "\e938";
-        color: #ffb600;
-    }
-
-    .shimmer {
-        animation-duration: 2.2s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-name: skeleton;
-        animation-timing-function: linear;
-        background: linear-gradient(
-            to right,
-            #f6f6f6 8%,
-            #f0f0f0 18%,
-            #f6f6f6 33%
-        );
-        background-size: 1250px 100%;
-    }
-
-    .dark .shimmer {
-        background: linear-gradient(
-            to right,
-            #1f2937 8%,
-            #1a2232 18%,
-            #1f2937 33%
-        );
-    }
-
-    @keyframes skeleton {
-        0% {
-            @apply bg-[-1250px_0];
-        }
-
-        100% {
-            @apply bg-[1250px_0];
-        }
-    }
-
-    .required:after {
-        @apply content-['*'];
-    }
-
-    .CodeMirror {
-        @apply !h-[calc(100vh-367px)]
     }
 }
 

@@ -38,5 +38,32 @@ class AppServiceProvider extends ServiceProvider
         ParallelTesting::setUpTestDatabase(function (string $database, int $token) {
             Artisan::call('db:seed');
         });
+
+        // Manually register storage routes for Laravel 11
+        $this->registerStorageRoutes();
+    }
+
+    /**
+     * Register storage routes manually.
+     */
+    protected function registerStorageRoutes(): void
+    {
+        $this->app->booted(function () {
+            $config = config('filesystems.disks.public');
+            
+            if ($config && ($config['serve'] ?? false)) {
+                $uri = isset($config['url'])
+                    ? rtrim(parse_url($config['url'])['path'], '/')
+                    : '/storage';
+
+                \Illuminate\Support\Facades\Route::get($uri.'/{path}', function (\Illuminate\Http\Request $request, string $path) use ($config) {
+                    return (new \Illuminate\Filesystem\ServeFile(
+                        'public',
+                        $config,
+                        app()->isProduction()
+                    ))($request, $path);
+                })->where('path', '.*')->name('storage.public');
+            }
+        });
     }
 }

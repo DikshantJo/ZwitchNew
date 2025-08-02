@@ -57,7 +57,7 @@
 
     <!-- Breadcrumbs -->
     @if ((core()->getConfigData('general.general.breadcrumbs.shop')))
-        <div class="flex justify-center px-7 max-lg:hidden">
+        <div class="flex justify-start px-16 max-lg:hidden">
             <x-shop::breadcrumbs
                 name="product"
                 :entity="$product"
@@ -276,7 +276,7 @@
                 <div class="zob-steps-faq__steps-header">
                     <h2 class="zob-steps-faq__steps-title">Navigating the StyleLoom Fashion Journey.</h2>
                     <p class="zob-steps-faq__steps-subtitle">At StyleLoom, we've designed a straightforward shopping experience to make fashion accessible.</p>
-                    <div class="zob-steps-faq__steps-decoration">
+                    <div class="zob-steps-faq__steps-decoration" style="display: none;">
                         <svg width="446" height="446" viewBox="0 0 446 446" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <clipPath id="steps-clip">

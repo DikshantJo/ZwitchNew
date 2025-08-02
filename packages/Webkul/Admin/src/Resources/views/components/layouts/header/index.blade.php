@@ -15,14 +15,14 @@
         <a href="{{ route('admin.dashboard.index') }}" class="flex-shrink-0">
             @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))
                 <img
-                    class="h-8 w-auto sm:h-10"
+                    class="h-7 w-auto sm:h-9"
                     src="{{ Storage::url($logo) }}"
                     alt="{{ config('app.name') }}"
                 />
             @else
                 <img
                     src="{{ request()->cookie('dark_mode') ? bagisto_asset('images/dark-logo.svg') : bagisto_asset('images/logo.svg') }}"
-                    class="h-8 w-auto sm:h-10"
+                    class="h-7 w-auto sm:h-9"
                     id="logo-image"
                     alt="{{ config('app.name') }}"
                 />
@@ -151,13 +151,13 @@
             @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))
                 <img
                     src="{{ Storage::url($logo) }}"
-                    class="h-8 w-auto sm:h-10"
+                    class="h-7 w-auto sm:h-9"
                     alt="{{ config('app.name') }}"
                 />
             @else
                 <img
                     src="{{ request()->cookie('dark_mode') ? bagisto_asset('images/dark-logo.svg') : bagisto_asset('images/logo.svg') }}"
-                    class="h-8 w-auto sm:h-10"
+                    class="h-7 w-auto sm:h-9"
                     id="logo-image"
                     alt="{{ config('app.name') }}"
                 />

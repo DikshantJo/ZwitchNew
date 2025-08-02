@@ -6,7 +6,7 @@
 @endPush
 
 <x-shop::layouts
-    :has-header="false"
+    :has-header="true"
     :has-feature="false"
     :has-footer="false"
 >
@@ -15,7 +15,7 @@
         @lang('shop::app.customers.forgot-password.title')
     </x-slot>
 
-    <div class="container mt-20 max-1180:px-5 max-md:mt-12">
+    <div class="container mt-8 max-1180:px-5 max-md:mt-6">
         {!! view_render_event('bagisto.shop.customers.forget_password.logo.before') !!}
 
         <!-- Company Logo -->
@@ -30,6 +30,7 @@
                     alt="{{ config('app.name') }}"
                     width="131"
                     height="29"
+                    style="background: #fff;border-radius: 30px;padding:10px"
                 >
             </a>
         </div>
@@ -38,13 +39,13 @@
 
         <!-- Form Container -->
         <div
-            class="m-auto w-full max-w-[870px] rounded-xl border border-zinc-200 p-16 px-[90px] max-md:px-8 max-md:py-8 max-sm:border-none max-sm:p-0"
+            class="m-auto w-full max-w-[870px] rounded-xl p-8 px-[90px] max-md:px-8 max-md:py-8 max-sm:border-none max-sm:p-0"
         >
-            <h1 class="font-dmserif text-4xl max-md:text-3xl max-sm:text-xl">
+            <h1 class="font-dmserif text-4xl max-md:text-3xl max-sm:text-xl text-center">
                 @lang('shop::app.customers.forgot-password.title')
             </h1>
 
-            <p class="mt-4 text-xl text-zinc-500 max-sm:mt-0 max-sm:text-sm">
+            <p class="mt-4 text-xl text-zinc-500 max-sm:mt-0 max-sm:text-sm text-center">
                 @lang('shop::app.customers.forgot-password.forgot-password-text')
             </p>
 
@@ -111,10 +112,10 @@
             {!! view_render_event('bagisto.shop.customers.forget_password.after') !!}
 
         </div>
-
+<!-- 
         <p class="mb-4 mt-8 text-center text-xs text-zinc-500">
             @lang('shop::app.customers.forgot-password.footer', ['current_year'=> date('Y') ])
-        </p>
+        </p> -->
     </div>
 
     @push('scripts')

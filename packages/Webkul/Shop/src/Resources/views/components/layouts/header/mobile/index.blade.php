@@ -21,20 +21,20 @@
         </div>
 
         <!-- Centered Logo Section -->
-        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg">
+        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg brand-logo-container">
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.before') !!}
 
             <a
                 href="{{ route('shop.home.index') }}"
-                class="max-h-[30px]"
+                class="max-h-[28px]"
                 aria-label="@lang('shop::app.components.layouts.header.mobile.bagisto')"
             >
                 <img
                     src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                     alt="{{ config('app.name') }}"
-                    width="131"
-                    height="29"
-                    class="rounded-full object-cover"
+                    width="110"
+                    height="24"
+                    class="rounded-full object-cover h-7 w-auto brand-logo"
                     style="border-radius: 50%;"
                 >
             </a>
@@ -254,8 +254,9 @@
                         <img
                             src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                             alt="{{ config('app.name') }}"
-                            width="131"
-                            height="29"
+                            width="110"
+                            height="24"
+                            class="h-7 w-auto"
                         >
                     </a>
                 </div>
@@ -263,7 +264,7 @@
 
             <x-slot:content class="!p-0">
                 <!-- Account Profile Hero Section -->
-                <div class="border-b border-zinc-200 p-4">
+                <div class="border-b border-zinc-200 p-4" style="display:none;">
                     <div class="grid grid-cols-[auto_1fr] items-center gap-4 rounded-xl border border-zinc-200 p-2.5">
                         <div>
                             <img
@@ -271,17 +272,6 @@
                                 class="h-[60px] w-[60px] rounded-full max-md:rounded-full"
                             >
                         </div>
-
-                        @guest('customer')
-                            <a
-                                href="{{ route('shop.customer.session.create') }}"
-                                class="flex text-base font-medium"
-                            >
-                                @lang('shop::app.components.layouts.header.mobile.login')
-
-                                <i class="icon-double-arrow text-2xl ltr:ml-2.5 rtl:mr-2.5"></i>
-                            </a>
-                        @endguest
 
                         @auth('customer')
                             <div class="flex flex-col justify-between gap-2.5 max-md:gap-0">
@@ -295,16 +285,38 @@
 
                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.categories.before') !!}
 
-                <!-- Mobile category view -->
-                <v-mobile-category ref="mobileCategory"></v-mobile-category>
+                <!-- Mobile category view with bottom padding for login button -->
+                <div class="pb-20">
+                    <v-mobile-category ref="mobileCategory"></v-mobile-category>
+                </div>
 
                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.categories.after') !!}
+
+                <!-- Login Section - Fixed at Bottom -->
+                @guest('customer')
+                    <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-zinc-200 bg-white px-4 py-3">
+                        <a
+                            href="{{ route('shop.customer.session.create') }}"
+                            class="flex items-center justify-between rounded-xl border border-zinc-200 p-3 transition-colors duration-200 hover:bg-gray-50"
+                        >
+                            <div class="flex items-center gap-3">
+                                <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                                    <i class="icon-users text-lg text-gray-600"></i>
+                                </div>
+                                <span class="text-base font-medium text-black">
+                                    @lang('shop::app.components.layouts.header.mobile.login')
+                                </span>
+                            </div>
+                            <i class="icon-double-arrow text-2xl text-gray-600"></i>
+                        </a>
+                    </div>
+                @endguest
             </x-slot>
 
             <x-slot:footer>
                 <!-- Localization & Currency Section -->
                 @if(core()->getCurrentChannel()->locales()->count() > 1 || core()->getCurrentChannel()->currencies()->count() > 1 )
-                    <div class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-zinc-200 bg-white px-5 ltr:left-0 rtl:right-0">
+                    <div class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-zinc-200 bg-white px-5 ltr:left-0 rtl:right-0" :class="{'bottom-16': !isLoggedIn}">
                         <!-- Filter Drawer -->
                         <x-shop::drawer
                             position="bottom"
@@ -540,6 +552,12 @@
 
         app.component('v-mobile-drawer', {
             template: '#v-mobile-drawer-template',
+
+            data() {
+                return {
+                    isLoggedIn: {{ auth()->check() ? 'true' : 'false' }}
+                }
+            },
 
             methods: {
                 onDrawerClose() {

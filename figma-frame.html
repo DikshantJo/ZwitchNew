@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Frame Design</title>
+    <style>
+        body {
+            background-color: transparent;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-image {
+            width: 96%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .hero-image {
+                width: 95%;
+                height: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://via.placeholder.com/1321x853/4a90e2/ffffff?text=Your+Image+Here" alt="Hero Image" class="hero-image">
+</body>
+</html> 

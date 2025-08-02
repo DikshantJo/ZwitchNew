@@ -1,7 +1,7 @@
 /node_modules
 /public/hot
-/public/storage
-/storage/*.key
+# /public/storage
+# /storage/*.key
 /vendor
 .env
 .env.backup
@@ -22,23 +22,23 @@ yarn-error.log
 /storage/framework/cache/*
 /storage/framework/sessions/*
 /storage/framework/views/*
-/storage/app/public/*
-/storage/debugbar/*
+# /storage/app/public/*
+# /storage/debugbar/*
 
 # Keep .gitkeep files
 !/storage/logs/.gitkeep
 !/storage/framework/cache/.gitkeep
 !/storage/framework/sessions/.gitkeep
 !/storage/framework/views/.gitkeep
-!/storage/app/public/.gitkeep
+# !/storage/app/public/.gitkeep
 
 # Bagisto specific
 /public/themes/shop/default/build/*
 /public/themes/admin/default/build/*
 /public/build/*
-/public/storage/*
-/storage/app/public/*
-/storage/debugbar/*
+# /public/storage/*
+# /storage/app/public/*
+# /storage/debugbar/*
 
 # Keep manifest files
 !/public/themes/shop/default/build/manifest.json

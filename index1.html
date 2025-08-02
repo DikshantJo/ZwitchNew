@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Banner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .zob-hero-banner {
+            width: 100%;
+            height: 100vh;
+            background: transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zob-hero-banner__container {
+            width: 95%;
+            height: 95%;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .zob-hero-banner__image { 
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .zob-hero-banner__gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+            border-radius: 16px;
+        }
+
+        .zob-hero-banner__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 24px;
+            text-align: center;
+            min-width: 200px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .zob-hero-banner__title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .zob-hero-banner__description {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 14px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .zob-hero-banner__cta-button {
+            font-family: 'Urbanist', sans-serif;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        /* Promotional Grid Section */
+        .zob-promo-grid {
+            width: 100%;
+            min-height: 100vh;
+            background: transparent;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zob-promo-grid__container {
+            width: 95%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: auto;
+        }
+
+        .zob-promo-grid__item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: transparent;
+            height: 75vh;
+        }
+
+        .zob-promo-grid__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .zob-promo-grid__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 30px 20px 20px;
+            color: white;
+        }
+
+        .zob-promo-grid__subtitle {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+
+        .zob-promo-grid__title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .zob-promo-grid__button {
+            font-family: 'Urbanist', sans-serif;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Text Section Component */
+        .zob-text-section {
+            width: 100%;
+            height: 90vh;
+            background: #1a1a1a;
+            border-radius: 24px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zob-text-section__container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .zob-text-section__description {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+            color: #ffffff;
+            text-align: center;
+            max-width: 634px;
+            margin: 0 auto;
+            padding: 0 0 20px 0;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-text-section__heading {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 95px;
+            font-weight: 700;
+            line-height: 1;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 20px 0;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-text-section__heading-highlight {
+            color: #3e9ad9;
+        }
+
+        .zob-text-section__content-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 20px 0 0 0;
+        }
+
+        .zob-text-section__content-text {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+            color: #ffffff;
+            max-width: 634px;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-text-section__content-left {
+            text-align: left;
+        }
+
+        .zob-text-section__content-right {
+            text-align: right;
+        }
+
+        /* Tablet responsive design */
+        @media (max-width: 1024px) {
+            .zob-hero-banner__container {
+                width: 98%;
+                height: 90%;
+            }
+
+            .zob-hero-banner__content {
+                padding: 20px;
+                min-width: 180px;
+                max-width: 350px;
+            }
+
+            .zob-hero-banner__title {
+                font-size: 22px;
+            }
+
+            .zob-hero-banner__description {
+                font-size: 13px;
+                margin-bottom: 18px;
+            }
+
+            .zob-hero-banner__cta-button {
+                padding: 11px 22px;
+                font-size: 15px;
+            }
+
+            .zob-promo-grid__container {
+                width: 98%;
+                height: auto;
+                gap: 15px;
+            }
+
+            .zob-promo-grid__item {
+                height: 75vh;
+            }
+
+            .zob-promo-grid__title {
+                font-size: 20px;
+            }
+
+            .zob-text-section {
+                height: 80vh;
+                padding: 20px 0;
+            }
+
+            .zob-text-section__heading {
+                font-size: 70px;
+            }
+
+            .zob-text-section__description,
+            .zob-text-section__content-text {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .zob-text-section__content-row {
+                gap: 30px;
+            }
+
+            .zob-feature-grid {
+                padding: 30px 15px;
+            }
+
+            .zob-feature-grid__container {
+                width: 98%;
+            }
+
+            .zob-feature-grid__header {
+                margin-bottom: 40px;
+                padding: 0 40px 0 40px;
+            }
+
+            .zob-feature-grid__header::before {
+                left: 40px;
+                right: 150px;
+            }
+
+            .zob-feature-grid__title {
+                font-size: 42px;
+            }
+
+            .zob-feature-grid__subtitle {
+                font-size: 17px;
+            }
+
+            .zob-feature-grid__cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0;
+            }
+
+            .zob-feature-grid__card {
+                padding: 50px 40px;
+            }
+
+            .zob-feature-grid__card:nth-child(2n)::after {
+                display: none;
+            }
+
+            .zob-feature-grid__card:nth-child(n+3)::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                border-top: 2px dashed #333;
+                pointer-events: none;
+            }
+
+            .zob-feature-grid__card-title {
+                font-size: 22px;
+            }
+
+            .zob-feature-grid__card-description {
+                font-size: 17px;
+            }
+
+            .zob-steps-faq {
+                padding: 30px 15px;
+                margin: 30px 0;
+            }
+
+            .zob-steps-faq__steps-header {
+                padding: 60px 40px 60px 40px;
+            }
+
+            .zob-steps-faq__steps-title {
+                font-size: 42px;
+                margin-bottom: 25px;
+            }
+
+            .zob-steps-faq__steps-subtitle {
+                font-size: 17px;
+            }
+
+            .zob-steps-faq__steps-decoration {
+                width: 300px;
+                height: 300px;
+                right: -100px;
+            }
+
+            .zob-steps-faq__steps-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .zob-steps-faq__steps-card {
+                padding: 40px 30px;
+            }
+
+            .zob-steps-faq__steps-card:nth-child(2n)::after {
+                display: none;
+            }
+
+            .zob-steps-faq__steps-card:nth-child(n+3)::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                border-top: 2px dashed #333;
+                pointer-events: none;
+            }
+
+            .zob-steps-faq__steps-step-number {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .zob-steps-faq__steps-card-title {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .zob-steps-faq__steps-card-description {
+                font-size: 16px;
+            }
+        }
+
+        /* Mobile responsive design */
+        @media (max-width: 768px) {
+            .zob-hero-banner__container {
+                width: 100%;
+                height: 85%;
+                border-radius: 12px;
+            }
+
+            .zob-hero-banner__gradient {
+                border-radius: 12px;
+            }
+
+            .zob-hero-banner__content {
+                padding: 16px;
+                min-width: 160px;
+                max-width: 300px;
+            }
+
+            .zob-hero-banner__title {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+
+            .zob-hero-banner__description {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+
+            .zob-hero-banner__cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+                max-width: 180px;
+            }
+
+            .zob-promo-grid {
+                padding: 20px 15px;
+            }
+
+            .zob-promo-grid__container {
+                width: 100%;
+                grid-template-columns: 1fr;
+                height: auto;
+                gap: 15px;
+            }
+
+            .zob-promo-grid__item {
+                height: 75vh;
+            }
+
+            .zob-promo-grid__overlay {
+                padding: 20px 15px 15px;
+            }
+
+            .zob-promo-grid__subtitle {
+                font-size: 12px;
+            }
+
+            .zob-promo-grid__title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .zob-promo-grid__button {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            .zob-text-section {
+                height: 80vh;
+                padding: 15px 0;
+                margin: 20px 0;
+            }
+
+            .zob-text-section__container {
+                padding: 0 15px;
+            }
+
+            .zob-text-section__heading {
+                font-size: 50px;
+                padding: 15px 0;
+            }
+
+            .zob-text-section__description,
+            .zob-text-section__content-text {
+                font-size: 14px;
+                line-height: 22px;
+            }
+
+            .zob-text-section__content-row {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 0 0 0;
+            }
+
+            .zob-text-section__content-left,
+            .zob-text-section__content-right {
+                text-align: center;
+            }
+
+            .zob-feature-grid {
+                padding: 20px 15px;
+                min-height: auto;
+            }
+
+            .zob-feature-grid__container {
+                width: 100%;
+            }
+
+            .zob-feature-grid__header {
+                margin-bottom: 30px;
+                padding: 0 20px;
+            }
+
+            .zob-feature-grid__header::before {
+                left: 20px;
+                right: 20px;
+            }
+
+            .zob-feature-grid__title {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .zob-feature-grid__subtitle {
+                font-size: 16px;
+            }
+
+            .zob-feature-grid__cards {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .zob-feature-grid__card {
+                padding: 40px 30px;
+            }
+
+            .zob-feature-grid__card::after {
+                display: none;
+            }
+
+            .zob-feature-grid__card:nth-child(n+2)::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                border-top: 2px dashed #333;
+                pointer-events: none;
+            }
+
+            .zob-feature-grid__icon-container {
+                margin-bottom: 30px;
+            }
+
+            .zob-feature-grid__card-title {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            .zob-feature-grid__card-description {
+                font-size: 16px;
+            }
+
+            .zob-feature-grid__card-decoration {
+                width: 120px;
+                height: 120px;
+                top: -20px;
+                right: -30px;
+            }
+
+            .zob-steps-faq__steps-header {
+                padding: 40px 20px;
+            }
+
+            .zob-steps-faq__steps-title {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .zob-steps-faq__steps-subtitle {
+                font-size: 16px;
+            }
+
+            .zob-steps-faq__steps-decoration {
+                width: 200px;
+                height: 200px;
+                right: -50px;
+            }
+
+            .zob-steps-faq__steps-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .zob-steps-faq__steps-card {
+                padding: 30px 20px;
+            }
+
+            .zob-steps-faq__steps-card::after {
+                display: none;
+            }
+
+            .zob-steps-faq__steps-card:nth-child(n+2)::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                border-top: 2px dashed #333;
+                pointer-events: none;
+            }
+
+            .zob-steps-faq__steps-step-number {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .zob-steps-faq__steps-card-title {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            .zob-steps-faq__steps-card-description {
+                font-size: 15px;
+            }
+
+            .zob-steps-faq__faq-header {
+                padding: 40px 20px;
+            }
+
+            .zob-steps-faq__faq-title {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .zob-steps-faq__faq-subtitle {
+                font-size: 16px;
+            }
+
+            .zob-steps-faq__faq-decoration {
+                width: 200px;
+                height: 200px;
+                right: -50px;
+            }
+
+            .zob-steps-faq__faq-tabs {
+                gap: 8px;
+                margin-top: 20px;
+            }
+
+            .zob-steps-faq__faq-tab {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+
+            .zob-steps-faq__faq-question {
+                padding: 15px 18px;
+            }
+
+            .zob-steps-faq__faq-question-text {
+                font-size: 15px;
+            }
+
+            .zob-steps-faq__faq-answer {
+                padding: 0 18px 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .zob-hero-banner__container {
+                height: 80%;
+                border-radius: 8px;
+            }
+
+            .zob-hero-banner__gradient {
+                border-radius: 8px;
+            }
+
+            .zob-hero-banner__content {
+                padding: 12px;
+                min-width: 140px;
+                max-width: 250px;
+            }
+
+            .zob-hero-banner__title {
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+
+            .zob-hero-banner__description {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+
+            .zob-hero-banner__cta-button {
+                padding: 8px 16px;
+                font-size: 13px;
+                max-width: 160px;
+            }
+
+            .zob-promo-grid {
+                padding: 15px 10px;
+            }
+
+            .zob-promo-grid__item {
+                height: 50vh;
+            }
+
+            .zob-promo-grid__overlay {
+                padding: 15px 10px 10px;
+            }
+
+            .zob-promo-grid__subtitle {
+                font-size: 11px;
+            }
+
+            .zob-promo-grid__title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+
+            .zob-promo-grid__button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .zob-text-section {
+                height: 80vh;
+                padding: 10px 0;
+            }
+
+            .zob-text-section__container {
+                padding: 0 10px;
+            }
+
+            .zob-text-section__heading {
+                font-size: 35px;
+                padding: 10px 0;
+            }
+
+            .zob-text-section__description,
+            .zob-text-section__content-text {
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            .zob-text-section__content-row {
+                gap: 15px;
+                padding: 10px 0 0 0;
+            }
+
+            .zob-feature-grid {
+                padding: 15px 10px;
+            }
+
+            .zob-feature-grid__header {
+                margin-bottom: 25px;
+                padding: 0 15px;
+            }
+
+            .zob-feature-grid__header::before {
+                left: 15px;
+                right: 15px;
+            }
+
+            .zob-feature-grid__title {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .zob-feature-grid__subtitle {
+                font-size: 14px;
+            }
+
+            .zob-feature-grid__card {
+                padding: 30px 20px;
+            }
+
+            .zob-feature-grid__icon-container {
+                margin-bottom: 25px;
+            }
+
+            .zob-feature-grid__icon-bg {
+                width: 56px;
+                height: 56px;
+                padding: 12px;
+            }
+
+            .zob-feature-grid__icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .zob-feature-grid__card-title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .zob-feature-grid__card-description {
+                font-size: 14px;
+            }
+
+            .zob-feature-grid__card-decoration {
+                width: 80px;
+                height: 80px;
+                top: -15px;
+                right: -20px;
+            }
+
+            .zob-steps-faq__steps-header {
+                padding: 30px 15px;
+            }
+
+            .zob-steps-faq__steps-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .zob-steps-faq__steps-subtitle {
+                font-size: 14px;
+            }
+
+            .zob-steps-faq__steps-decoration {
+                width: 150px;
+                height: 150px;
+                right: -30px;
+            }
+
+            .zob-steps-faq__steps-card {
+                padding: 25px 15px;
+            }
+
+            .zob-steps-faq__steps-step-number {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .zob-steps-faq__steps-card-title {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            .zob-steps-faq__steps-card-description {
+                font-size: 13px;
+            }
+
+            .zob-steps-faq__faq-header {
+                padding: 30px 15px;
+            }
+
+            .zob-steps-faq__faq-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .zob-steps-faq__faq-subtitle {
+                font-size: 14px;
+            }
+
+            .zob-steps-faq__faq-decoration {
+                width: 150px;
+                height: 150px;
+                right: -30px;
+            }
+
+            .zob-steps-faq__faq-tabs {
+                gap: 6px;
+                margin-top: 15px;
+            }
+
+            .zob-steps-faq__faq-tab {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .zob-steps-faq__faq-question {
+                padding: 12px 15px;
+            }
+
+            .zob-steps-faq__faq-question-text {
+                font-size: 13px;
+            }
+
+            .zob-steps-faq__faq-answer {
+                padding: 0 15px 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* Feature Grid Section */
+        .zob-feature-grid {
+            width: 100%;
+            min-height: 100vh;
+            background: transparent;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zob-feature-grid__container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .zob-feature-grid__container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px dashed #333;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .zob-feature-grid__header {
+            text-align: left;
+            margin-bottom: 60px;
+            padding: 0 80px 0 80px;
+            position: relative;
+        }
+
+        .zob-feature-grid__header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 80px;
+            right: 300px;
+            height: 2px;
+            border-bottom: 2px dashed #333;
+            pointer-events: none;
+        }
+
+        .zob-feature-grid__title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-feature-grid__subtitle {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #676665;
+            line-height: 1.5;
+            max-width: 634px;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-feature-grid__cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .zob-feature-grid__card {
+            position: relative;
+            background: transparent;
+            padding: 60px;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .zob-feature-grid__card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 2px;
+            border-right: 2px dashed #333;
+            pointer-events: none;
+        }
+
+        .zob-feature-grid__card:nth-child(3n)::after {
+            display: none;
+        }
+
+        .zob-feature-grid__card:nth-child(n+4)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            border-top: 2px dashed #333;
+            pointer-events: none;
+        }
+
+        .zob-feature-grid__icon-container {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .zob-feature-grid__icon-border {
+            position: relative;
+            display: inline-block;
+            padding: 14px;
+            border-radius: 100px;
+        }
+
+        .zob-feature-grid__line {
+            position: absolute;
+            background: #333;
+            pointer-events: none;
+        }
+
+        .zob-feature-grid__line--right {
+            top: 50%;
+            right: 0;
+            width: 15px;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+
+        .zob-feature-grid__line--left {
+            top: 50%;
+            left: 0;
+            width: 15px;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+
+        .zob-feature-grid__line--top {
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 15px;
+            transform: translateX(-50%);
+        }
+
+        .zob-feature-grid__line--bottom {
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            height: 15px;
+            transform: translateX(-50%);
+        }
+
+        .zob-feature-grid__icon-bg {
+            background: #1a1a1a;
+            border-radius: 64px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 66px;
+            height: 66px;
+        }
+
+        .zob-feature-grid__icon {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+
+        .zob-feature-grid__card-content {
+            margin-bottom: 20px;
+        }
+
+        .zob-feature-grid__card-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .zob-feature-grid__card-description {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #81807e;
+            line-height: 1.5;
+        }
+
+        .zob-feature-grid__card-decoration {
+            position: absolute;
+            top: -35px;
+            right: -53px;
+            width: 246px;
+            height: 246px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .zob-feature-grid__card-decoration svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Steps & FAQ Section */
+        .zob-steps-faq {
+            width: 100%;
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            margin: 40px 0;
+        }
+
+        .zob-steps-faq__container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Steps Section */
+        .zob-steps-faq__steps {
+            margin-bottom: 80px;
+        }
+
+        .zob-steps-faq__steps-header {
+            position: relative;
+            padding: 80px 80px 80px 80px;
+            margin-bottom: 0;
+        }
+
+        .zob-steps-faq__steps-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.63px;
+            max-width: 634px;
+        }
+
+        .zob-steps-faq__steps-subtitle {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #676665;
+            line-height: 1.5;
+            max-width: 634px;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-steps-faq__steps-decoration {
+            position: absolute;
+            top: 50%;
+            right: -165px;
+            transform: translateY(-50%);
+            width: 446px;
+            height: 446px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .zob-steps-faq__steps-decoration svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .zob-steps-faq__steps-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .zob-steps-faq__steps-card {
+            position: relative;
+            background: transparent;
+            padding: 50px;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .zob-steps-faq__steps-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 2px;
+            border-right: 2px dashed #333;
+            pointer-events: none;
+        }
+
+        .zob-steps-faq__steps-step-number {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #676665;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .zob-steps-faq__steps-card-content {
+            margin-bottom: 0;
+        }
+
+        .zob-steps-faq__steps-card-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .zob-steps-faq__steps-card-description {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #81807e;
+            line-height: 1.5;
+        }
+
+        /* Landscape orientation for mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .zob-hero-banner__container {
+                height: 90%;
+            }
+
+            .zob-hero-banner__content {
+                padding: 12px;
+            }
+
+            .zob-hero-banner__title {
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+
+            .zob-hero-banner__description {
+                font-size: 11px;
+                margin-bottom: 10px;
+            }
+
+            .zob-hero-banner__cta-button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .zob-promo-grid__container {
+                grid-template-columns: repeat(2, 1fr);
+                height: auto;
+            }
+
+            .zob-promo-grid__item {
+                height: 75vh;
+            }
+
+            .zob-text-section {
+                height: 80vh;
+            }
+
+            .zob-text-section__heading {
+                font-size: 40px;
+            }
+
+            .zob-text-section__description,
+            .zob-text-section__content-text {
+                font-size: 13px;
+            }
+
+            .zob-feature-grid__cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .zob-feature-grid__card {
+                padding: 40px 30px;
+            }
+
+            .zob-feature-grid__title {
+                font-size: 36px;
+            }
+
+            .zob-feature-grid__subtitle {
+                font-size: 16px;
+            }
+
+            .zob-steps-faq__steps-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .zob-steps-faq__steps-title {
+                font-size: 36px;
+            }
+
+            .zob-steps-faq__steps-subtitle {
+                font-size: 15px;
+            }
+
+            .zob-steps-faq__steps-decoration {
+                width: 250px;
+                height: 250px;
+                right: -80px;
+            }
+
+            .zob-steps-faq__faq-header {
+                padding: 60px 40px 60px 40px;
+            }
+
+            .zob-steps-faq__faq-title {
+                font-size: 42px;
+                margin-bottom: 25px;
+            }
+
+            .zob-steps-faq__faq-subtitle {
+                font-size: 17px;
+            }
+
+            .zob-steps-faq__faq-decoration {
+                width: 300px;
+                height: 300px;
+                right: -100px;
+            }
+
+            .zob-steps-faq__faq-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .zob-steps-faq__faq-tabs {
+                gap: 10px;
+                margin-top: 25px;
+            }
+
+            .zob-steps-faq__faq-tab {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+
+            .zob-steps-faq__faq-question {
+                padding: 18px 20px;
+            }
+
+            .zob-steps-faq__faq-question-text {
+                font-size: 16px;
+            }
+
+            .zob-steps-faq__faq-answer {
+                padding: 0 20px 18px;
+                font-size: 15px;
+            }
+
+            .zob-steps-faq__faq-content {
+                flex-direction: row;
+                gap: 30px;
+            }
+
+            .zob-steps-faq__faq-decoration {
+                width: 250px;
+                height: 250px;
+                right: -80px;
+            }
+        }
+
+        /* FAQ Section */
+        .zob-steps-faq__faq {
+            border-top: 2px dashed #333;
+            padding-top: 80px;
+        }
+
+        .zob-steps-faq__faq-header {
+            text-align: left;
+            margin-bottom: 60px;
+            padding: 0px;
+            position: relative;
+            max-width: 600px;
+        }
+
+        .zob-steps-faq__faq-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 80px;
+            right: 300px;
+            height: 2px;
+            border-bottom: 2px dashed #333;
+            pointer-events: none;
+            display: none;
+        }
+
+        .zob-steps-faq__faq-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-steps-faq__faq-subtitle {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #676665;
+            line-height: 1.5;
+            max-width: 634px;
+            letter-spacing: 0.63px;
+        }
+
+        .zob-steps-faq__faq-decoration {
+            position: absolute;
+            top: 50%;
+            right: -165px;
+            transform: translateY(-50%);
+            width: 446px;
+            height: 446px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .zob-steps-faq__faq-decoration svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .zob-steps-faq__faq-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .zob-steps-faq__faq-column {
+            flex: 1;
+        }
+
+        .zob-steps-faq__faq-item {
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .zob-steps-faq__faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .zob-steps-faq__faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            cursor: pointer;
+            background: #2a2a2a;
+            border-bottom: 1px solid #333;
+        }
+
+        .zob-steps-faq__faq-question-text {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .zob-steps-faq__faq-toggle {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #676665;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .zob-steps-faq__faq-answer {
+            padding: 0 25px 20px;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #81807e;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .zob-steps-faq__faq-item.active .zob-steps-faq__faq-answer {
+            display: block;
+        }
+
+        .zob-steps-faq__faq-item.active .zob-steps-faq__faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .zob-steps-faq__faq-tabs {
+            display: flex;
+            gap: 14px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .zob-steps-faq__faq-tab {
+            background: transparent;
+            border: 2px dashed #333;
+            border-radius: 12px;
+            padding: 18px 24px;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #b3b3b2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .zob-steps-faq__faq-tab:hover {
+            background: rgba(194, 180, 163, 0.1);
+            color: #ffffff;
+        }
+
+        .zob-steps-faq__faq-tab--active {
+            background: #c2b4a3;
+            border-color: #c2b4a3;
+            color: #0f0f0f;
+        }
+
+        .zob-steps-faq__faq-item.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="zob-hero-banner">
+        <div class="zob-hero-banner__container">
+            <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2189,c_limit/5c068c3b-343e-4192-9a63-3ea9b0379c11/nike-just-do-it.png" alt="Hero Banner Image" class="zob-hero-banner__image">
+            <div class="zob-hero-banner__gradient"></div>
+        </div>
+        <div class="zob-hero-banner__content">
+            <h2 class="zob-hero-banner__title">Just Do It</h2>
+            <p class="zob-hero-banner__description">Discover the latest collection and push your limits with premium gear designed for champions.</p>
+            <button class="zob-hero-banner__cta-button">
+                Shop Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Promotional Grid Section -->
+    <div class="zob-promo-grid">
+        <div class="zob-promo-grid__container">
+            <div class="zob-promo-grid__item">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2189,c_limit/5c068c3b-343e-4192-9a63-3ea9b0379c11/nike-just-do-it.png" alt="Nike Training" class="zob-promo-grid__image">
+                <div class="zob-promo-grid__overlay">
+                    <div class="zob-promo-grid__subtitle">Nike Training</div>
+                    <div class="zob-promo-grid__title">Perfect Leggings</div>
+                    <button class="zob-promo-grid__button">Shop</button>
+                </div>
+            </div>
+
+            <div class="zob-promo-grid__item">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2189,c_limit/5c068c3b-343e-4192-9a63-3ea9b0379c11/nike-just-do-it.png" alt="Look of Football" class="zob-promo-grid__image">
+                <div class="zob-promo-grid__overlay">
+                    <div class="zob-promo-grid__subtitle">Look of Football</div>
+                    <div class="zob-promo-grid__title">Total 90</div>
+                    <button class="zob-promo-grid__button">Shop</button>
+                </div>
+            </div>
+
+            <div class="zob-promo-grid__item">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2189,c_limit/5c068c3b-343e-4192-9a63-3ea9b0379c11/nike-just-do-it.png" alt="Outdoor Adventure" class="zob-promo-grid__image">
+                <div class="zob-promo-grid__overlay">
+                    <div class="zob-promo-grid__subtitle">Outdoor Adventure</div>
+                    <div class="zob-promo-grid__title">Explore More</div>
+                    <button class="zob-promo-grid__button">Shop</button>
+                </div>
+            </div>
+
+            <div class="zob-promo-grid__item">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_2189,c_limit/5c068c3b-343e-4192-9a63-3ea9b0379c11/nike-just-do-it.png" alt="Running Collection" class="zob-promo-grid__image">
+                <div class="zob-promo-grid__overlay">
+                    <div class="zob-promo-grid__subtitle">Running Collection</div>
+                    <div class="zob-promo-grid__title">Speed & Style</div>
+                    <button class="zob-promo-grid__button">Shop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Text Section Component -->
+    <div class="zob-text-section">
+        <div class="zob-text-section__container">
+            <p class="zob-text-section__description">
+                Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style.
+            </p>
+            
+            <h2 class="zob-text-section__heading">
+                Introducing <span class="zob-text-section__heading-highlight">revolution</span>
+            </h2>
+            
+            <div class="zob-text-section__content-row">
+                <div class="zob-text-section__content-text zob-text-section__content-left">
+                    Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style.
+                </div>
+                <div class="zob-text-section__content-text zob-text-section__content-right">
+                    Discover a world of fashion-forward trends, curated collections, and timeless pieces that inspire. Unleash your inner fashionista and embark on a journey of confidence, elegance and impeccable style.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Steps & FAQ Section -->
+    <div class="zob-steps-faq">
+        <div class="zob-steps-faq__container">
+            <!-- Steps Section -->
+            <div class="zob-steps-faq__steps">
+                <div class="zob-steps-faq__steps-header">
+                    <h2 class="zob-steps-faq__steps-title">Navigating the StyleLoom Fashion Journey.</h2>
+                    <p class="zob-steps-faq__steps-subtitle">At StyleLoom, we've designed a straightforward shopping experience to make fashion accessible.</p>
+                    <div class="zob-steps-faq__steps-decoration">
+                        <svg width="446" height="446" viewBox="0 0 446 446" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <clipPath id="steps-clip">
+                                    <path d="M223 0C100.5 0 0 100.5 0 223C0 345.5 100.5 446 223 446C345.5 446 446 345.5 446 223C446 100.5 345.5 0 223 0ZM223 400C120.5 400 40 319.5 40 223C40 126.5 120.5 46 223 46C319.5 46 400 126.5 400 223C400 319.5 319.5 400 223 400Z"/>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#steps-clip)">
+                                <circle cx="223" cy="223" r="223" fill="#FFFFFF" fill-opacity="0.03"/>
+                                <!-- Abstract geometric patterns -->
+                                <path d="M100 100C100 100 150 130 200 100C250 70 300 100 300 100" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                <path d="M80 180C80 180 130 210 180 180C230 150 280 180 280 180" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                <path d="M160 260C160 260 210 290 260 260C310 230 360 260 360 260" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                <path d="M120 320C120 320 170 350 220 320C270 290 320 320 320 320" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                
+                                <!-- Decorative dots -->
+                                <circle cx="150" cy="120" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="250" cy="160" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="200" cy="200" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="300" cy="240" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="180" cy="280" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="280" cy="320" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                
+                                <!-- Additional geometric elements -->
+                                <rect x="120" y="140" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                                <rect x="280" y="180" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                                <rect x="160" y="220" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                                <rect x="320" y="260" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="zob-steps-faq__steps-cards">
+                    <div class="zob-steps-faq__steps-card">
+                        <div class="zob-steps-faq__steps-step-number">Step 01</div>
+                        <div class="zob-steps-faq__steps-card-content">
+                            <h3 class="zob-steps-faq__steps-card-title">Discover Trends</h3>
+                            <p class="zob-steps-faq__steps-card-description">Explore our curated collection of over 1000 styles, spanning global fashion trends.</p>
+                        </div>
+                    </div>
+
+                    <div class="zob-steps-faq__steps-card">
+                        <div class="zob-steps-faq__steps-step-number">Step 02</div>
+                        <div class="zob-steps-faq__steps-card-content">
+                            <h3 class="zob-steps-faq__steps-card-title">Effortless Navigation</h3>
+                            <p class="zob-steps-faq__steps-card-description">Intuitive filters and categories help you find the perfect pieces tailored to your style.</p>
+                        </div>
+                    </div>
+
+                    <div class="zob-steps-faq__steps-card">
+                        <div class="zob-steps-faq__steps-step-number">Step 03</div>
+                        <div class="zob-steps-faq__steps-card-content">
+                            <h3 class="zob-steps-faq__steps-card-title">Secure Checkout</h3>
+                            <p class="zob-steps-faq__steps-card-description">Multiple payment options and encrypted transactions ensure a safe and hassle-free purchase.</p>
+                        </div>
+                    </div>
+
+                    <div class="zob-steps-faq__steps-card">
+                        <div class="zob-steps-faq__steps-step-number">Step 04</div>
+                        <div class="zob-steps-faq__steps-card-content">
+                            <h3 class="zob-steps-faq__steps-card-title">Unbox Happiness</h3>
+                            <p class="zob-steps-faq__steps-card-description">Unbox a fashion-forward experience delivered right to your door, ready to elevate your style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="zob-steps-faq__faq">
+                <div class="zob-steps-faq__faq-header">
+                    <div class="zob-steps-faq__faq-text-container">
+                        <h2 class="zob-steps-faq__faq-title">Have Questions? We Have Answers.</h2>
+                        <p class="zob-steps-faq__faq-subtitle">Ease into the world of StyleLoom with clarity. Our FAQs cover a spectrum of topics.</p>
+                    </div>
+                    
+                    <div class="zob-steps-faq__faq-tabs">
+                        <button class="zob-steps-faq__faq-tab zob-steps-faq__faq-tab--active" data-category="all">All</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="ordering">Ordering</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="shipping">Shipping</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="returns">Returns</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="support">Support</button>
+                    </div>
+                    
+                    <div class="zob-steps-faq__faq-decoration">
+                        <svg width="446" height="446" viewBox="0 0 446 446" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <clipPath id="faq-clip">
+                                    <path d="M223 0C100.5 0 0 100.5 0 223C0 345.5 100.5 446 223 446C345.5 446 446 345.5 446 223C446 100.5 345.5 0 223 0ZM223 400C120.5 400 40 319.5 40 223C40 126.5 120.5 46 223 46C319.5 46 400 126.5 400 223C400 319.5 319.5 400 223 400Z"/>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#faq-clip)">
+                                <circle cx="223" cy="223" r="223" fill="#FFFFFF" fill-opacity="0.03"/>
+                                <!-- Abstract geometric patterns -->
+                                <path d="M100 100C100 100 150 130 200 100C250 70 300 100 300 100" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                <path d="M80 180C80 180 130 210 180 180C230 150 280 180 280 180" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                <path d="M160 260C160 260 210 290 260 260C310 230 360 260 360 260" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                <path d="M120 320C120 320 170 350 220 320C270 290 320 320 320 320" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                
+                                <!-- Decorative dots -->
+                                <circle cx="150" cy="120" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="250" cy="160" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="200" cy="200" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="300" cy="240" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="180" cy="280" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                <circle cx="280" cy="320" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                
+                                <!-- Additional geometric elements -->
+                                <rect x="120" y="140" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                                <rect x="280" y="180" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                                <rect x="160" y="220" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                                <rect x="320" y="260" width="40" height="2" fill="#FFFFFF" fill-opacity="0.06"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="zob-steps-faq__faq-content">
+                    <div class="zob-steps-faq__faq-column">
+                        <div class="zob-steps-faq__faq-item" data-category="ordering">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">How can I place an order on StyleLoom?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Ordering is easy! Simply browse our website, add items to your cart, and proceed to checkout. Follow the prompts to enter your details and complete your purchase.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="ordering">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">What payment methods do you accept?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>We accept a variety of payment methods, including credit/debit cards, net banking, and select digital wallets. Choose the option that suits you best during checkout.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="shipping">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">How can I track my order?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Once your order is dispatched, you'll receive a tracking number via email. Use this number to track your package in real-time on our website.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="returns">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">How do I initiate a return?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Visit our Returns page and follow the provided instructions. Ensure your item meets our return criteria, and our team will guide you through the process.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="returns">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Do you offer exchanges for products?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>At this time, we don't offer direct product exchanges. If you'd like a different item, please initiate a return and place a new order.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zob-steps-faq__faq-column">
+                        <div class="zob-steps-faq__faq-item" data-category="ordering">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Can I modify or cancel my order after placing it?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Unfortunately, once an order is confirmed, modifications or cancellations may not be possible. Please review your order carefully before completing the purchase.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.zob-steps-faq__faq-item');
+            const faqTabs = document.querySelectorAll('.zob-steps-faq__faq-tab');
+
+            // FAQ Toggle Functionality
+            faqItems.forEach(item => {
+                const question = item.querySelector('.zob-steps-faq__faq-question');
+                const toggle = item.querySelector('.zob-steps-faq__faq-toggle');
+                const answer = item.querySelector('.zob-steps-faq__faq-answer');
+
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherToggle = otherItem.querySelector('.zob-steps-faq__faq-toggle');
+                            otherToggle.textContent = '+';
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        toggle.textContent = '+';
+                    } else {
+                        item.classList.add('active');
+                        toggle.textContent = '−';
+                    }
+                });
+            });
+
+            // Tab Filtering Functionality
+            faqTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active tab
+                    faqTabs.forEach(t => t.classList.remove('zob-steps-faq__faq-tab--active'));
+                    this.classList.add('zob-steps-faq__faq-tab--active');
+                    
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        
+                        if (category === 'all' || itemCategory === category) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

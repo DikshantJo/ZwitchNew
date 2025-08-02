@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwitch Originals - Hero Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Unbounded:wght@700&family=Urbanist:wght@400&display=swap" rel="stylesheet">
+    <style>
+        .font-montserrat-medium {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        .font-unbounded-bold {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+        }
+        
+        .font-urbanist-regular {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+        }
+        
+        .adjustLetterSpacing {
+            letter-spacing: 0.63px;
+        }
+        
+        /* Custom blue color for Zwitch Originals */
+        .text-zwitch-blue {
+            color: #3e9ad9;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center justify-center gap-8 md:gap-[50px] p-4 md:p-8 min-h-screen">
+        <!-- Text Content -->
+        <div class="flex flex-col gap-4 md:gap-5 items-center max-w-[1050px] px-4">
+            <!-- Subtitle -->
+            <div class="font-montserrat-medium text-black text-sm md:text-base text-center">
+                <p>Experience fashion like never before</p>
+            </div>
+            
+            <!-- Main Heading -->
+            <div class="font-unbounded-bold text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center max-w-[989px]">
+                <p class="leading-tight">
+                    <span>Elevate Your Style With </span>
+                    <span class="text-zwitch-blue">Zwitch Originals</span>
+                    <span>: Where Fashion Meets Passion</span>
+                </p>
+            </div>
+            
+            <!-- Description -->
+            <div class="font-urbanist-regular text-base md:text-lg text-black/76 text-center tracking-[0.63px] max-w-[837px] px-4">
+                <p class="adjustLetterSpacing leading-[1.4] md:leading-[26px]">
+                    Discover a world of fashion-forward trends, curated collections, and
+                    timeless pieces that inspire. Unleash your inner fashionista and
+                    embark on a journey of confidence, elegance and impeccable style.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Image Gallery Carousel -->
+        <div class="relative w-full max-w-[1288px] px-4 md:px-8">
+            <!-- Navigation Arrows -->
+            <button id="prevBtn" class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 backdrop-blur-sm">
+                <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            
+            <button id="nextBtn" class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 backdrop-blur-sm">
+                <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            
+            <!-- Carousel Container -->
+            <div id="carousel" class="flex gap-4 md:gap-6 lg:gap-8 transition-transform duration-500 ease-in-out overflow-hidden">
+                <!-- Image 1 -->
+                <div class="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[342px] rounded-xl w-[250px] sm:w-[280px] md:w-[300px] flex-shrink-0 overflow-hidden">
+                    <img 
+                        src="http://localhost:3845/assets/335069b05363a201eabd5db78c02abbc3abca0ea.png" 
+                        alt="Fashion Product 1" 
+                        class="w-full h-full object-cover rounded-xl"
+                    />
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[342px] rounded-xl w-[250px] sm:w-[280px] md:w-[300px] flex-shrink-0 overflow-hidden">
+                    <img 
+                        src="http://localhost:3845/assets/3588e4edbdc8f2dcc3d0abaad265802cef1559b0.png" 
+                        alt="Fashion Product 2" 
+                        class="w-full h-full object-cover rounded-xl"
+                    />
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[342px] rounded-xl w-[250px] sm:w-[280px] md:w-[300px] flex-shrink-0 overflow-hidden">
+                    <img 
+                        src="http://localhost:3845/assets/d65b5b3a58a0a67d3c30054f95a84b3bde736596.png" 
+                        alt="Fashion Product 3" 
+                        class="w-full h-full object-cover rounded-xl"
+                    />
+                </div>
+                
+                <!-- Image 4 -->
+                <div class="h-[200px] sm:h-[250px] md:h-[300px] lg:h-[342px] rounded-xl w-[250px] sm:w-[280px] md:w-[300px] flex-shrink-0 overflow-hidden">
+                    <img 
+                        src="http://localhost:3845/assets/048df7a06f96a481279b2367562d5a8a30e98efe.png" 
+                        alt="Fashion Product 4" 
+                        class="w-full h-full object-cover rounded-xl"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for carousel functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('carousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let currentIndex = 0;
+            
+            // Responsive calculations
+            function getResponsiveValues() {
+                const screenWidth = window.innerWidth;
+                let itemWidth, gap, containerWidth;
+                
+                if (screenWidth < 640) { // Mobile
+                    itemWidth = 250;
+                    gap = 16; // 4 * 4px
+                    containerWidth = screenWidth - 32; // Account for padding
+                } else if (screenWidth < 768) { // Small tablet
+                    itemWidth = 280;
+                    gap = 24; // 6 * 4px
+                    containerWidth = screenWidth - 64;
+                } else if (screenWidth < 1024) { // Tablet
+                    itemWidth = 300;
+                    gap = 32; // 8 * 4px
+                    containerWidth = screenWidth - 64;
+                } else { // Desktop
+                    itemWidth = 300;
+                    gap = 32; // 8 * 4px
+                    containerWidth = 1288;
+                }
+                
+                return { itemWidth, gap, containerWidth };
+            }
+            
+            function calculateMaxIndex() {
+                const { itemWidth, gap, containerWidth } = getResponsiveValues();
+                const totalItemWidth = itemWidth + gap;
+                const visibleItems = Math.floor(containerWidth / totalItemWidth);
+                return Math.max(0, 4 - visibleItems);
+            }
+            
+            // Initialize carousel
+            function updateCarousel() {
+                const { itemWidth, gap } = getResponsiveValues();
+                const totalItemWidth = itemWidth + gap;
+                const translateX = -currentIndex * totalItemWidth;
+                carousel.style.transform = `translateX(${translateX}px)`;
+                
+                const maxIndex = calculateMaxIndex();
+                
+                // Update button states
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+                
+                // Update button opacity based on disabled state
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+            }
+            
+            // Event listeners for navigation
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                const maxIndex = calculateMaxIndex();
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                }
+            });
+            
+            // Touch/swipe support for mobile
+            let startX = 0;
+            let endX = 0;
+            
+            carousel.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+            });
+            
+            carousel.addEventListener('touchend', function(e) {
+                endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > 50) { // Minimum swipe distance
+                    if (diff > 0) {
+                        // Swipe left - go next
+                        nextBtn.click();
+                    } else {
+                        // Swipe right - go previous
+                        prevBtn.click();
+                    }
+                }
+            });
+            
+            // Initialize on load
+            updateCarousel();
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                // Recalculate maxIndex on resize
+                const newMaxIndex = calculateMaxIndex();
+                if (currentIndex > newMaxIndex) {
+                    currentIndex = newMaxIndex;
+                }
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>
