@@ -10,36 +10,36 @@
 
 <div class="relative flex flex-wrap gap-4 px-4 pb-4 pt-6 shadow-sm lg:hidden">
     <div class="flex w-full items-center justify-between">
-        <!-- Left Navigation -->
-        <div class="flex items-center gap-x-1.5">
+        <!-- Left Navigation with Logo -->
+        <div class="flex items-center gap-x-3">
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.before') !!}
 
             <!-- Drawer -->
             <v-mobile-drawer></v-mobile-drawer>
 
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.after') !!}
-        </div>
 
-        <!-- Centered Logo Section -->
-        <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg brand-logo-container">
-            {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.before') !!}
+            <!-- Logo -->
+            <div class="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg brand-logo-container">
+                {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.before') !!}
 
-            <a
-                href="{{ route('shop.home.index') }}"
-                class="max-h-[28px]"
-                aria-label="@lang('shop::app.components.layouts.header.mobile.bagisto')"
-            >
-                <img
-                    src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
-                    alt="{{ config('app.name') }}"
-                    width="110"
-                    height="24"
-                    class="rounded-full object-cover h-7 w-auto brand-logo"
-                    style="border-radius: 50%;"
+                <a
+                    href="{{ route('shop.home.index') }}"
+                    class="max-h-[28px]"
+                    aria-label="@lang('shop::app.components.layouts.header.mobile.bagisto')"
                 >
-            </a>
+                    <img
+                        src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
+                        alt="{{ config('app.name') }}"
+                        width="110"
+                        height="24"
+                        class="rounded-full object-cover h-7 w-auto brand-logo"
+                        style="border-radius: 50%; width: 50px; height: 50px;"
+                    >
+                </a>
 
-            {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.after') !!}
+                {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.after') !!}
+            </div>
         </div>
 
         <!-- Right Navigation -->
@@ -65,6 +65,18 @@
                 @endif
 
                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.mini_cart.after') !!}
+
+                <!-- Search Icon for Mobile/Tablet -->
+                <div class="lg:hidden">
+                    <button
+                        type="button"
+                        id="mobile-search-toggle"
+                        class="search-toggle-btn"
+                        aria-label="@lang('shop::app.components.layouts.header.mobile.search')"
+                    >
+                        <span class="icon-search cursor-pointer text-2xl"></span>
+                    </button>
+                </div>
 
                 <!-- For Large screens -->
                 <div class="max-md:hidden">
@@ -207,32 +219,45 @@
 
     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.search.before') !!}
 
-    <!-- Serach Catalog Form -->
-    <form action="{{ route('shop.search.index') }}" class="flex w-full items-center">
-        <label
-            for="organic-search"
-            class="sr-only"
-        >
-            @lang('shop::app.components.layouts.header.mobile.search')
-        </label>
-
+    <!-- Mobile Search Form - Only visible when toggled -->
+    <div id="mobile-search-container" class="mobile-search-container w-full" style="display: none;">
         <div class="relative w-full">
-            <div class="icon-search pointer-events-none absolute top-3 flex items-center text-2xl max-md:text-xl max-sm:top-2.5 ltr:left-3 rtl:right-3"></div>
-
-            <input
-                type="text"
-                class="block w-full rounded-[50px] border border-['#E3E3E3'] px-11 py-3.5 text-sm font-medium text-gray-900 max-md:rounded-[50px] max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
-                name="query"
-                value="{{ request('query') }}"
-                placeholder="@lang('shop::app.components.layouts.header.mobile.search-text')"
-                required
+            <!-- Close Button -->
+            <button
+                type="button"
+                id="mobile-search-close"
+                aria-label="Close search"
             >
+                <span class="icon-close"></span>
+            </button>
+            
+            <form action="{{ route('shop.search.index') }}" class="flex w-full items-center mobile-search-form" id="mobile-search-form">
+                <label
+                    for="organic-search"
+                    class="sr-only"
+                >
+                    @lang('shop::app.components.layouts.header.mobile.search')
+                </label>
 
-            @if (core()->getConfigData('catalog.products.settings.image_search'))
-                @include('shop::search.images.index')
-            @endif
+                <div class="relative w-full">
+                    <div class="icon-search pointer-events-none absolute top-3 flex items-center text-2xl max-md:text-xl max-sm:top-2.5 ltr:left-3 rtl:right-3"></div>
+
+                    <input
+                        type="text"
+                        class="block w-full rounded-[50px] border border-['#E3E3E3'] px-11 py-3.5 text-sm font-medium text-gray-900 max-md:rounded-[50px] max-md:px-10 max-md:py-3 max-md:font-normal max-sm:text-xs"
+                        name="query"
+                        value="{{ request('query') }}"
+                        placeholder="@lang('shop::app.components.layouts.header.mobile.search-text')"
+                        required
+                    >
+
+                    @if (core()->getConfigData('catalog.products.settings.image_search'))
+                        @include('shop::search.images.index')
+                    @endif
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 
     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.search.after') !!}
 </div>
@@ -565,5 +590,190 @@
                 }
             },
         });
+
+        // Mobile Search Toggle Functionality
+        function initMobileSearch() {
+            const searchToggle = document.getElementById('mobile-search-toggle');
+            const searchContainer = document.getElementById('mobile-search-container');
+            const searchForm = document.getElementById('mobile-search-form');
+            const searchClose = document.getElementById('mobile-search-close');
+            
+            console.log('Mobile search elements:', { searchToggle, searchContainer, searchForm, searchClose }); // Debug log
+            
+            if (searchToggle && searchContainer && searchForm && searchClose) {
+                const searchInput = searchForm.querySelector('input[name="query"]');
+                
+                // Function to show search
+                function showSearch() {
+                    searchContainer.style.display = 'block';
+                    searchContainer.style.animation = 'slideDown 0.3s ease-out';
+                    
+                    // Focus on input after a short delay to ensure it's visible
+                    setTimeout(() => {
+                        if (searchInput) {
+                            searchInput.focus();
+                        }
+                    }, 100);
+                    
+                    // Change icon appearance to indicate active state
+                    const searchIcon = searchToggle.querySelector('.icon-search');
+                    if (searchIcon) {
+                        searchIcon.style.color = '#3b82f6'; // Blue color to indicate active state
+                        searchIcon.style.transform = 'scale(1.1)';
+                    }
+                }
+                
+                // Function to hide search
+                function hideSearch() {
+                    searchContainer.style.animation = 'slideUp 0.3s ease-out';
+                    setTimeout(() => {
+                        searchContainer.style.display = 'none';
+                    }, 300);
+                    
+                    // Reset icon appearance to normal state
+                    const searchIcon = searchToggle.querySelector('.icon-search');
+                    if (searchIcon) {
+                        searchIcon.style.color = ''; // Reset to default color
+                        searchIcon.style.transform = ''; // Reset scale
+                    }
+                }
+                
+                // Search toggle click handler
+                searchToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Search toggle clicked'); // Debug log
+                    
+                    // Toggle search container visibility
+                    if (searchContainer.style.display === 'none') {
+                        showSearch();
+                    } else {
+                        hideSearch();
+                    }
+                });
+
+                // Close button click handler
+                searchClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Search close clicked'); // Debug log
+                    hideSearch();
+                });
+
+                // Close search when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!searchContainer.contains(e.target) && !searchToggle.contains(e.target)) {
+                        if (searchContainer.style.display !== 'none') {
+                            hideSearch();
+                        }
+                    }
+                });
+
+                // Handle form submission
+                searchForm.addEventListener('submit', function() {
+                    // Hide search container after submission
+                    setTimeout(() => {
+                        hideSearch();
+                    }, 100);
+                });
+                
+                console.log('Mobile search initialized successfully'); // Debug log
+            } else {
+                console.log('Mobile search elements not found, retrying...'); // Debug log
+                // Retry after a short delay
+                setTimeout(initMobileSearch, 100);
+            }
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMobileSearch);
+        } else {
+            initMobileSearch();
+        }
+
+        // Also try to initialize after Vue components are loaded
+        setTimeout(initMobileSearch, 500);
     </script>
+
+    <style>
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Mobile search form styling */
+        .mobile-search-form {
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile search container styling */
+        .mobile-search-container {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Close button styling */
+        #mobile-search-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #mobile-search-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+        }
+
+        #mobile-search-close .icon-close {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Search toggle button styling */
+        .search-toggle-btn {
+            transition: all 0.2s ease;
+        }
+
+        .search-toggle-btn .icon-search {
+            transition: all 0.2s ease;
+        }
+
+        /* Hide search toggle on desktop */
+        @media (min-width: 1024px) {
+            .search-toggle-btn {
+                display: none !important;
+            }
+        }
+    </style>
 @endPushOnce

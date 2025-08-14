@@ -57,7 +57,7 @@
 
 <footer class="bg-black dark:bg-[#000000] text-white font-['Urbanist']">
     <!-- Logo and Social Media Section -->
-    <div class="flex justify-between items-start px-[162px] pt-[100px] py-[50px] max-xl:px-16 max-lg:px-8 max-md:flex-col max-md:gap-8 max-md:px-6 max-sm:px-4">
+    <div class="flex justify-between items-start px-[162px] md-pt-[100px] py-[50px] max-xl:px-16 max-lg:px-8 max-md:flex-col max-md:gap-8 max-md:px-6 max-sm:px-4">
         <!-- Logo and Description -->
         <div class="flex flex-col gap-6 max-md:gap-4" style="align-items: flex-start;">
             <div class="text-white text-6xl font-semibold flex items-center max-lg:text-3xl max-md:text-2xl max-sm:text-xl" style="font-family: 'Unbounded', sans-serif !important;">
@@ -66,7 +66,7 @@
                 <span style="font-family: 'Unbounded', sans-serif !important;">Originals</span>
             </div>
             <p class="text-[18px] text-[#81807e] font-normal leading-[1.5] font-['Roboto_Mono'] max-lg:text-base max-sm:text-sm" style= 'width:80%'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+                Zwitch Originals is built on storytelling and soulful design - no random graphics, no soulless prints. Only thoughtfully crafted pieces that make you feel super special, fresh, and unmistakably unique.
             </p>
             
             <!-- Social Media Buttons -->

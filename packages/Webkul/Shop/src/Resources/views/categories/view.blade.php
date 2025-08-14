@@ -343,24 +343,24 @@
             <!-- Steps Section -->
             <div class="zob-steps-faq__steps">
                 <div class="zob-steps-faq__steps-header">
-                    <h2 class="zob-steps-faq__steps-title">Navigating the StyleLoom Fashion Journey.</h2>
-                    <p class="zob-steps-faq__steps-subtitle">At StyleLoom, we've designed a straightforward shopping experience to make fashion accessible.</p>
+                    <h2 class="zob-steps-faq__steps-title">Your Zwitch Shopping Journey</h2>
+                    <p class="zob-steps-faq__steps-subtitle">Discover, select, and create your impact with our exclusive collection of handmade, limited-edition t-shirts and apparel.</p>
                 </div>
 
                 <div class="zob-steps-faq__steps-cards">
                     <div class="zob-steps-faq__steps-card">
                         <div class="zob-steps-faq__steps-step-number">Step 01</div>
                         <div class="zob-steps-faq__steps-card-content">
-                            <h3 class="zob-steps-faq__steps-card-title">Discover Trends</h3>
-                            <p class="zob-steps-faq__steps-card-description">Explore our curated collection of over 1000 styles, spanning global fashion trends.</p>
+                            <h3 class="zob-steps-faq__steps-card-title">Discover Originals</h3>
+                            <p class="zob-steps-faq__steps-card-description">Explore our exclusive collection of handmade, limited-edition t-shirts and apparel - each design tells a story and turns heads.</p>
                         </div>
                     </div>
 
                     <div class="zob-steps-faq__steps-card">
                         <div class="zob-steps-faq__steps-step-number">Step 02</div>
                         <div class="zob-steps-faq__steps-card-content">
-                            <h3 class="zob-steps-faq__steps-card-title">Effortless Navigation</h3>
-                            <p class="zob-steps-faq__steps-card-description">Intuitive filters and categories help you find the perfect pieces tailored to your style.</p>
+                            <h3 class="zob-steps-faq__steps-card-title">Seamless Selection</h3>
+                            <p class="zob-steps-faq__steps-card-description">Use intuitive filters to shop by style, category, or fit. Choose between our iconic black or white tees, and pick from regular or oversized fits for the look that's uniquely yours.</p>
                         </div>
                     </div>
 
@@ -368,15 +368,15 @@
                         <div class="zob-steps-faq__steps-step-number">Step 03</div>
                         <div class="zob-steps-faq__steps-card-content">
                             <h3 class="zob-steps-faq__steps-card-title">Secure Checkout</h3>
-                            <p class="zob-steps-faq__steps-card-description">Multiple payment options and encrypted transactions ensure a safe and hassle-free purchase.</p>
+                            <p class="zob-steps-faq__steps-card-description">Enjoy safe, encrypted transactions and all major online payment options - UPI, net banking, cards, or wallets. No cash on delivery, for a smoother, faster shopping experience.</p>
                         </div>
                     </div>
 
                     <div class="zob-steps-faq__steps-card">
                         <div class="zob-steps-faq__steps-step-number">Step 04</div>
                         <div class="zob-steps-faq__steps-card-content">
-                            <h3 class="zob-steps-faq__steps-card-title">Unbox Happiness</h3>
-                            <p class="zob-steps-faq__steps-card-description">Unbox a fashion-forward experience delivered right to your door, ready to elevate your style.</p>
+                            <h3 class="zob-steps-faq__steps-card-title">Create Your Impact</h3>
+                            <p class="zob-steps-faq__steps-card-description">Start making memories in your statement piece. Zwitch isn't just apparel-it's your invitation to own the spotlight.</p>
                         </div>
                     </div>
                 </div>
@@ -387,15 +387,15 @@
                 <div class="zob-steps-faq__faq-header">
                     <div class="zob-steps-faq__faq-text-container">
                         <h2 class="zob-steps-faq__faq-title">Have Questions? We Have Answers.</h2>
-                        <p class="zob-steps-faq__faq-subtitle">Ease into the world of StyleLoom with clarity. Our FAQs cover a spectrum of topics.</p>
+                        <p class="zob-steps-faq__faq-subtitle">Ease into the world of Zwitch Originals with clarity. Our FAQs cover a spectrum of topics.</p>
                     </div>
                     
                     <div class="zob-steps-faq__faq-tabs">
                         <button class="zob-steps-faq__faq-tab zob-steps-faq__faq-tab--active" data-category="all">All</button>
-                        <button class="zob-steps-faq__faq-tab" data-category="ordering">Ordering</button>
-                        <button class="zob-steps-faq__faq-tab" data-category="shipping">Shipping</button>
-                        <button class="zob-steps-faq__faq-tab" data-category="returns">Returns</button>
-                        <button class="zob-steps-faq__faq-tab" data-category="support">Support</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="orders">Orders & Products</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="shipping">Shipping & Delivery</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="returns">Returns & Refunds</button>
+                        <button class="zob-steps-faq__faq-tab" data-category="general">General</button>
                     </div>
                     
                     <div class="zob-steps-faq__faq-decoration">
@@ -428,96 +428,168 @@
                 </div>
 
                 <div class="zob-steps-faq__faq-content">
-                    <div class="zob-steps-faq__faq-column">
-                        <div class="zob-steps-faq__faq-item" data-category="ordering">
+                    <!-- Left Column -->
+                    <div class="zob-steps-faq__faq-column" id="faq-left-column">
+                        <div class="zob-steps-faq__faq-item" data-category="orders">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">How can I place an order on StyleLoom?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">How do I place an order with Zwitch Originals?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>Ordering is easy! Simply browse our website, add items to your cart, and proceed to checkout. Follow the prompts to enter your details and complete your purchase.</p>
+                                <p>Simply browse our website, select your favorite design, choose size, color, and fit, then proceed to secure online checkout. You'll receive an order confirmation and tracking details by email once your purchase is complete.</p>
                             </div>
                         </div>
 
-                        <div class="zob-steps-faq__faq-item" data-category="ordering">
+                        <div class="zob-steps-faq__faq-item" data-category="orders">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">What payment methods do you accept?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">How do I choose the right size?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>We accept a variety of payment methods, including credit/debit cards, net banking, and select digital wallets. Choose the option that suits you best during checkout.</p>
+                                <p>Always refer to our detailed size chart available on each product page. If unsure, measure your chest, waist, and length, and compare with our chart for the best fit.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="orders">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Are all Zwitch Originals t-shirts handmade and limited edition?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Yes! All our designs are hand-illustrated by our in-house artist and released in limited quantities, ensuring exclusivity in every piece.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="orders">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Can I customize my t-shirt or place a bulk order for events?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Currently, we offer limited editions only. For customization or bulk inquiries, please contact our support team - we'd love to discuss your needs!</p>
                             </div>
                         </div>
 
                         <div class="zob-steps-faq__faq-item" data-category="shipping">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">How can I track my order?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">Do you ship across India?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>Once your order is dispatched, you'll receive a tracking number via email. Use this number to track your package in real-time on our website.</p>
+                                <p>Absolutely! We deliver PAN India to all states and union territories. Shipping charges are calculated at checkout.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="shipping">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">How long will it take to receive my order?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Standard delivery takes 4–6 business days from order processing. You'll get a tracking number via email/SMS for real-time updates on your shipment status.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="shipping">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Which payment methods do you accept?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>We accept UPI, net banking, debit/credit cards, and wallets. We do not currently offer Cash on Delivery.</p>
                             </div>
                         </div>
 
                         <div class="zob-steps-faq__faq-item" data-category="returns">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">How do I initiate a return?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">What is your return policy?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>Visit our Returns page and follow the provided instructions. Ensure your item meets our return criteria, and our team will guide you through the process.</p>
+                                <p>Returns are accepted within 7 days of delivery for unworn and unwashed items with tags intact. Customized and limited-edition drops are final sale unless defective. Please contact us to initiate a return.</p>
                             </div>
                         </div>
 
                         <div class="zob-steps-faq__faq-item" data-category="returns">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">Do you offer exchanges for products?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">How do refunds work?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>At this time, we don't offer direct product exchanges. If you'd like a different item, please initiate a return and place a new order.</p>
+                                <p>Eligible returns are refunded to the original payment method within 7–10 business days after we receive and inspect the product. Refunds exclude shipping fees unless the product is faulty or incorrect.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="zob-steps-faq__faq-column">
-                        <div class="zob-steps-faq__faq-item" data-category="ordering">
+                    <!-- Right Column -->
+                    <div class="zob-steps-faq__faq-column" id="faq-right-column">
+                        <div class="zob-steps-faq__faq-item" data-category="returns">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">Can I modify or cancel my order after placing it?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">What if I receive a defective or wrong item?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>Unfortunately, once an order is confirmed, modifications or cancellations may not be possible. Please review your order carefully before completing the purchase.</p>
+                                <p>We apologize for any inconvenience! Please contact us within 2 days of receiving your order. We'll arrange a return, reimburse your shipping costs, and send a replacement or refund after review.</p>
                             </div>
                         </div>
 
-                        <div class="zob-steps-faq__faq-item" data-category="shipping">
+                        <div class="zob-steps-faq__faq-item" data-category="returns">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">What are your shipping options?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">Can I cancel my order?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>We offer standard and express shipping options. Standard delivery typically takes 3-5 business days, while express delivery takes 1-2 business days.</p>
+                                <p>Yes, cancellations are allowed within 24 hours of purchase only. After that, your order will be processed and shipped as per schedule.</p>
                             </div>
                         </div>
 
-                        <div class="zob-steps-faq__faq-item" data-category="support">
+                        <div class="zob-steps-faq__faq-item" data-category="general">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">How can I contact customer support?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">Do you offer Cash on Delivery (COD)?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>You can reach our customer support team through email, live chat, or phone. We're available 24/7 to assist you with any questions or concerns.</p>
+                                <p>No, we currently accept only prepaid online payments for faster, safer transactions.</p>
                             </div>
                         </div>
 
-                        <div class="zob-steps-faq__faq-item" data-category="support">
+                        <div class="zob-steps-faq__faq-item" data-category="general">
                             <div class="zob-steps-faq__faq-question">
-                                <h3 class="zob-steps-faq__faq-question-text">Do you have a size guide?</h3>
+                                <h3 class="zob-steps-faq__faq-question-text">Are your prices inclusive of GST and other taxes?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
                             <div class="zob-steps-faq__faq-answer">
-                                <p>Yes! We provide detailed size guides for all our products. You can find the size guide on each product page to help you choose the perfect fit.</p>
+                                <p>Yes, all listed prices are inclusive of GST and applicable taxes.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="general">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Will my personal information be safe?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Absolutely. We value your privacy and use your personal details only for order processing and updates. Read our Privacy Policy for more info.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="general">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">Can minors (under 18) shop at Zwitch Originals?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>Yes, minors may shop on our site, but we advise parental supervision for safe purchases.</p>
+                            </div>
+                        </div>
+
+                        <div class="zob-steps-faq__faq-item" data-category="general">
+                            <div class="zob-steps-faq__faq-question">
+                                <h3 class="zob-steps-faq__faq-question-text">How can I contact customer care?</h3>
+                                <button class="zob-steps-faq__faq-toggle">+</button>
+                            </div>
+                            <div class="zob-steps-faq__faq-answer">
+                                <p>For any queries or issues, reach out to us at your support email or use the contact form on our website. Our team is ready to help!</p>
                             </div>
                         </div>
                     </div>
@@ -602,7 +674,12 @@
                     faqTabs.forEach(t => t.classList.remove('zob-steps-faq__faq-tab--active'));
                     this.classList.add('zob-steps-faq__faq-tab--active');
                     
-                    // Filter FAQ items
+                    // Get column containers
+                    const leftColumn = document.getElementById('faq-left-column');
+                    const rightColumn = document.getElementById('faq-right-column');
+                    
+                    // Filter FAQ items and redistribute them
+                    const visibleItems = [];
                     faqItems.forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
                         console.log('Filtering item:', itemCategory, 'for category:', category);
@@ -610,11 +687,71 @@
                         if (category === 'all' || itemCategory === category) {
                             item.classList.remove('hidden');
                             item.style.display = 'block';
+                            visibleItems.push(item);
                         } else {
                             item.classList.add('hidden');
                             item.style.display = 'none';
                         }
                     });
+                    
+                    // Redistribute visible items evenly between columns
+                    if (leftColumn && rightColumn) {
+                        // Clear both columns
+                        leftColumn.innerHTML = '';
+                        rightColumn.innerHTML = '';
+                        
+                        // Redistribute items
+                        visibleItems.forEach((item, index) => {
+                            const clone = item.cloneNode(true);
+                            if (index % 2 === 0) {
+                                leftColumn.appendChild(clone);
+                            } else {
+                                rightColumn.appendChild(clone);
+                            }
+                        });
+                        
+                        // Reinitialize click handlers for new elements
+                        setTimeout(() => {
+                            const newFaqItems = document.querySelectorAll('.zob-steps-faq__faq-item');
+                            newFaqItems.forEach((item, index) => {
+                                const question = item.querySelector('.zob-steps-faq__faq-question');
+                                const toggle = item.querySelector('.zob-steps-faq__faq-toggle');
+                                
+                                if (question && toggle) {
+                                    question.removeEventListener('click', question.faqClickHandler);
+                                    
+                                    question.faqClickHandler = function(e) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        
+                                        const isActive = item.classList.contains('active');
+                                        
+                                        // Close all other FAQ items
+                                        newFaqItems.forEach(otherItem => {
+                                            if (otherItem !== item) {
+                                                otherItem.classList.remove('active');
+                                                const otherToggle = otherItem.querySelector('.zob-steps-faq__faq-toggle');
+                                                if (otherToggle) {
+                                                    otherToggle.textContent = '+';
+                                                }
+                                            }
+                                        });
+
+                                        // Toggle current item
+                                        if (isActive) {
+                                            item.classList.remove('active');
+                                            toggle.textContent = '+';
+                                        } else {
+                                            item.classList.add('active');
+                                            toggle.textContent = '−';
+                                        }
+                                    };
+                                    
+                                    question.addEventListener('click', question.faqClickHandler);
+                                }
+                            });
+                        }, 10);
+                    }
                 };
                 
                 tab.addEventListener('click', tab.faqTabClickHandler);

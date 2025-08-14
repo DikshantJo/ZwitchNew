@@ -87,10 +87,10 @@
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold text-white dark:text-white light:text-[#111827] uppercase mb-6" style="font-family: 'Unbounded', sans-serif;">
-                        The StyleLoom Testimonial Collection.
+                        The Zwitch Testimonial Collection.
                     </h2>
                     <p class="text-lg text-[#676665] dark:text-[#676665] light:text-[#6b7280] mb-8" style="font-family: 'Urbanist', sans-serif;">
-                        At StyleLoom, our customers are the heartbeat of our brand.
+                        Start making memories in your statement piece. Zwitch isn't just apparel-it's your invitation to own the spotlight.
                     </p>
                 </div>
                 
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                            StyleLoom exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!
+                            Zwitch exceeded my expectations. The t-shirt's quality and design made me feel like a queen. Fast shipping, too!
                         </p>
                     </div>
 
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                         <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                            Adorable and comfortable! My daughter loves her new outfit. Thank you, StyleLoom, for dressing our little fashionista.
+                            Adorable and comfortable! My daughter loves her new outfit. Thank you, Zwitch, for dressing our little fashionista.
                         </p>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                         Have Questions? We Have Answers.
                     </h2>
                     <p class="text-lg text-[#676665] dark:text-[#676665] light:text-[#6b7280] mb-8" style="font-family: 'Urbanist', sans-serif;">
-                        Ease into the world of StyleLoom with clarity. Our FAQs cover a spectrum of topics.
+                        Ease into the world of Zwitch Originals with clarity. Our FAQs cover a spectrum of topics.
                     </p>
                 </div>
                 
@@ -227,16 +227,16 @@
                         All
                     </button>
                     <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        Ordering
+                        Orders & Products
                     </button>
                     <button class="px-6 py-3 rounded-lg bg-[#c2b4a3] text-[#0f0f0f] border border-[#c2b4a3]" style="font-family: 'Urbanist', sans-serif;">
-                        Shipping
+                        Shipping & Delivery
                     </button>
                     <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        Returns
+                        Returns & Refunds
                     </button>
                     <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        Support
+                        General
                     </button>
                 </div>
                 
@@ -245,28 +245,46 @@
                     <div class="space-y-8">
                         <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
                             <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                How can I place an order on StyleLoom?
+                                How do I place an order with Zwitch Originals?
                             </h3>
                             <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Ordering is easy! Simply browse our website, add items to your cart, and proceed to checkout. Follow the prompts to enter your details and complete your purchase.
+                                Simply browse our website, select your favorite design, choose size, color, and fit, then proceed to secure online checkout. You'll receive an order confirmation and tracking details by email once your purchase is complete.
                             </p>
                         </div>
                         
                         <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
                             <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                What payment methods do you accept?
+                                How do I choose the right size?
                             </h3>
                             <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                We accept a variety of payment methods, including credit/debit cards, net banking, and select digital wallets. Choose the option that suits you best during checkout.
+                                Always refer to our detailed size chart available on each product page. If unsure, measure your chest, waist, and length, and compare with our chart for the best fit.
                             </p>
                         </div>
                         
                         <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
                             <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                How can I track my order?
+                                Are all Zwitch Originals t-shirts handmade and limited edition?
                             </h3>
                             <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Once your order is dispatched, you'll receive a tracking number via email. Use this number to track your package in real-time on our website.
+                                Yes! All our designs are hand-illustrated by our in-house artist and released in limited quantities, ensuring exclusivity in every piece.
+                            </p>
+                        </div>
+
+                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
+                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
+                                Do you ship across India?
+                            </h3>
+                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
+                                Absolutely! We deliver PAN India to all states and union territories. Shipping charges are calculated at checkout.
+                            </p>
+                        </div>
+
+                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
+                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
+                                Which payment methods do you accept?
+                            </h3>
+                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
+                                We accept UPI, net banking, debit/credit cards, and wallets. We do not currently offer Cash on Delivery.
                             </p>
                         </div>
                     </div>
@@ -274,28 +292,46 @@
                     <div class="space-y-8">
                         <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
                             <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Can I modify or cancel my order after placing it?
+                                What is your return policy?
                             </h3>
                             <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Unfortunately, once an order is confirmed, modifications or cancellations may not be possible. Please review your order carefully before completing the purchase.
+                                Returns are accepted within 7 days of delivery for unworn and unwashed items with tags intact. Customized and limited-edition drops are final sale unless defective. Please contact us to initiate a return.
                             </p>
                         </div>
                         
                         <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
                             <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                How do I initiate a return?
+                                How do refunds work?
                             </h3>
                             <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Visit our Returns page and follow the provided instructions. Ensure your item meets our return criteria, and our team will guide you through the process.
+                                Eligible returns are refunded to the original payment method within 7–10 business days after we receive and inspect the product. Refunds exclude shipping fees unless the product is faulty or incorrect.
                             </p>
                         </div>
                         
                         <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
                             <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Do you offer exchanges for products?
+                                Can I cancel my order?
                             </h3>
                             <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                At this time, we don't offer direct product exchanges. If you'd like a different item, please initiate a return and place a new order.
+                                Yes, cancellations are allowed within 24 hours of purchase only. After that, your order will be processed and shipped as per schedule.
+                            </p>
+                        </div>
+
+                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
+                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
+                                Do you offer Cash on Delivery (COD)?
+                            </h3>
+                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
+                                No, we currently accept only prepaid online payments for faster, safer transactions.
+                            </p>
+                        </div>
+
+                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
+                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
+                                Are your prices inclusive of GST and other taxes?
+                            </h3>
+                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
+                                Yes, all listed prices are inclusive of GST and applicable taxes.
                             </p>
                         </div>
                     </div>
