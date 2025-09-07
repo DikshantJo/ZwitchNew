@@ -1249,6 +1249,41 @@ return [
             'to'              => 'To contact',
         ],
 
+        'customization-request' => [
+            'admin' => [
+                'subject'           => 'New Customization Request from :customer_name',
+                'greeting'          => 'New Customization Request',
+                'description'       => 'A customer has submitted a new customization request. Please review the details below.',
+                'customer-info'     => 'Customer Information',
+                'product-info'      => 'Product Information',
+                'project-details'   => 'Project Details',
+                'reference-files'   => 'Reference Files',
+                'action-required'   => 'Action Required',
+                'quick-actions'     => 'Quick Actions',
+                'request-summary'   => 'Request Summary',
+                'reply-customer'    => 'Reply to Customer',
+                'call-customer'     => 'Call Customer',
+                'footer-note'       => 'This email was automatically generated from the customization request form on :app_name. Please respond to the customer promptly to maintain excellent service quality.',
+            ],
+
+            'customer' => [
+                'subject'           => 'Customization Request Confirmation - Reference #:reference_number',
+                'greeting'          => 'Thank you for your customization request!',
+                'description'       => 'We have received your customization request and our team will review it shortly.',
+                'request-details'   => 'Your Request Details',
+                'next-steps'        => 'What happens next?',
+                'contact-info'      => 'Need help?',
+                'reference-number'  => 'Reference Number',
+                'estimated-response' => 'We typically respond within 24 hours',
+                'thank-you'         => 'Thank you for choosing :app_name for your customization needs!',
+                'reference-note'    => 'Please keep this reference number for your records',
+                'files-received'    => 'Your reference files have been received and will be reviewed by our team.',
+                'continue-shopping' => 'Continue Shopping',
+                'confirmation-note' => 'This email confirms that we have received your customization request. Please keep this email and your reference number for your records.',
+                'files-attached'    => 'Your reference files are attached to this email for your records.',
+            ],
+        ],
+
         'orders' => [
             'created' => [
                 'greeting' => 'Thanks for your Order :order_id placed on :created_at',

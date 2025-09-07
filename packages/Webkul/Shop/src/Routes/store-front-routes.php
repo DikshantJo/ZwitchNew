@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Webkul\Shop\Http\Controllers\BookingProductController;
 use Webkul\Shop\Http\Controllers\CompareController;
+use Webkul\Shop\Http\Controllers\CustomizationController;
 use Webkul\Shop\Http\Controllers\HomeController;
 use Webkul\Shop\Http\Controllers\PageController;
 use Webkul\Shop\Http\Controllers\ProductController;
@@ -38,6 +39,23 @@ Route::get('contact-us', [HomeController::class, 'contactUs'])
 Route::post('contact-us/send-mail', [HomeController::class, 'sendContactUsMail'])
     ->name('shop.home.contact_us.send_mail')
     ->middleware('cache.response');
+
+/**
+ * Customisation request routes.
+ */
+Route::get('customisation', [CustomizationController::class, 'index'])
+    ->name('shop.customisation.index')
+    ->middleware('cache.response');
+
+Route::post('customisation/submit', [CustomizationController::class, 'submit'])
+    ->name('shop.customisation.submit');
+
+Route::get('customisation/thank-you', [CustomizationController::class, 'thankYou'])
+    ->name('shop.customisation.thank_you')
+    ->middleware('cache.response');
+
+Route::get('customisation/products/{categoryId}', [CustomizationController::class, 'getProducts'])
+    ->name('shop.customisation.products');
 
 /**
  * Store front search.
