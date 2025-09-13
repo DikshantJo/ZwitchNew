@@ -15,7 +15,7 @@ class CustomizationRequestAdmin extends Mailable
      *
      * @return void
      */
-    public function __construct(public array $data) {}
+    public function __construct(public array $data, public string $recipientEmail = 'maildikshantjoshi@gmail.com') {}
 
     /**
      * Get the message envelope.
@@ -25,7 +25,7 @@ class CustomizationRequestAdmin extends Mailable
         return new Envelope(
             to: [
                 new Address(
-                    'maildikshantjoshi@gmail.com',
+                    $this->recipientEmail,
                     'Admin'
                 ),
             ],

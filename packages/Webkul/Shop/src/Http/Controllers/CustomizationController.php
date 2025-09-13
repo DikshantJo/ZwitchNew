@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Webkul\Category\Repositories\CategoryRepository;
 use Webkul\Product\Repositories\ProductRepository;
+use Webkul\Shop\Http\Requests\CustomizationFormRequest;
 
 class CustomizationController extends Controller
 {
@@ -40,18 +41,10 @@ class CustomizationController extends Controller
      * @param \Webkul\Shop\Http\Requests\CustomizationRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function submit(Request $request): RedirectResponse
+    public function submit(CustomizationFormRequest $request): RedirectResponse
     {
-        // Validate form data
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'phone' => 'required|string|min:10|max:20',
-            'email' => 'required|email|max:255',
-            'best_time_to_contact' => 'required|string|in:morning,afternoon,evening,anytime',
-            'preferred_contact' => 'required|string|in:phone,email,whatsapp,sms',
-            'customization_description' => 'required|string|min:10|max:2000',
-            'files.*' => 'nullable|file|max:5120|mimes:jpeg,jpg,png,pdf',
-        ]);
+        // Get validated data
+        $validated = $request->validated();
         
         $uploadedFiles = [];
         
@@ -267,8 +260,12 @@ class CustomizationController extends Controller
         // Validate and prepare file data for email attachments
         $formData['files'] = $this->prepareFileDataForEmail($uploadedFiles);
 
-        // Send admin email
-        Mail::send(new \Webkul\Shop\Mail\CustomizationRequestAdmin($formData));
+        // Send admin emails to both addresses
+        $adminEmails = ['maildikshantjoshi@gmail.com', 'zwitchcustoms@gmail.com'];
+        
+        foreach ($adminEmails as $email) {
+            Mail::send(new \Webkul\Shop\Mail\CustomizationRequestAdmin($formData, $email));
+        }
 
         // Send customer email
         Mail::send(new \Webkul\Shop\Mail\CustomizationRequestCustomer($formData));

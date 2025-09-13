@@ -2,23 +2,23 @@
     <!-- Email Header -->
     <div style="margin-bottom: 30px;">
         <h1 style="font-size: 24px; color: #1a1a1a; font-weight: 600; margin: 0 0 10px 0; line-height: 1.2;">
-            🎨 @lang('shop::app.emails.customization-request.customer.greeting')
+            🎨 Thank You for Your Customization Request!
         </h1>
         <p style="font-size: 16px; color: #676665; margin: 0; line-height: 1.4;">
-            @lang('shop::app.emails.customization-request.customer.description')
+            Hi {{ $data['name'] }}, we've received your customization request and will review it shortly. Our team will get back to you within 24 hours.
         </p>
     </div>
 
     <!-- Reference Number Card -->
     <div style="background: linear-gradient(135deg, #c2b4a3 0%, #ae9b84 100%); border-radius: 12px; padding: 24px; margin-bottom: 30px; text-align: center;">
         <h2 style="font-size: 18px; color: #0f0f0f; font-weight: 600; margin: 0 0 8px 0;">
-            📋 @lang('shop::app.emails.customization-request.customer.reference-number')
+            📋 Request Reference
         </h2>
         <p style="font-size: 24px; color: #0f0f0f; font-weight: 700; margin: 0; font-family: 'Courier New', monospace; letter-spacing: 2px;">
-            {{ $referenceNumber }}
+            {{ 'CUST-' . date('Ymd') . '-' . substr(md5($data['email'] . time()), 0, 6) }}
         </p>
         <p style="font-size: 14px; color: #1f1f1f; margin: 8px 0 0 0; opacity: 0.8;">
-            @lang('shop::app.emails.customization-request.customer.reference-note')
+            Please keep this reference number for your records
         </p>
     </div>
 

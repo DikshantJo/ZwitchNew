@@ -2,10 +2,10 @@
     <!-- Email Header -->
     <div style="margin-bottom: 30px;">
         <h1 style="font-size: 24px; color: #1a1a1a; font-weight: 600; margin: 0 0 10px 0; line-height: 1.2;">
-            🎨 @lang('shop::app.emails.customization-request.admin.greeting')
+            🎨 New Customization Request
         </h1>
         <p style="font-size: 16px; color: #676665; margin: 0; line-height: 1.4;">
-            @lang('shop::app.emails.customization-request.admin.description')
+            A customer has submitted a new customization request. Please review the details below and respond promptly.
         </p>
     </div>
 
@@ -18,7 +18,7 @@
         <!-- Customer Information -->
         <div style="margin-bottom: 20px;">
             <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
-                👤 @lang('shop::app.emails.customization-request.admin.customer-info')
+                👤 Customer Information
             </h3>
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
@@ -43,7 +43,7 @@
         <!-- Project Details -->
         <div style="margin-bottom: 20px;">
             <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
-                💼 @lang('shop::app.emails.customization-request.admin.project-details')
+                💼 Contact Preferences
             </h3>
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
