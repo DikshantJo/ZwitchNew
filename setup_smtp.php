@@ -110,3 +110,9 @@ echo "- Admin: maildikshantjoshi@gmail.com\n";
 echo "- Customer: Email provided in the form\n\n";
 
 echo "🎉 Setup complete! Happy emailing! 🎉\n";
+
+
+
+
+
+

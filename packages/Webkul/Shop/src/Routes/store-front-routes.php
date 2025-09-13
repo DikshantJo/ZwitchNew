@@ -50,6 +50,7 @@ Route::get('customisation', [CustomizationController::class, 'index'])
 Route::post('customisation/submit', [CustomizationController::class, 'submit'])
     ->name('shop.customisation.submit');
 
+
 Route::get('customisation/thank-you', [CustomizationController::class, 'thankYou'])
     ->name('shop.customisation.thank_you')
     ->middleware('cache.response');

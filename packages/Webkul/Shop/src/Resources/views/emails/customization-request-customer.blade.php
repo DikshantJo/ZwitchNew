@@ -49,50 +49,39 @@
             </table>
         </div>
 
-        <!-- Product Information -->
+        <!-- Project Details -->
         <div style="margin-bottom: 20px;">
             <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
-                🛍️ Your Customization Request
+                💼 Contact Preferences
             </h3>
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860; width: 120px;">Category:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">{{ $data['category_name'] }}</td>
+                    <td style="padding: 8px 0; font-weight: 500; color: #384860; width: 120px;">Best Time to Contact:</td>
+                    <td style="padding: 8px 0; color: #1a1a1a;">
+                        <span style="background: #c2b4a3; color: #0f0f0f; padding: 4px 8px; border-radius: 4px; font-weight: 600;">
+                            {{ ucfirst(str_replace('_', ' ', $data['best_time_to_contact'])) }}
+                        </span>
+                    </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Product:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">{{ $data['product_name'] }}</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Quantity:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">{{ $data['quantity'] }} piece(s)</td>
+                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Preferred Contact:</td>
+                    <td style="padding: 8px 0; color: #1a1a1a;">
+                        <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 4px; font-weight: 600;">
+                            {{ ucfirst($data['preferred_contact']) }}
+                        </span>
+                    </td>
                 </tr>
             </table>
         </div>
 
-        <!-- Project Details -->
+        <!-- Customization Description -->
         <div style="margin-bottom: 20px;">
             <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
-                💼 Project Specifications
+                📝 Your Customization Description
             </h3>
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860; width: 120px;">Budget:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">
-                        <span style="background: #c2b4a3; color: #0f0f0f; padding: 4px 8px; border-radius: 4px; font-weight: 600;">
-                            {{ $data['budget'] }}
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Timeline:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">
-                        <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 4px; font-weight: 600;">
-                            {{ \Carbon\Carbon::parse($data['timeline'])->format('M d, Y') }}
-                        </span>
-                    </td>
-                </tr>
-            </table>
+            <div style="background: #ffffff; border: 1px solid #e9ecef; border-radius: 6px; padding: 16px;">
+                <p style="font-size: 14px; color: #1a1a1a; margin: 0; line-height: 1.6; white-space: pre-wrap;">{{ $data['customization_description'] }}</p>
+            </div>
         </div>
 
         <!-- File Attachments -->

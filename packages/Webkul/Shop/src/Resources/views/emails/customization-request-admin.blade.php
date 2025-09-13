@@ -40,27 +40,6 @@
             </table>
         </div>
 
-        <!-- Product Information -->
-        <div style="margin-bottom: 20px;">
-            <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
-                🛍️ @lang('shop::app.emails.customization-request.admin.product-info')
-            </h3>
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860; width: 120px;">Category:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">{{ $data['category_name'] }}</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Product:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">{{ $data['product_name'] }}</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Quantity:</td>
-                    <td style="padding: 8px 0; color: #1a1a1a;">{{ $data['quantity'] }} piece(s)</td>
-                </tr>
-            </table>
-        </div>
-
         <!-- Project Details -->
         <div style="margin-bottom: 20px;">
             <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
@@ -68,22 +47,32 @@
             </h3>
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860; width: 120px;">Budget:</td>
+                    <td style="padding: 8px 0; font-weight: 500; color: #384860; width: 120px;">Best Time to Contact:</td>
                     <td style="padding: 8px 0; color: #1a1a1a;">
                         <span style="background: #c2b4a3; color: #0f0f0f; padding: 4px 8px; border-radius: 4px; font-weight: 600;">
-                            {{ $data['budget'] }}
+                            {{ ucfirst(str_replace('_', ' ', $data['best_time_to_contact'])) }}
                         </span>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Timeline:</td>
+                    <td style="padding: 8px 0; font-weight: 500; color: #384860;">Preferred Contact:</td>
                     <td style="padding: 8px 0; color: #1a1a1a;">
                         <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 4px; font-weight: 600;">
-                            {{ \Carbon\Carbon::parse($data['timeline'])->format('M d, Y') }}
+                            {{ ucfirst($data['preferred_contact']) }}
                         </span>
                     </td>
                 </tr>
             </table>
+        </div>
+
+        <!-- Customization Description -->
+        <div style="margin-bottom: 20px;">
+            <h3 style="font-size: 16px; color: #1a1a1a; font-weight: 600; margin: 0 0 12px 0;">
+                📝 Customization Description
+            </h3>
+            <div style="background: #ffffff; border: 1px solid #e9ecef; border-radius: 6px; padding: 16px;">
+                <p style="font-size: 14px; color: #1a1a1a; margin: 0; line-height: 1.6; white-space: pre-wrap;">{{ $data['customization_description'] }}</p>
+            </div>
         </div>
 
         <!-- File Attachments -->
@@ -136,7 +125,7 @@
             🚀 @lang('shop::app.emails.customization-request.admin.quick-actions')
         </h3>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="mailto:{{ $data['email'] }}?subject=Re: Customization Request - {{ $data['name'] }}&body=Hi {{ $data['name'] }},%0D%0A%0D%0AThank you for your customization request. We have received your request for {{ $data['product_name'] }} and will review it shortly.%0D%0A%0D%0ABest regards,%0D%0A{{ config('app.name') }} Team" 
+            <a href="mailto:{{ $data['email'] }}?subject=Re: Customization Request - {{ $data['name'] }}&body=Hi {{ $data['name'] }},%0D%0A%0D%0AThank you for your customization request. We have received your request and will review it shortly.%0D%0A%0D%0ABest regards,%0D%0A{{ config('app.name') }} Team" 
                style="background: #c2b4a3; color: #0f0f0f; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">
                 📧 @lang('shop::app.emails.customization-request.admin.reply-customer')
             </a>
@@ -153,8 +142,9 @@
             📊 @lang('shop::app.emails.customization-request.admin.request-summary')
         </h4>
         <p style="font-size: 14px; color: #676665; margin: 0; line-height: 1.4;">
-            <strong>{{ $data['name'] }}</strong> is requesting customization for <strong>{{ $data['product_name'] }}</strong> 
-            with a budget of <strong>{{ $data['budget'] }}</strong> and timeline of <strong>{{ \Carbon\Carbon::parse($data['timeline'])->format('M d, Y') }}</strong>.
+            <strong>{{ $data['name'] }}</strong> has submitted a customization request. 
+            They prefer to be contacted via <strong>{{ ucfirst($data['preferred_contact']) }}</strong> 
+            during <strong>{{ ucfirst(str_replace('_', ' ', $data['best_time_to_contact'])) }}</strong>.
             @if(!empty($data['files']))
                 They have also provided <strong>{{ count($data['files']) }} reference file(s)</strong> for your review.
             @endif

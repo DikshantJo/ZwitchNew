@@ -16,7 +16,17 @@ class CustomizationRequest extends FormRequest
     {
         return true;
     }
-
+    
+    /**
+     * Determine if the request should be validated.
+     *
+     * @return bool
+     */
+    public function shouldValidate()
+    {
+        return true;
+    }
+    
     /**
      * Get the validation rules that apply to the request.
      *
@@ -26,18 +36,21 @@ class CustomizationRequest extends FormRequest
     {
         // Debug: Log validation attempt
         \Log::info('CustomizationRequest validation started', [
-            'input_data' => $this->all()
+            'input_data' => $this->all(),
+            'csrf_token' => $this->input('_token'),
+            'session_token' => session()->token(),
+            'csrf_match' => $this->input('_token') === session()->token(),
+            'has_csrf' => $this->has('_token'),
+            'session_id' => session()->getId()
         ]);
         
         return [
             'name' => 'required|string|max:255',
-            'phone' => ['required', new PhoneNumber],
+            'phone' => 'required|string|min:10|max:20',
             'email' => 'required|email|max:255',
-            'category_id' => 'required|exists:categories,id',
-            'product_id' => 'nullable|exists:products,id',
-            'quantity' => 'required|integer|min:1',
-            'budget' => 'required|string|in:under_1000,1000_2500,2500_5000,5000_10000,10000_15000,15000_25000,25000_50000,50000_100000,100000_plus,custom',
-            'timeline' => 'required|date|after:today',
+            'best_time_to_contact' => 'required|string|in:morning,afternoon,evening,anytime',
+            'preferred_contact' => 'required|string|in:phone,email,whatsapp,sms',
+            'customization_description' => 'required|string|min:10|max:2000',
             'files.*' => 'nullable|file|max:5120|mimes:jpeg,jpg,png,pdf',
         ];
     }
@@ -59,21 +72,15 @@ class CustomizationRequest extends FormRequest
             'email.email' => 'Please enter a valid email address.',
             'email.max' => 'Email cannot exceed 255 characters.',
             
-            'category_id.required' => 'Please select a category.',
-            'category_id.exists' => 'Selected category is invalid.',
+            'best_time_to_contact.required' => 'Please select the best time to contact you.',
+            'best_time_to_contact.in' => 'Please select a valid contact time.',
             
-            'product_id.exists' => 'Selected product is invalid.',
+            'preferred_contact.required' => 'Please select your preferred contact method.',
+            'preferred_contact.in' => 'Please select a valid contact method.',
             
-            'quantity.required' => 'Please enter the quantity.',
-            'quantity.integer' => 'Quantity must be a whole number.',
-            'quantity.min' => 'Quantity must be at least 1.',
-            
-            'budget.required' => 'Please select a budget range.',
-            'budget.in' => 'Please select a valid budget range.',
-            
-            'timeline.required' => 'Please select a timeline.',
-            'timeline.date' => 'Please enter a valid date.',
-            'timeline.after' => 'Timeline must be a future date.',
+            'customization_description.required' => 'Please describe your customization requirements.',
+            'customization_description.min' => 'Description must be at least 10 characters long.',
+            'customization_description.max' => 'Description cannot exceed 2000 characters.',
             
             'files.*.file' => 'Each file must be a valid file.',
             'files.*.max' => 'Each file cannot exceed 5MB.',
@@ -92,11 +99,9 @@ class CustomizationRequest extends FormRequest
             'name' => 'Name',
             'phone' => 'Phone Number',
             'email' => 'Email Address',
-            'category_id' => 'Category',
-            'product_id' => 'Product',
-            'quantity' => 'Quantity',
-            'budget' => 'Budget Range',
-            'timeline' => 'Timeline',
+            'best_time_to_contact' => 'Best Time to Contact',
+            'preferred_contact' => 'Preferred Contact Method',
+            'customization_description' => 'Customization Description',
             'files.*' => 'File',
         ];
     }
