@@ -34,8 +34,8 @@
                         <v-field
                             as="select"
                             :name="'super_attribute[' + attribute.id + ']'"
-                            class="custom-select mb-3 block w-full cursor-pointer rounded-lg border border-zinc-200 bg-white dark:bg-gray-700 px-5 py-3 text-base text-zinc-500 dark:text-gray-300 focus:border-blue-500 focus:ring-blue-500 dark:focus:border-blue-400 dark:focus:ring-blue-400"
-                            :class="[errors['super_attribute[' + attribute.id + ']'] ? 'border border-red-500' : '']"
+                            class="custom-select mb-3 block w-full cursor-pointer rounded-lg border-2 border-zinc-200 bg-white dark:bg-gray-700 px-5 py-3 text-base text-zinc-500 dark:text-gray-300 focus:border-navyBlue focus:ring-navyBlue dark:focus:border-blue-400 dark:focus:ring-blue-400 transition-all duration-200"
+                            :class="[errors['super_attribute[' + attribute.id + ']'] ? 'border border-red-500' : '', attribute.selectedValue ? 'border-navyBlue' : '']"
                             :id="'attribute_' + attribute.id"
                             v-model="attribute.selectedValue"
                             rules="required"
@@ -66,8 +66,8 @@
                                 <template v-if="option.id">
                                     <!-- Color Swatch Options -->
                                     <label
-                                        class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none"
-                                        :class="{'ring-2 ring-gray-900' : option.id == attribute.selectedValue}"
+                                        class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none transition-all duration-200"
+                                        :class="{'ring-4 ring-navyBlue ring-offset-2' : option.id == attribute.selectedValue}"
                                         :title="option.label"
                                         v-if="attribute.swatch_type == 'color'"
                                     >
@@ -93,7 +93,8 @@
                                         </v-field>
 
                                         <span
-                                            class="h-8 w-8 rounded-full border border-gray-200 dark:border-gray-600 max-sm:h-[25px] max-sm:w-[25px]"
+                                            class="h-8 w-8 rounded-full border-2 border-gray-200 dark:border-gray-600 max-sm:h-[25px] max-sm:w-[25px] transition-all duration-200"
+                                            :class="{'border-navyBlue shadow-lg' : option.id == attribute.selectedValue}"
                                             tabindex="0"
                                             :style="{ 'background-color': option.swatch_value }"
                                         ></span>
@@ -101,8 +102,8 @@
 
                                     <!-- Image Swatch Options -->
                                     <label 
-                                        class="group relative flex h-[60px] w-[60px] cursor-pointer items-center justify-center overflow-hidden rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 font-medium uppercase text-gray-900 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 sm:py-6"
-                                        :class="{'border-navyBlue dark:border-blue-400' : option.id == attribute.selectedValue }"
+                                        class="group relative flex h-[60px] w-[60px] cursor-pointer items-center justify-center overflow-hidden rounded-md border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 font-medium uppercase text-gray-900 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 sm:py-6 transition-all duration-200"
+                                        :class="{'border-navyBlue dark:border-blue-400 ring-2 ring-navyBlue ring-offset-1 shadow-lg' : option.id == attribute.selectedValue }"
                                         :title="option.label"
                                         v-if="attribute.swatch_type == 'image'"
                                     >
@@ -136,8 +137,8 @@
 
                                     <!-- Text Swatch Options -->
                                     <label 
-                                        class="group relative flex h-fit min-w-fit cursor-pointer items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-5 py-3 font-medium uppercase text-gray-900 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 max-sm:h-fit max-sm:w-fit max-sm:px-3.5 max-sm:py-2"
-                                        :class="{'border-transparent !bg-navyBlue dark:!bg-blue-600 text-white' : option.id == attribute.selectedValue }"
+                                        class="group relative flex h-fit min-w-fit cursor-pointer items-center justify-center rounded-full border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-5 py-3 font-medium uppercase text-gray-900 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 max-sm:h-fit max-sm:w-fit max-sm:px-3.5 max-sm:py-2 transition-all duration-200"
+                                        :class="{'border-navyBlue bg-navyBlue dark:bg-blue-600 text-white shadow-lg' : option.id == attribute.selectedValue }"
                                         :title="option.label"
                                         v-if="attribute.swatch_type == 'text'"
                                     >

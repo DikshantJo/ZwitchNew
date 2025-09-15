@@ -246,7 +246,8 @@
                     <template v-else>
                         <div class="m-auto grid h-[476px] w-full place-content-center items-center justify-items-center text-center max-md:h-60">
                             <img
-                                class="max-md:h-32 max-md:w-32 max-sm:h-[100px] max-sm:w-[100px]"
+                                class="max-md:h-32 max-md:w-32 max-sm:h-[100px] max-sm:w-[100px] max-md:mb-10 max-sm:mb-10"
+                                style="background-color: grey; border-radius: 30px; margin-bottom: 40px;"
                                 src="{{ bagisto_asset('images/review.png') }}"
                                 alt=""
                                 title=""

@@ -164,7 +164,7 @@
             class="max-md:border-none"
             :is-active="true"
         >
-            <x-slot:header class="bg-gray-100 max-md:!py-3 max-sm:!py-2">
+            <x-slot:header class="max-md:!py-3 max-sm:!py-2">
                 <p class="text-base font-medium 1180:hidden">
                     @lang('shop::app.products.view.description')
                 </p>
@@ -183,7 +183,7 @@
                 class="max-md:border-none"
                 :is-active="false"
             >
-                <x-slot:header class="bg-gray-100 max-md:!py-3 max-sm:!py-2">
+                <x-slot:header class="max-md:!py-3 max-sm:!py-2">
                     <p class="text-base font-medium 1180:hidden">
                         @lang('shop::app.products.view.additional-information')
                     </p>
@@ -239,7 +239,7 @@
             :is-active="false"
         >
             <x-slot:header
-                class="bg-gray-100 max-md:!py-3 max-sm:!py-2"
+                class="max-md:!py-3 max-sm:!py-2"
                 id="review-accordian-button"
             >
                 <p class="text-base font-medium">
@@ -401,7 +401,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">How do I place an order with Zwitch Originals?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Simply browse our website, select your favorite design, choose size, color, and fit, then proceed to secure online checkout. You'll receive an order confirmation and tracking details by email once your purchase is complete.</p>
                             </div>
                         </div>
@@ -411,7 +411,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">How do I choose the right size?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Always refer to our detailed size chart available on each product page. If unsure, measure your chest, waist, and length, and compare with our chart for the best fit.</p>
                             </div>
                         </div>
@@ -421,7 +421,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Are all Zwitch Originals t-shirts handmade and limited edition?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Yes! All our designs are hand-illustrated by our in-house artist and released in limited quantities, ensuring exclusivity in every piece.</p>
                             </div>
                         </div>
@@ -431,7 +431,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Can I customize my t-shirt or place a bulk order for events?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Currently, we offer limited editions only. For customization or bulk inquiries, please contact our support team - we'd love to discuss your needs!</p>
                             </div>
                         </div>
@@ -441,7 +441,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Do you ship across India?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Absolutely! We deliver PAN India to all states and union territories. Shipping charges are calculated at checkout.</p>
                             </div>
                         </div>
@@ -451,7 +451,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">How long will it take to receive my order?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Standard delivery takes 4–6 business days from order processing. You'll get a tracking number via email/SMS for real-time updates on your shipment status.</p>
                             </div>
                         </div>
@@ -461,7 +461,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Which payment methods do you accept?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>We accept UPI, net banking, debit/credit cards, and wallets. We do not currently offer Cash on Delivery.</p>
                             </div>
                         </div>
@@ -471,7 +471,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">What is your return policy?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Returns are accepted within 7 days of delivery for unworn and unwashed items with tags intact. Customized and limited-edition drops are final sale unless defective. Please contact us to initiate a return.</p>
                             </div>
                         </div>
@@ -481,7 +481,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">How do refunds work?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Eligible returns are refunded to the original payment method within 7–10 business days after we receive and inspect the product. Refunds exclude shipping fees unless the product is faulty or incorrect.</p>
                             </div>
                         </div>
@@ -494,7 +494,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">What if I receive a defective or wrong item?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>We apologize for any inconvenience! Please contact us within 2 days of receiving your order. We'll arrange a return, reimburse your shipping costs, and send a replacement or refund after review.</p>
                             </div>
                         </div>
@@ -504,7 +504,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Can I cancel my order?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Yes, cancellations are allowed within 24 hours of purchase only. After that, your order will be processed and shipped as per schedule.</p>
                             </div>
                         </div>
@@ -514,7 +514,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Do you offer Cash on Delivery (COD)?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>No, we currently accept only prepaid online payments for faster, safer transactions.</p>
                             </div>
                         </div>
@@ -524,7 +524,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Are your prices inclusive of GST and other taxes?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Yes, all listed prices are inclusive of GST and applicable taxes.</p>
                             </div>
                         </div>
@@ -534,7 +534,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Will my personal information be safe?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Absolutely. We value your privacy and use your personal details only for order processing and updates. Read our Privacy Policy for more info.</p>
                             </div>
                         </div>
@@ -544,7 +544,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">Can minors (under 18) shop at Zwitch Originals?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>Yes, minors may shop on our site, but we advise parental supervision for safe purchases.</p>
                             </div>
                         </div>
@@ -554,7 +554,7 @@
                                 <h3 class="zob-steps-faq__faq-question-text">How can I contact customer care?</h3>
                                 <button class="zob-steps-faq__faq-toggle">+</button>
                             </div>
-                            <div class="zob-steps-faq__faq-answer">
+                            <div class="zob-steps-faq__faq-answer" style="padding-top: 25px;">
                                 <p>For any queries or issues, reach out to us at your support email or use the contact form on our website. Our team is ready to help!</p>
                             </div>
                         </div>
