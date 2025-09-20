@@ -37,7 +37,6 @@
                     <x-slot:menu>
                         <x-shop::dropdown.menu.item
                             v-for="(sort, key) in filters.available.sort"
-                            ::class="{'bg-gray-100': sort.value == filters.applied.sort}"
                             @click="apply('sort', sort.value)"
                         >
                             @{{ sort.title }}
@@ -69,7 +68,6 @@
                         <x-slot:menu>
                             <x-shop::dropdown.menu.item
                                 v-for="(limit, key) in filters.available.limit"
-                                ::class="{'bg-gray-100': limit == filters.applied.limit}"
                                 @click="apply('limit', limit)"
                             >
                                 @{{ limit }}
@@ -109,7 +107,6 @@
                 <ul>
                     <li
                         class="px-4 py-2.5"
-                        :class="{'bg-gray-100': sort.value == filters.applied.sort}"
                         v-for="(sort, key) in filters.available.sort"
                         @click="apply('sort', sort.value)"
                     >

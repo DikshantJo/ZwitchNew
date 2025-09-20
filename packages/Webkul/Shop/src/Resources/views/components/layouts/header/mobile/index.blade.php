@@ -52,7 +52,7 @@
                         href="{{ route('shop.compare.index') }}"
                         aria-label="@lang('shop::app.components.layouts.header.mobile.compare')"
                     >
-                        <span class="icon-compare cursor-pointer text-2xl"></span>
+                        <span class="icon-compare cursor-pointer text-2xl" style="color: #1a1a1a !important;"></span>
                     </a>
                 @endif
 
@@ -74,7 +74,7 @@
                         class="search-toggle-btn"
                         aria-label="@lang('shop::app.components.layouts.header.mobile.search')"
                     >
-                        <span class="icon-search cursor-pointer text-2xl"></span>
+                        <span class="icon-search cursor-pointer text-2xl" style="color: #1a1a1a !important;"></span>
                     </button>
                 </div>
 
@@ -82,14 +82,14 @@
                 <div class="max-md:hidden">
                     <x-shop::dropdown position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'right' : 'left' }}">
                         <x-slot:toggle>
-                            <span class="icon-users cursor-pointer text-2xl"></span>
+                            <span class="icon-users cursor-pointer text-2xl" style="color: #1a1a1a !important;"></span>
                         </x-slot>
 
                         <!-- Guest Dropdown -->
                         @guest('customer')
                             <x-slot:content>
                                 <div class="grid gap-2.5">
-                                    <p class="font-dmserif text-xl">
+                                    <p class="font-urbanist text-xl" style="font-family: 'Urbanist', sans-serif !important;">
                                         @lang('shop::app.components.layouts.header.mobile.welcome-guest')
                                     </p>
 
@@ -130,7 +130,7 @@
                         @auth('customer')
                             <x-slot:content class="!p-0">
                                 <div class="grid gap-2.5 p-5 pb-0">
-                                    <p class="font-dmserif text-xl">
+                                    <p class="font-urbanist text-xl" style="font-family: 'Urbanist', sans-serif !important;">
                                         @lang('shop::app.components.layouts.header.mobile.welcome')’
                                         {{ auth()->guard('customer')->user()->first_name }}
                                     </p>
@@ -199,7 +199,7 @@
                             href="{{ route('shop.customer.session.create') }}"
                             aria-label="@lang('shop::app.components.layouts.header.mobile.account')"
                         >
-                            <span class="icon-users cursor-pointer text-2xl"></span>
+                            <span class="icon-users cursor-pointer text-2xl" style="color: #1a1a1a !important;"></span>
                         </a>
                     @endguest
 
@@ -209,7 +209,7 @@
                             href="{{ route('shop.customers.account.index') }}"
                             aria-label="@lang('shop::app.components.layouts.header.mobile.account')"
                         >
-                            <span class="icon-users cursor-pointer text-2xl"></span>
+                            <span class="icon-users cursor-pointer text-2xl" style="color: #1a1a1a !important;"></span>
                         </a>
                     @endauth
                 </div>

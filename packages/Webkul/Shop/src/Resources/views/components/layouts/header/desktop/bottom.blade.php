@@ -1,12 +1,37 @@
 {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.before') !!}
 
-<div class="relative flex min-h-[78px] w-full justify-between border border-b border-l-0 border-r-0 border-t-0 px-[60px] max-1180:px-8">
+<div class="relative flex min-h-[78px] w-full justify-between items-center px-[20px] max-1180:px-8">
+    <div class = "flex gap-4 items-center">
+   <!-- Centered Logo Section -->
+   <div class="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg" style="top: 75%;">
+        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.before') !!}
+    
+        <a
+            href="{{ route('shop.home.index') }}"
+            aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
+        >
+            <img
+                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
+                width="110"
+                height="24"
+                alt="{{ config('app.name') }}"
+                class="rounded-full object-cover h-12 w-auto sm:h-9"
+                style="border-radius: 50%; width: 60px;height: 60px;"
+            >
+        </a>
+
+        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.after') !!}
+    </div>
+
+
+
+
     <!--
         This section will provide categories for the first, second, and third levels. If
         additional levels are required, users can customize them according to their needs.
     -->
     <!-- Left Navigation Section -->
-    <div class="flex items-center gap-x-10 max-[1180px]:gap-x-5">
+    <div class="flex items-center gap-x-10 max-[1180px]:gap-x-5" style="background: #f2f2f2; border-radius: 50px; padding: 10px;height:40px;">
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.before') !!}
 
         <v-desktop-category>
@@ -30,35 +55,16 @@
 
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.after') !!}
     </div>
-
-    <!-- Centered Logo Section -->
-    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg" style="top: 75%;">
-        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.before') !!}
-
-        <a
-            href="{{ route('shop.home.index') }}"
-            aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
-        >
-            <img
-                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
-                width="110"
-                height="24"
-                alt="{{ config('app.name') }}"
-                class="rounded-full object-cover h-12 w-auto sm:h-9"
-                style="border-radius: 50%; width: 90px;height: 90px;"
-            >
-        </a>
-
-        {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.logo.after') !!}
     </div>
 
+ 
     <!-- Right Nagivation Section -->
-    <div class="flex items-center gap-x-9 max-[1100px]:gap-x-6 max-lg:gap-x-8">
+    <div class="flex items-center gap-x-4 max-[1100px]:gap-x-4 max-lg:gap-x-8" style="background: #e4e4e4; border-radius: 50px; padding-right: 26px;">
 
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.search_bar.before') !!}
 
         <!-- Search Bar Container -->
-        <div class="relative w-full" style="width:420px;">
+        <div class="relative w-full" style="width:320px;">
             <form
                 action="{{ route('shop.search.index') }}"
                 class="flex w-[600px] max-w-[600px] items-center max-lg:w-[500px] max-md:w-[400px] max-sm:w-full" style="width: 100%;"
@@ -71,7 +77,7 @@
                     @lang('shop::app.components.layouts.header.desktop.bottom.search')
                 </label>
 
-                <div class="icon-search pointer-events-none absolute top-2.5 flex items-center text-xl ltr:left-3 rtl:right-3"></div>
+                <div class="icon-search pointer-events-none absolute top-2.5 flex items-center text-xl ltr:left-3 rtl:right-3" style="color: #1a1a1a !important;"></div>
 
                 <input
                     type="text"
@@ -85,6 +91,7 @@
                     aria-required="true"
                     pattern="[^\\]+"
                     required
+                    style="color: #1a1a1a !important;background: #fff !important;border:none !important;"
                 >
 
                 <button
@@ -103,7 +110,7 @@
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.search_bar.after') !!}
 
         <!-- Right Navigation Links -->
-        <div class="mt-1.5 flex gap-x-8 max-[1100px]:gap-x-6 max-lg:gap-x-8">
+        <div class="mt-1.5 flex gap-x-4 max-[1100px]:gap-x-6 max-lg:gap-x-6">
 
             {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.compare.before') !!}
 
@@ -115,6 +122,7 @@
                 >
                     <span
                         class="icon-compare inline-block cursor-pointer text-2xl"
+                        style="color: #1a1a1a !important;"
                         role="presentation"
                     ></span>
                 </a>
@@ -138,6 +146,7 @@
                 <x-slot:toggle>
                     <span
                         class="icon-users inline-block cursor-pointer text-2xl"
+                        style="color: #1a1a1a !important;"
                         role="button"
                         aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.profile')"
                         tabindex="0"
@@ -148,7 +157,7 @@
                 @guest('customer')
                     <x-slot:content>
                         <div class="grid gap-2.5">
-                            <p class="font-dmserif text-xl">
+                            <p class="font-urbanist text-xl" style="font-family: 'Urbanist', sans-serif !important;">
                                 @lang('shop::app.components.layouts.header.desktop.bottom.welcome-guest')
                             </p>
 
@@ -189,7 +198,7 @@
                 @auth('customer')
                     <x-slot:content class="!p-0">
                         <div class="grid gap-2.5 p-5 pb-0">
-                            <p class="font-dmserif text-xl">
+                            <p class="font-urbanist text-xl" style="font-family: 'Urbanist', sans-serif !important;">
                                 @lang('shop::app.components.layouts.header.desktop.bottom.welcome')’
                                 {{ auth()->guard('customer')->user()->first_name }}
                             </p>
@@ -287,14 +296,15 @@
             v-else-if="'{{ core()->getConfigData('general.design.categories.category_view') }}' !== 'sidebar'"
         >
             <div
-                class="group relative flex h-[77px] items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
+                class="group relative flex  items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
+                style="background: transparent !important;"
                 v-for="category in categories"
             >
                 <span>
                     <a
                         :href="category.url"
                         class="inline-block px-5 font-semibold"
-                        style="text-transform: none !important; font-weight: 600 !important;"
+                        style="text-transform: none !important; font-weight: 600 !important; font-family: 'Urbanist', sans-serif !important; color: #1a1a1a !important;"
                     >
                         @{{ category.name }}
                     </a>
@@ -342,11 +352,11 @@
             <div class="flex items-center">
                 <!-- "All" button for opening the category drawer -->
                 <div
-                    class="flex h-[77px] cursor-pointer items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
+                    class="flex  cursor-pointer items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
                     @click="toggleCategoryDrawer"
                 >
-                    <span class="flex items-center gap-1 px-5 font-semibold" style="text-transform: none !important; font-weight: 600 !important;">
-                        <span class="icon-hamburger text-xl"></span>
+                    <span class="flex items-center gap-1 px-5 font-semibold" style="text-transform: none !important; font-weight: 600 !important; font-family: 'Urbanist', sans-serif !important; color: #1a1a1a !important;">
+                        <span class="icon-hamburger text-xl" style="color: #1a1a1a !important;"></span>
 
                         @lang('shop::app.components.layouts.header.desktop.bottom.all')
                     </span>
@@ -354,14 +364,15 @@
 
                 <!-- Show only first 4 categories in main navigation -->
                 <div
-                    class="group relative flex h-[77px] items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
+                    class="group relative flex h-[77px] items-center border-b-4 border-transparent"
+                style="background: transparent !important;"
                     v-for="category in categories.slice(0, 4)"
                 >
                     <span>
                         <a
                             :href="category.url"
                             class="inline-block px-5 font-semibold"
-                            style="text-transform: none !important; font-weight: 600 !important;"
+                            style="text-transform: none !important; font-weight: 600 !important; font-family: 'Urbanist', sans-serif !important; color: #1a1a1a !important;"
                         >
                             @{{ category.name }}
                         </a>

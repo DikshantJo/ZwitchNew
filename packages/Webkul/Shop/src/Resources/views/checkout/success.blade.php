@@ -9,12 +9,13 @@
     </x-slot>
 
 	<!-- Page content -->
-	<div class="container mt-8 px-[60px] max-lg:px-8">
+	<div class="container my-8 px-[60px] max-lg:px-8">
 		<div class="grid place-items-center gap-y-5 max-md:gap-y-2.5">
 			{{ view_render_event('bagisto.shop.checkout.success.image.before', ['order' => $order]) }}
 
 			<img 
 				class="max-md:h-[100px] max-md:w-[100px]"
+				style="background: #fafafa; border-radius: 20%; padding: 20px; margin: 20px;"
 				src="{{ bagisto_asset('images/thank-you.png') }}" 
 				alt="@lang('shop::app.checkout.success.thanks')" 
 				title="@lang('shop::app.checkout.success.thanks')"

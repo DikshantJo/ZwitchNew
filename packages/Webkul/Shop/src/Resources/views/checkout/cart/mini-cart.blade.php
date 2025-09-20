@@ -1,7 +1,8 @@
 <!-- Mini Cart Vue Component -->
 <v-mini-cart>
     <span
-        class="icon-cart cursor-pointer text-2xl"
+        class="icon-cart cursor-pointer text-2xl" style="color: #1a1a1a !important;"
+        style="color: #1a1a1a !important;"
         role="button"
         aria-label="@lang('shop::app.checkout.cart.mini-cart.shopping-cart')"
     ></span>
@@ -22,7 +23,7 @@
 
                     <span class="relative">
                         <span
-                            class="icon-cart cursor-pointer text-2xl"
+                            class="icon-cart cursor-pointer text-2xl" style="color: #1a1a1a !important;"
                             role="button"
                             aria-label="@lang('shop::app.checkout.cart.mini-cart.shopping-cart')"
                             tabindex="0"
@@ -353,7 +354,7 @@
 
                     <span class="relative">
                         <span
-                            class="icon-cart cursor-pointer text-2xl"
+                            class="icon-cart cursor-pointer text-2xl" style="color: #1a1a1a !important;"
                             role="button"
                             aria-label="@lang('shop::app.checkout.cart.mini-cart.shopping-cart')"
                             tabindex="0"

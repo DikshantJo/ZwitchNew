@@ -19,11 +19,11 @@
 
     <!-- Page Header -->
     <div class="flex-wrap">
-        <div class="flex w-full justify-between border border-b border-l-0 border-r-0 border-t-0 px-[60px] py-4 max-lg:px-8 max-sm:px-4">
+        <div class="flex w-full justify-between items-center border border-b border-l-0 border-r-0 border-t-0 px-[60px] py-4 max-lg:px-8 max-sm:px-4">
             <div class="flex items-center gap-x-14 max-[1180px]:gap-x-9">
                 <a
                     href="{{ route('shop.home.index') }}"
-                    class="flex min-h-[30px]"
+                    class="flex min-h-[30px] max-h-[100px] max-w-[100px]"
                     aria-label="@lang('shop::checkout.onepage.index.bagisto')"
                 >
                     <img
@@ -31,6 +31,7 @@
                         alt="{{ config('app.name') }}"
                         width="131"
                         height="29"
+                        style="border-radius: 50%;"
                     >
                 </a>
             </div>
@@ -73,7 +74,8 @@
             </template>
 
             <template v-else>
-                <div class="grid grid-cols-[1fr_auto] gap-8 max-lg:grid-cols-[1fr] max-md:gap-5">
+                <div class="grid grid-cols-[1fr_auto] gap-8 max-lg:grid-cols-[1fr] max-md:gap-5 px-6 py-8" 
+                style="box-shadow: 1px 1px 7px 7px #252525bf; margin: 30px 0; border-radius: 30px;">
                     <!-- Included Checkout Summary Blade File For Mobile view -->
                     <div class="hidden max-md:block">
                         @include('shop::checkout.onepage.summary')
@@ -100,7 +102,7 @@
                     </div>
 
                     <!-- Included Checkout Summary Blade File For Desktop view -->
-                    <div class="sticky top-8 block h-max w-[442px] max-w-full max-lg:w-auto max-lg:max-w-[442px] ltr:pl-8 max-lg:ltr:pl-0 rtl:pr-8 max-lg:rtl:pr-0">
+                    <div class="sticky top-8 block h-max w-[442px] max-w-full max-lg:w-auto max-lg:max-w-[442px] ltr:pl-8 max-lg:ltr:pl-0 rtl:pr-8 max-lg:rtl:pr-0 pt-6">
                         <div class="block max-md:hidden">
                             @include('shop::checkout.onepage.summary')
                         </div>

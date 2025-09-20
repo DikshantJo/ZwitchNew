@@ -30,6 +30,8 @@
         <div class="container mt-8 px-[60px] max-lg:px-8 max-md:mt-4 max-md:px-4">
             <x-shop::media.images.lazy
                 class="aspect-[4/1] max-h-full max-w-full rounded-xl category-banner-img"
+                style="height: auto; object-fit: cover;"
+                data-mobile-style="height: 350px; object-fit: cover;"
                 src="{{ $category->banner_url }}"
                 alt="{{ $category->name }}"
                 width="1320"
@@ -39,6 +41,29 @@
     @endif
 
     {!! view_render_event('bagisto.shop.categories.view.banner_path.after') !!}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bannerImg = document.querySelector('.category-banner-img');
+            if (bannerImg) {
+                function applyMobileStyles() {
+                    if (window.innerWidth <= 768) {
+                        bannerImg.style.height = '350px';
+                        bannerImg.style.objectFit = 'cover';
+                    } else {
+                        bannerImg.style.height = 'auto';
+                        bannerImg.style.objectFit = 'contain';
+                    }
+                }
+                
+                // Apply on load
+                applyMobileStyles();
+                
+                // Apply on resize
+                window.addEventListener('resize', applyMobileStyles);
+            }
+        });
+    </script>
 
     <!-- Category Name -->
     <div class="container mt-20 px-[60px] max-lg:px-8 max-md:mt-16 max-md:px-4 category-name-container">

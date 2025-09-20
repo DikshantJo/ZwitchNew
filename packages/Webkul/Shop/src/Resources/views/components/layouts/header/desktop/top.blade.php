@@ -68,13 +68,14 @@
                         tabindex="0"
                         @click="currencyToggler = ! currencyToggler"
                     >
-                        <span>
+                        <span style="color: #1a1a1a !important;">
                             {{ core()->getCurrentCurrency()->symbol . ' ' . core()->getCurrentCurrencyCode() }}
                         </span>
 
                         <span
                             class="text-2xl"
                             :class="{'icon-arrow-up': currencyToggler, 'icon-arrow-down': ! currencyToggler}"
+                            style="color: #1a1a1a !important;"
                             role="presentation"
                         ></span>
                     </div>
@@ -88,12 +89,13 @@
 
             {!! view_render_event('bagisto.shop.components.layouts.header.desktop.top.currency_switcher.after') !!}
 
-            <p class="py-3 text-xs font-medium">
+            <p class="py-3 text-xs font-medium" style="color: #1a1a1a !important;">
                 {{ core()->getConfigData('general.content.header_offer.title') }}
                 
                 <a 
                     href="{{ core()->getConfigData('general.content.header_offer.redirection_link') }}" 
                     class="underline"
+                    style="color: #1a1a1a !important;"
                     role="button"
                 >
                     {{ core()->getConfigData('general.content.header_offer.redirection_title') }}
@@ -123,13 +125,14 @@
                             height="16"
                         />
                         
-                        <span>
+                        <span style="color: #1a1a1a !important;">
                             {{ core()->getCurrentChannel()->locales()->orderBy('name')->where('code', app()->getLocale())->value('name') }}
                         </span>
 
                         <span
                             class="text-2xl"
                             :class="{'icon-arrow-up': localeToggler, 'icon-arrow-down': ! localeToggler}"
+                            style="color: #1a1a1a !important;"
                             role="presentation"
                         ></span>
                     </div>
