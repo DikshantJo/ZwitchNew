@@ -14,9 +14,7 @@ class AdminContent
      */
     public function afterUpdate($content)
     {
-        // Clear homepage cache when admin content is updated
-        ResponseCache::selectCachedItems()
-            ->forUrls(config('app.url').'/')
-            ->forget();
+        // Clear entire website cache when admin content is updated
+        ResponseCache::clear();
     }
 }
