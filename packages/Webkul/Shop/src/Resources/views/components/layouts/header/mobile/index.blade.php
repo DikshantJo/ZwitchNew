@@ -618,7 +618,7 @@
                     // Change icon appearance to indicate active state
                     const searchIcon = searchToggle.querySelector('.icon-search');
                     if (searchIcon) {
-                        searchIcon.style.color = '#3b82f6'; // Blue color to indicate active state
+                        searchIcon.style.setProperty('color', '#1a1a1a', 'important'); // Dark color to indicate active state
                         searchIcon.style.transform = 'scale(1.1)';
                     }
                 }
@@ -659,6 +659,14 @@
                     e.stopPropagation();
                     
                     console.log('Search close clicked'); // Debug log
+                    
+                    // Apply same styling to close button
+                    const closeIcon = searchClose.querySelector('.icon-close');
+                    if (closeIcon) {
+                        closeIcon.style.setProperty('color', '#1a1a1a', 'important');
+                        closeIcon.style.transform = 'scale(1.1)';
+                    }
+                    
                     hideSearch();
                 });
 
