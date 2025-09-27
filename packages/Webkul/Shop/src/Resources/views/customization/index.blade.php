@@ -156,6 +156,19 @@
                     </div>
                 </div>
 
+                <!-- reCAPTCHA -->
+                <div class="bg-[#1a1a1a] rounded-2xl p-8 border border-[#404040]">
+                    <h2 class="text-2xl font-semibold text-white mb-6">Security Verification</h2>
+                    
+                    <div class="flex justify-center">
+                        <div class="g-recaptcha" data-sitekey="{{ config('recaptcha.site_key') }}"></div>
+                    </div>
+                    
+                    @error('g-recaptcha-response')
+                        <p class="text-red-400 text-sm mt-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <!-- Submit Button -->
                 <div class="text-center">
                     <button type="submit" id="submit-btn" 
@@ -274,5 +287,8 @@
             });
         });
     </script>
+
+    <!-- reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js?hl={{ config('recaptcha.language', 'en') }}" async defer></script>
 
 </x-shop::layouts>

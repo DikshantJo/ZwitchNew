@@ -11,7 +11,7 @@
         type="text/x-template"
         id="v-carousel-template"
     >
-        <div class="relative m-auto flex w-full overflow-hidden">
+        <div class="relative m-auto flex w-full overflow-hidden customCarousel">
             <!-- Slider -->
             <div 
                 class="inline-flex translate-x-0 cursor-pointer transition-transform duration-700 ease-out will-change-transform"
