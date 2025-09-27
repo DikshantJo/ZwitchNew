@@ -83,5 +83,18 @@ class EventServiceProvider extends ServiceProvider
         'marketing.search_seo.url_rewrites.delete.before' => [
             'Webkul\FPC\Listeners\URLRewrite@beforeDelete',
         ],
+
+        // Add missing cache invalidation for admin content updates
+        'admin.content.update.after' => [
+            'Webkul\FPC\Listeners\AdminContent@afterUpdate',
+        ],
+
+        'admin.settings.update.after' => [
+            'Webkul\FPC\Listeners\AdminSettings@afterUpdate',
+        ],
+
+        'admin.seo.update.after' => [
+            'Webkul\FPC\Listeners\AdminSEO@afterUpdate',
+        ],
     ];
 }
