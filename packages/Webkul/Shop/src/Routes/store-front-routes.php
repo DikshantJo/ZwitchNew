@@ -40,6 +40,10 @@ Route::post('contact-us/send-mail', [HomeController::class, 'sendContactUsMail']
     ->name('shop.home.contact_us.send_mail')
     ->middleware('cache.response');
 
+Route::get('about-us', [HomeController::class, 'aboutUs'])
+    ->name('shop.home.about_us')
+    ->middleware('cache.response');
+
 /**
  * Customisation request routes.
  */

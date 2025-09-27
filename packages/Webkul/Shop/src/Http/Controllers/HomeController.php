@@ -60,6 +60,16 @@ class HomeController extends Controller
     }
 
     /**
+     * About us page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function aboutUs()
+    {
+        return view('shop::home.about-us');
+    }
+
+    /**
      * Summary of store.
      *
      * @return \Illuminate\Http\RedirectResponse

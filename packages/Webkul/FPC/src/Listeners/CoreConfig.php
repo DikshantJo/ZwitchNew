@@ -13,12 +13,7 @@ class CoreConfig
      */
     public function afterUpdate()
     {
-        // Clear homepage cache specifically for core config changes
-        ResponseCache::selectCachedItems()
-            ->forUrls(config('app.url').'/')
-            ->forget();
-            
-        // Also clear any other cached pages that might be affected
+        // Clear entire website cache for core configuration changes
         ResponseCache::clear();
     }
 }

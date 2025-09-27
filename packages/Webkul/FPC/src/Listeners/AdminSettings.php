@@ -14,9 +14,7 @@ class AdminSettings
      */
     public function afterUpdate($settings)
     {
-        // Clear homepage cache when admin settings are updated
-        ResponseCache::selectCachedItems()
-            ->forUrls(config('app.url').'/')
-            ->forget();
+        // Clear entire website cache when admin settings are updated
+        ResponseCache::clear();
     }
 }

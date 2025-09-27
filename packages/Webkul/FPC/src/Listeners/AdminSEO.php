@@ -14,9 +14,7 @@ class AdminSEO
      */
     public function afterUpdate($seo)
     {
-        // Clear homepage cache when admin SEO is updated
-        ResponseCache::selectCachedItems()
-            ->forUrls(config('app.url').'/')
-            ->forget();
+        // Clear entire website cache when admin SEO is updated
+        ResponseCache::clear();
     }
 }

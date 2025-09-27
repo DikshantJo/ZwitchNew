@@ -96,5 +96,18 @@ class EventServiceProvider extends ServiceProvider
         'admin.seo.update.after' => [
             'Webkul\FPC\Listeners\AdminSEO@afterUpdate',
         ],
+
+        // Add cache invalidation for all admin panel changes
+        'admin.*.update.after' => [
+            'Webkul\FPC\Listeners\AdminContent@afterUpdate',
+        ],
+
+        'admin.*.create.after' => [
+            'Webkul\FPC\Listeners\AdminContent@afterUpdate',
+        ],
+
+        'admin.*.delete.before' => [
+            'Webkul\FPC\Listeners\AdminContent@afterUpdate',
+        ],
     ];
 }

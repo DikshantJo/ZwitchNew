@@ -5,39 +5,37 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Spatie\ResponseCache\Facades\ResponseCache;
 
-class ClearHomepageCache extends Command
+class ClearWebsiteCache extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'cache:homepage {--force : Force clear all homepage cache}';
+    protected $signature = 'cache:website {--homepage : Clear only homepage cache} {--force : Force clear all website cache}';
 
     /**
      * The console command.
      *
      * @var string
      */
-    protected $description = 'Clear homepage cache specifically';
+    protected $description = 'Clear website cache (entire site or homepage only)';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $this->info('Clearing homepage cache...');
-
-        if ($this->option('force')) {
-            // Clear all response cache
-            ResponseCache::clear();
-            $this->info('✅ All response cache cleared');
-        } else {
-            // Clear only homepage cache
+        if ($this->option('homepage')) {
+            $this->info('Clearing homepage cache...');
             ResponseCache::selectCachedItems()
                 ->forUrls(config('app.url').'/')
                 ->forget();
             $this->info('✅ Homepage cache cleared');
+        } else {
+            $this->info('Clearing entire website cache...');
+            ResponseCache::clear();
+            $this->info('✅ Entire website cache cleared');
         }
 
         $this->info('💡 Remember to refresh your browser with Ctrl+F5');
