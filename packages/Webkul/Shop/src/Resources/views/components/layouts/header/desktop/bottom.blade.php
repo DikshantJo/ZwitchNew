@@ -296,7 +296,7 @@
             v-else-if="'{{ core()->getConfigData('general.design.categories.category_view') }}' !== 'sidebar'"
         >
             <div
-                class="group relative flex  items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
+                class="group relative flex  items-center border-transparent"
                 style="background: transparent !important;"
                 v-for="category in categories"
             >
@@ -364,7 +364,7 @@
 
                 <!-- Show only first 4 categories in main navigation -->
                 <div
-                    class="group relative flex h-[77px] items-center border-b-4 border-transparent"
+                    class="group relative flex h-[77px] items-center border-transparent"
                 style="background: transparent !important;"
                     v-for="category in categories.slice(0, 4)"
                 >

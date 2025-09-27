@@ -43,7 +43,7 @@
         </div>
 
         <!-- Right Navigation -->
-        <div>
+        <div style = 'background: #fafafa; padding: 5px 10px; border-radius: 50px;'>
             <div class="flex items-center gap-x-5 max-md:gap-x-4">
                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.compare.before') !!}
 
