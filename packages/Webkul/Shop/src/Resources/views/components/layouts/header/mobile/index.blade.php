@@ -74,7 +74,7 @@
                         class="search-toggle-btn"
                         aria-label="@lang('shop::app.components.layouts.header.mobile.search')"
                     >
-                        <span class="icon-search cursor-pointer text-2xl" style="color: #1a1a1a !important;"></span>
+                        <span class="icon-search cursor-pointer text-2xl" style="color: #1a1a1a !important;" id="mobile-search-icon"></span>
                     </button>
                 </div>
 
@@ -618,7 +618,7 @@
                     // Change icon appearance to indicate active state
                     const searchIcon = searchToggle.querySelector('.icon-search');
                     if (searchIcon) {
-                        searchIcon.style.setProperty('color', '#1a1a1a', 'important'); // Dark color to indicate active state
+                        searchIcon.style.setProperty('color', '#1a1a1a', 'important'); // Always maintain dark color
                         searchIcon.style.transform = 'scale(1.1)';
                     }
                 }
@@ -633,8 +633,12 @@
                     // Reset icon appearance to normal state
                     const searchIcon = searchToggle.querySelector('.icon-search');
                     if (searchIcon) {
-                        searchIcon.style.color = ''; // Reset to default color
+                        searchIcon.style.setProperty('color', '#1a1a1a', 'important'); // Always maintain dark color
                         searchIcon.style.transform = ''; // Reset scale
+                        // Force the color to stay even after any other operations
+                        setTimeout(() => {
+                            searchIcon.style.setProperty('color', '#1a1a1a', 'important');
+                        }, 50);
                     }
                 }
                 
@@ -663,7 +667,7 @@
                     // Apply same styling to close button
                     const closeIcon = searchClose.querySelector('.icon-close');
                     if (closeIcon) {
-                        closeIcon.style.setProperty('color', '#1a1a1a', 'important');
+                        closeIcon.style.setProperty('color', '#1a1a1a', 'important'); // Always maintain dark color
                         closeIcon.style.transform = 'scale(1.1)';
                     }
                     
@@ -694,6 +698,24 @@
                 setTimeout(initMobileSearch, 100);
             }
         }
+
+        // Add CSS to ensure search icon color is always maintained
+        const style = document.createElement('style');
+        style.textContent = `
+            #mobile-search-icon {
+                color: #1a1a1a !important;
+            }
+            #mobile-search-icon:hover {
+                color: #1a1a1a !important;
+            }
+            #mobile-search-icon:active {
+                color: #1a1a1a !important;
+            }
+            #mobile-search-icon:focus {
+                color: #1a1a1a !important;
+            }
+        `;
+        document.head.appendChild(style);
 
         // Initialize when DOM is ready
         if (document.readyState === 'loading') {
