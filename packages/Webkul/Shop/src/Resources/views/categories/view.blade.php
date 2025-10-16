@@ -50,9 +50,6 @@
                     if (window.innerWidth <= 768) {
                         bannerImg.style.height = '350px';
                         bannerImg.style.objectFit = 'cover';
-                    } else {
-                        bannerImg.style.height = 'auto';
-                        bannerImg.style.objectFit = 'contain';
                     }
                 }
                 

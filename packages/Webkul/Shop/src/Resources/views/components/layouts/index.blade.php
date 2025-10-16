@@ -339,7 +339,7 @@
             }
 
             header input[type="text"]:focus {
-                border-color: #2563eb !important;
+                border-color: #3e9bd8 !important;
                 background-color: #404040 !important;
             }
 
@@ -387,7 +387,7 @@
             [data-theme="dark"] input:focus,
             [data-theme="dark"] select:focus,
             [data-theme="dark"] textarea:focus {
-                border-color: #2563eb !important;
+                border-color: #3e9bd8 !important;
                 outline: none !important;
                 box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
             }
@@ -454,7 +454,7 @@
             }
 
             [data-theme="dark"] .focus\\:border-gray-400:focus {
-                border-color: #2563eb !important;
+                border-color: #3e9bd8 !important;
             }
 
             /* Search input styling with 50px border radius */
@@ -474,12 +474,12 @@
             }
 
             [data-theme="dark"] input[name="query"]:focus {
-                border-color: #2563eb !important;
+                border-color: #3e9bd8 !important;
                 box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
             }
 
             [data-theme="dark"] .primary-button {
-                background-color: #2563eb !important;
+                background-color: #3e9bd8 !important;
                 color: #ffffff !important;
             }
 
@@ -507,7 +507,7 @@
             }
 
             [data-theme="dark"] .bg-navyBlue {
-                background-color: #2563eb !important;
+                background-color: #3e9bd8 !important;
             }
 
             [data-theme="dark"] .text-navyBlue {
@@ -515,7 +515,7 @@
             }
 
             [data-theme="dark"] .border-navyBlue {
-                border-color: #2563eb !important;
+                border-color: #3e9bd8 !important;
             }
 
             /* Urbanist Font - Global Application */
