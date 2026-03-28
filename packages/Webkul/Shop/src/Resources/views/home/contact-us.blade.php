@@ -210,129 +210,218 @@
         </div>
 
         <!-- FAQ Section -->
-        <div class="container mx-auto px-4 py-16">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white dark:text-white light:text-[#111827] uppercase mb-6" style="font-family: 'Unbounded', sans-serif;">
-                        Have Questions? We Have Answers.
-                    </h2>
-                    <p class="text-lg text-[#676665] dark:text-[#676665] light:text-[#6b7280] mb-8" style="font-family: 'Urbanist', sans-serif;">
-                        Ease into the world of Zwitch Originals with clarity. Our FAQs cover a spectrum of topics.
-                    </p>
-                </div>
-                
-                <!-- FAQ Tabs -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        All
-                    </button>
-                    <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        Orders & Products
-                    </button>
-                    <button class="px-6 py-3 rounded-lg bg-[#c2b4a3] text-[#0f0f0f] border border-[#c2b4a3]" style="font-family: 'Urbanist', sans-serif;">
-                        Shipping & Delivery
-                    </button>
-                    <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        Returns & Refunds
-                    </button>
-                    <button class="px-6 py-3 rounded-lg border border-[#333333] dark:border-[#333333] light:border-[#d1d5db] text-[#b3b3b2] dark:text-[#b3b3b2] light:text-[#6b7280] hover:bg-[#c2b4a3] hover:text-[#0f0f0f] transition-colors" style="font-family: 'Urbanist', sans-serif;">
-                        General
-                    </button>
-                </div>
-                
-                <!-- FAQ Content -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="space-y-8">
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                How do I place an order with Zwitch Originals?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Simply browse our website, select your favorite design, choose size, color, and fit, then proceed to secure online checkout. You'll receive an order confirmation and tracking details by email once your purchase is complete.
-                            </p>
+        <div class="zob-steps-faq">
+            <div class="zob-steps-faq__container">
+                <!-- FAQ Section -->
+                <div class="zob-steps-faq__faq">
+                    <div class="zob-steps-faq__faq-header">
+                        <div class="zob-steps-faq__faq-text-container">
+                            <h2 class="zob-steps-faq__faq-title">Have Questions? We Have Answers.</h2>
+                            <p class="zob-steps-faq__faq-subtitle">Ease into the world of Zwitch Originals with clarity. Our FAQs cover a spectrum of topics.</p>
                         </div>
                         
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                How do I choose the right size?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Always refer to our detailed size chart available on each product page. If unsure, measure your chest, waist, and length, and compare with our chart for the best fit.
-                            </p>
+                        <div class="zob-steps-faq__faq-tabs">
+                            <button class="zob-steps-faq__faq-tab zob-steps-faq__faq-tab--active" data-category="all">All</button>
+                            <button class="zob-steps-faq__faq-tab" data-category="orders">Orders & Products</button>
+                            <button class="zob-steps-faq__faq-tab" data-category="shipping">Shipping & Delivery</button>
+                            <button class="zob-steps-faq__faq-tab" data-category="returns">Returns & Refunds</button>
+                            <button class="zob-steps-faq__faq-tab" data-category="general">General</button>
                         </div>
                         
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Are all Zwitch Originals t-shirts handmade and limited edition?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Yes! All our designs are hand-illustrated by our in-house artist and released in limited quantities, ensuring exclusivity in every piece.
-                            </p>
-                        </div>
-
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Do you ship across India?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Absolutely! We deliver PAN India to all states and union territories. Shipping charges are calculated at checkout.
-                            </p>
-                        </div>
-
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Which payment methods do you accept?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                We accept UPI, net banking, debit/credit cards, and wallets. We do not currently offer Cash on Delivery.
-                            </p>
+                        <div class="zob-steps-faq__faq-decoration">
+                            <svg width="446" height="446" viewBox="0 0 446 446" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <clipPath id="faq-clip">
+                                        <path d="M223 0C100.5 0 0 100.5 0 223C0 345.5 100.5 446 223 446C345.5 446 446 345.5 446 223C446 100.5 345.5 0 223 0ZM223 400C120.5 400 40 319.5 40 223C40 126.5 120.5 46 223 46C319.5 46 400 126.5 400 223C400 319.5 319.5 400 223 400Z"/>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#faq-clip)">
+                                    <circle cx="223" cy="223" r="223" fill="#FFFFFF" fill-opacity="0.03"/>
+                                    <!-- Abstract geometric patterns -->
+                                    <path d="M100 100C100 100 150 130 200 100C250 70 300 100 300 100" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                    <path d="M80 180C80 180 130 210 180 180C230 150 280 180 280 180" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                    <path d="M160 260C160 260 210 290 260 260C310 230 360 260 360 260" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                    <path d="M120 320C120 320 170 350 220 320C270 290 320 320 320 320" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.08" fill="none"/>
+                                    
+                                    <!-- Decorative dots -->
+                                    <circle cx="150" cy="120" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="250" cy="160" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="200" cy="200" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="300" cy="240" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="180" cy="280" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="280" cy="320" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="220" cy="360" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                    <circle cx="320" cy="400" r="2" fill="#FFFFFF" fill-opacity="0.15"/>
+                                </g>
+                            </svg>
                         </div>
                     </div>
-                    
-                    <div class="space-y-8">
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                What is your return policy?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Returns are accepted within 7 days of delivery for unworn and unwashed items with tags intact. Customized and limited-edition drops are final sale unless defective. Please contact us to initiate a return.
-                            </p>
-                        </div>
-                        
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                How do refunds work?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Eligible returns are refunded to the original payment method within 7–10 business days after we receive and inspect the product. Refunds exclude shipping fees unless the product is faulty or incorrect.
-                            </p>
-                        </div>
-                        
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Can I cancel my order?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Yes, cancellations are allowed within 24 hours of purchase only. After that, your order will be processed and shipped as per schedule.
-                            </p>
+
+                    <div class="zob-steps-faq__faq-content">
+                        <!-- Left Column -->
+                        <div class="zob-steps-faq__faq-column" id="faq-left-column">
+                            <div class="zob-steps-faq__faq-item" data-category="orders">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">How do I place an order with Zwitch Originals?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Simply browse our website, select your favorite design, choose size, color, and fit, then proceed to secure online checkout. You'll receive an order confirmation and tracking details by email once your purchase is complete.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="orders">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">How do I choose the right size?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Always refer to our detailed size chart available on each product page. If unsure, measure your chest, waist, and length, and compare with our chart for the best fit.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="orders">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Are all Zwitch Originals t-shirts handmade and limited edition?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Yes! All our designs are hand-illustrated by our in-house artist and released in limited quantities, ensuring exclusivity in every piece.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="orders">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Can I customize my t-shirt or place a bulk order for events?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Currently, we offer limited editions only. For customization or bulk inquiries, please contact our support team - we'd love to discuss your needs!</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="shipping">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Do you ship across India?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Absolutely! We deliver PAN India to all states and union territories. Shipping charges are calculated at checkout.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="shipping">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">How long will it take to receive my order?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Standard delivery takes 4–6 business days from order processing. You'll get a tracking number via email/SMS for real-time updates on your shipment status.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="shipping">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Which payment methods do you accept?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>We accept UPI, net banking, debit/credit cards, and wallets. We do not currently offer Cash on Delivery.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="returns">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">What is your return policy?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Returns are accepted within 7 days of delivery for unworn and unwashed items with tags intact. Customized and limited-edition drops are final sale unless defective. Please contact us to initiate a return.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="returns">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">How do refunds work?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Eligible returns are refunded to the original payment method within 7–10 business days after we receive and inspect the product. Refunds exclude shipping fees unless the product is faulty or incorrect.</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Do you offer Cash on Delivery (COD)?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                No, we currently accept only prepaid online payments for faster, safer transactions.
-                            </p>
-                        </div>
+                        <!-- Right Column -->
+                        <div class="zob-steps-faq__faq-column" id="faq-right-column">
+                            <div class="zob-steps-faq__faq-item" data-category="returns">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">What if I receive a defective or wrong item?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>We apologize for any inconvenience! Please contact us within 2 days of receiving your order. We'll arrange a return, reimburse your shipping costs, and send a replacement or refund after review.</p>
+                                </div>
+                            </div>
 
-                        <div class="border-b border-[#404040] dark:border-[#404040] light:border-[#d1d5db] pb-6">
-                            <h3 class="text-xl font-semibold text-white dark:text-white light:text-[#111827] mb-3" style="font-family: 'Unbounded', sans-serif;">
-                                Are your prices inclusive of GST and other taxes?
-                            </h3>
-                            <p class="text-[#81807e] dark:text-[#81807e] light:text-[#6b7280] text-base" style="font-family: 'Urbanist', sans-serif;">
-                                Yes, all listed prices are inclusive of GST and applicable taxes.
-                            </p>
+                            <div class="zob-steps-faq__faq-item" data-category="returns">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Can I cancel my order?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Yes, cancellations are allowed within 24 hours of purchase only. After that, your order will be processed and shipped as per schedule.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="general">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Do you offer Cash on Delivery (COD)?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>No, we currently accept only prepaid online payments for faster, safer transactions.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="general">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Are your prices inclusive of GST and other taxes?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Yes, all listed prices are inclusive of GST and applicable taxes.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="general">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Will my personal information be safe?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Absolutely. We value your privacy and use your personal details only for order processing and updates. Read our Privacy Policy for more info.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="general">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">Can minors (under 18) shop at Zwitch Originals?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>Yes, minors may shop on our site, but we advise parental supervision for safe purchases.</p>
+                                </div>
+                            </div>
+
+                            <div class="zob-steps-faq__faq-item" data-category="general">
+                                <div class="zob-steps-faq__faq-question">
+                                    <h3 class="zob-steps-faq__faq-question-text">How can I contact customer care?</h3>
+                                    <button class="zob-steps-faq__faq-toggle">+</button>
+                                </div>
+                                <div class="zob-steps-faq__faq-answer">
+                                    <p>For any queries or issues, reach out to us at your support email or use the contact form on our website. Our team is ready to help!</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -365,4 +454,177 @@
             </div>
         </div>
     </div>
+
+    <!-- FAQ JavaScript Functionality -->
+    <script>
+        // FAQ Functionality - Run after everything is loaded
+        function initContactFAQ() {
+            console.log('Contact FAQ JavaScript loaded');
+            
+            const faqItems = document.querySelectorAll('.zob-steps-faq__faq-item');
+            const faqTabs = document.querySelectorAll('.zob-steps-faq__faq-tab');
+            
+            console.log('Found FAQ items:', faqItems.length);
+            console.log('Found FAQ tabs:', faqTabs.length);
+
+            // FAQ Toggle Functionality
+            faqItems.forEach((item, index) => {
+                const question = item.querySelector('.zob-steps-faq__faq-question');
+                const toggle = item.querySelector('.zob-steps-faq__faq-toggle');
+                const answer = item.querySelector('.zob-steps-faq__faq-answer');
+                
+                console.log(`FAQ item ${index}:`, { question: !!question, toggle: !!toggle, answer: !!answer });
+
+                if (question && toggle) {
+                    // Remove any existing listeners
+                    question.removeEventListener('click', question.faqClickHandler);
+                    
+                    // Create new click handler
+                    question.faqClickHandler = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        console.log('FAQ question clicked');
+                        const isActive = item.classList.contains('active');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                                const otherToggle = otherItem.querySelector('.zob-steps-faq__faq-toggle');
+                                if (otherToggle) {
+                                    otherToggle.textContent = '+';
+                                }
+                            }
+                        });
+
+                        // Toggle current item
+                        if (isActive) {
+                            item.classList.remove('active');
+                            toggle.textContent = '+';
+                        } else {
+                            item.classList.add('active');
+                            toggle.textContent = '−';
+                        }
+                    };
+                    
+                    question.addEventListener('click', question.faqClickHandler);
+                }
+            });
+
+            // Tab Filtering Functionality
+            faqTabs.forEach((tab, index) => {
+                console.log(`FAQ tab ${index}:`, tab.getAttribute('data-category'));
+                
+                // Remove any existing listeners
+                tab.removeEventListener('click', tab.faqTabClickHandler);
+                
+                // Create new click handler
+                tab.faqTabClickHandler = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('FAQ tab clicked:', this.getAttribute('data-category'));
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active tab
+                    faqTabs.forEach(t => t.classList.remove('zob-steps-faq__faq-tab--active'));
+                    this.classList.add('zob-steps-faq__faq-tab--active');
+                    
+                    // Get column containers
+                    const leftColumn = document.getElementById('faq-left-column');
+                    const rightColumn = document.getElementById('faq-right-column');
+                    
+                    // Filter FAQ items and redistribute them
+                    const visibleItems = [];
+                    faqItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        console.log('Filtering item:', itemCategory, 'for category:', category);
+                        
+                        if (category === 'all' || itemCategory === category) {
+                            item.classList.remove('hidden');
+                            item.style.display = 'block';
+                            visibleItems.push(item);
+                        } else {
+                            item.classList.add('hidden');
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Redistribute visible items evenly between columns
+                    if (leftColumn && rightColumn) {
+                        // Clear both columns
+                        leftColumn.innerHTML = '';
+                        rightColumn.innerHTML = '';
+                        
+                        // Redistribute items
+                        visibleItems.forEach((item, index) => {
+                            const clone = item.cloneNode(true);
+                            if (index % 2 === 0) {
+                                leftColumn.appendChild(clone);
+                            } else {
+                                rightColumn.appendChild(clone);
+                            }
+                        });
+                        
+                        // Reinitialize click handlers for new elements
+                        setTimeout(() => {
+                            const newFaqItems = document.querySelectorAll('.zob-steps-faq__faq-item');
+                            newFaqItems.forEach((item, index) => {
+                                const question = item.querySelector('.zob-steps-faq__faq-question');
+                                const toggle = item.querySelector('.zob-steps-faq__faq-toggle');
+                                
+                                if (question && toggle) {
+                                    question.removeEventListener('click', question.faqClickHandler);
+                                    
+                                    question.faqClickHandler = function(e) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        
+                                        const isActive = item.classList.contains('active');
+                                        
+                                        // Close all other FAQ items
+                                        newFaqItems.forEach(otherItem => {
+                                            if (otherItem !== item) {
+                                                otherItem.classList.remove('active');
+                                                const otherToggle = otherItem.querySelector('.zob-steps-faq__faq-toggle');
+                                                if (otherToggle) {
+                                                    otherToggle.textContent = '+';
+                                                }
+                                            }
+                                        });
+
+                                        // Toggle current item
+                                        if (isActive) {
+                                            item.classList.remove('active');
+                                            toggle.textContent = '+';
+                                        } else {
+                                            item.classList.add('active');
+                                            toggle.textContent = '−';
+                                        }
+                                    };
+                                    
+                                    question.addEventListener('click', question.faqClickHandler);
+                                }
+                            });
+                        }, 10);
+                    }
+                };
+                
+                tab.addEventListener('click', tab.faqTabClickHandler);
+            });
+        }
+
+        // Try multiple ways to ensure it runs
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initContactFAQ);
+        } else {
+            initContactFAQ();
+        }
+
+        // Also try on window load as backup
+        window.addEventListener('load', function() {
+            setTimeout(initContactFAQ, 100);
+        });
+    </script>
 </x-shop::layouts>

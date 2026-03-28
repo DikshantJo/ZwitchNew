@@ -2,7 +2,7 @@
 
 <v-carousel :images="{{ json_encode($options['images'] ?? []) }}">
     <div class="overflow-hidden">
-        <div class="shimmer aspect-[2.743/1] max-h-screen w-screen"></div>
+        <div class="shimmer aspect-[2.743/1] max-md:aspect-[4/3] max-sm:aspect-[3/4] max-h-screen w-screen"></div>
     </div>
 </v-carousel>
 
@@ -18,13 +18,13 @@
                 ref="sliderContainer"
             >
                 <div
-                    class="max-h-screen w-screen bg-cover bg-no-repeat"
+                    class="aspect-[2.743/1] max-md:aspect-[4/3] max-sm:!aspect-auto max-sm:min-h-[400px] w-screen bg-cover bg-no-repeat"
                     v-for="(image, index) in images"
                     @click="visitLink(image)"
                     ref="slide"
                 >
                     <x-shop::media.images.lazy
-                        class="aspect-[2.743/1] max-h-full w-full max-w-full select-none transition-transform duration-300 ease-in-out"
+                        class="h-full w-full object-cover select-none transition-transform duration-300 ease-in-out"
                         ::lazy="false"
                         ::src="image.image"
                         ::srcset="image.image + ' 1920w, ' + image.image.replace('storage', 'cache/large') + ' 1280w,' + image.image.replace('storage', 'cache/medium') + ' 1024w, ' + image.image.replace('storage', 'cache/small') + ' 525w'"

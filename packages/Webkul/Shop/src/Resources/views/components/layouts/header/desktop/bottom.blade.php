@@ -452,7 +452,7 @@
                                         :key="category.id"
                                         :class="{'mb-2': category.children && category.children.length}"
                                     >
-                                        <div class="flex cursor-pointer items-center justify-between px-6 py-2 transition-colors duration-200 hover:bg-gray-100">
+                                        <div class="flex cursor-pointer items-center justify-between px-6 py-2 transition-colors duration-200 ">
                                             <a
                                                 :href="category.url"
                                                 class="text-base font-medium text-black"
@@ -468,7 +468,7 @@
                                                 :key="secondLevelCategory.id"
                                             >
                                                 <div
-                                                    class="flex cursor-pointer items-center justify-between px-6 py-2 transition-colors duration-200 hover:bg-gray-100"
+                                                    class="flex cursor-pointer items-center justify-between px-6 py-2 transition-colors duration-200"
                                                     @click="showThirdLevel(secondLevelCategory, category, $event)"
                                                 >
                                                     <a
@@ -500,7 +500,7 @@
                                         class="flex items-center justify-center gap-2 focus:outline-none"
                                         aria-label="Go back"
                                     >
-                                        <span class="icon-arrow-left rtl:icon-arrow-right text-lg"></span>
+                                        <!-- <span class="icon-arrow-left rtl:icon-arrow-right text-lg"></span> -->
 
                                         <p class="text-base font-medium text-black">
                                             @lang('shop::app.components.layouts.header.desktop.bottom.back-button')
@@ -517,7 +517,7 @@
                                     >
                                         <a
                                             :href="thirdLevelCategory.url"
-                                            class="block px-6 py-2 text-sm transition-colors duration-200 hover:bg-gray-100"
+                                            class="block px-6 py-2 text-sm transition-colors duration-200"
                                         >
                                             @{{ thirdLevelCategory.name }}
                                         </a>
