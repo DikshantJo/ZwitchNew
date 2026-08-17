@@ -12,7 +12,7 @@
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white uppercase" style="font-family: 'Unbounded', sans-serif !important;">
                     About Zwitch Originals
                 </h1>
-                <p class="text-xl md:text-2xl text-[#c2b4a3] dark:text-[#c2b4a3] mb-8 font-semibold" style="font-family: 'Urbanist', sans-serif !important;">
+                <p class="text-xl md:text-2xl text-[#3e9bd8] dark:text-[#3e9bd8] mb-8 font-semibold" style="font-family: 'Urbanist', sans-serif !important;">
                     We don't just design t-shirts - we design statements.
                 </p>
                 <p class="text-lg text-gray-600 dark:text-[#676665] mb-8 max-w-4xl mx-auto" style="font-family: 'Urbanist', sans-serif !important;">
@@ -30,15 +30,15 @@
                             Our Story
                         </h2>
                         <p class="text-lg text-gray-600 dark:text-[#81807e] mb-6" style="font-family: 'Urbanist', sans-serif !important;">
-                            We stand for <span class="text-[#c2b4a3] dark:text-[#c2b4a3] font-semibold">originality, expression, and an unapologetically bold identity</span>. Every piece you wear is more than fabric - it's a canvas of thought, wit, and creativity. Our designs are hand-illustrated by our in-house artist and co-founder, making each drop limited, premium, and deeply personal.
+                            We stand for <span class="text-[#3e9bd8] dark:text-[#3e9bd8] font-semibold">originality, expression, and an unapologetically bold identity</span>. Every piece you wear is more than fabric - it's a canvas of thought, wit, and creativity. Our designs are hand-illustrated by our in-house artist and co-founder, making each drop limited, premium, and deeply personal.
                         </p>
                         <p class="text-lg text-gray-600 dark:text-[#81807e] mb-6" style="font-family: 'Urbanist', sans-serif !important;">
-                            From foodies and gamers to artists, adventurers, and everyday originals - our collections thread real passions into wearable art. <span class="text-[#c2b4a3] dark:text-[#c2b4a3] font-semibold">Zwitch is not a trend. It's a mindset.</span>
+                            From foodies and gamers to artists, adventurers, and everyday originals - our collections thread real passions into wearable art. <span class="text-[#3e9bd8] dark:text-[#3e9bd8] font-semibold">Zwitch is not a trend. It's a mindset.</span>
                         </p>
                     </div>
                     <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 border border-gray-200 dark:border-[#404040]">
                         <div class="text-center">
-                            <div class="w-24 h-24 bg-[#c2b4a3] dark:bg-[#c2b4a3] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <div class="w-24 h-24 bg-[#3e9bd8] dark:bg-[#3e9bd8] rounded-full flex items-center justify-center mx-auto mb-6">
                                 <svg class="w-12 h-12 text-gray-900 dark:text-[#0f0f0f]" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                                 </svg>
@@ -130,7 +130,7 @@
         <!-- CTA Section -->
         <div class="container mx-auto px-4 py-16">
             <div class="max-w-6xl mx-auto">
-                <div class="bg-[#c2b4a3] dark:bg-[#c2b4a3] rounded-2xl p-12 md:p-16">
+                <div class="bg-[#3e9bd8] dark:bg-[#3e9bd8] rounded-2xl p-12 md:p-16">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-[#0f0f0f] uppercase mb-6" style="font-family: 'Unbounded', sans-serif !important;">
